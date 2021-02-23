@@ -67,8 +67,6 @@
 * Generate WFGs from CFG and sourcecode
 * INPUT: cfg_file (necessary), code_file, and sensitive_line_no. The code_file and sensitive_line_no can be set 'no' for different requirements.
 * OUTPUT: Dump the node {lines, ast_feature, weight} of the WFG, meanwhile storing the WFG as dict into ../data/wfgs
-* NOTE: Three cases on the You can i) , ii) provide sensitive_line_no by yourself, or iii) leave it automatically
-* 
 *  i) leave code_file as 'no' to use the full graph as WFG (no slicing)	
 	*  `cd WFGParse`
 	*  `python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  no -1`
@@ -82,8 +80,13 @@
 *  NOTE: Two key parameters, i.e., weigh_depth and decay_ratio, can be modified in config.py
   
 ### WFG Comparison
-*  `cd SimCompare`
-*  `python cfgcmp.py  ../data/wfgs/cms_smime.c#do_free_upto_-1  ../data/wfgs/cms_smime.c#do_free_upto_131`
+* Desc
+	* Compute the similarity of two WFGs
+	* INPUT: WFG file path
+	* OUTPUT: Similarity
+* Cmds
+	*  `cd SimCompare`
+	*  `python cfgcmp.py  ../data/wfgs/cms_smime.c#do_free_upto_-1  ../data/wfgs/cms_smime.c#do_free_upto_131`
 
 ### Others:
 * ./DataPrepare/stat_keywords.py is used to determine keywords for your own corpus
