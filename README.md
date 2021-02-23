@@ -40,7 +40,7 @@
 * Output: output/OpenSSL_code_dir now contains the raw code for each function
 * Cmds
 	* `cd DataPrepare`
-	* `python extract_func.py input/OpenSSL/ output/OpenSSL_code_dir input/OpenSSL/`
+	* `python2.7 extract_func.py input/OpenSSL/ output/OpenSSL_code_dir input/OpenSSL/`
 
 ### CFG Description Generation
 * Generate raw CFG description for a project (e.g., OpenSSL). 
@@ -56,15 +56,15 @@
 * Output: ../data/func_cfg now contains the CFGs for each function 
 * Cmds
 	* `cd DataPrepare`
-	* `python extract_cfg_desc.py  ../data/cfg_desc/cfg_desc.log  ../data/func_cfg/`
+	* `python2.7 extract_cfg_desc.py  ../data/cfg_desc/cfg_desc.log  ../data/func_cfg/`
 
 ### Sensitive Line Location 
 * Get sensitive lines for a function
 * Input: source code of a function
 * Output: a list of matched keyword and line_no
 * Cmds
-	* `cd SenLocate`
-	* `python sensitive_parse.py ../data/func_code/cms_smime.c#small#do_free_upto#126.c`
+	* `cd ../SenLocate`
+	* `python2.7 sensitive_parse.py ../data/func_code/cms_smime.c#small#do_free_upto#126.c`
 *  NOTE: You can provide your own keywords in sensitive_parse.py
 
 ### WFG Generation 
@@ -72,14 +72,14 @@
 * Input: cfg_file (necessary), code_file, and sensitive_line_no. The code_file and sensitive_line_no can be set 'no' for different requirements.
 * Output: Dump the node {lines, ast_feature, weight} of the WFG, meanwhile storing the WFG as dict into ../data/wfgs
 *  i) leave code_file as 'no' to use the full graph as WFG (no slicing)	
-	*  `cd WFGParse`
-	*  `python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  no -1`
+	*  `cd ../WFGParse`
+	*  `python2.7 code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  no -1`
   
 *  ii) leave sensitive_line_no as '-1' to automated seach sensitive lines and generate WFG for each sensitive line.
-	*  ` python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  ../data/func_code/cms_smime.c#small#do_free_upto#126.c  -1`
+	*  `python2.7 code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  ../data/func_code/cms_smime.c#small#do_free_upto#126.c  -1`
   
 *  iii) pass the specific sensitive_line_no to generate WFG
-	*  `python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  ../data/func_code/cms_smime.c#small#do_free_upto#126.c  7`
+	*  `python2.7 code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  ../data/func_code/cms_smime.c#small#do_free_upto#126.c  7`
   
 *  NOTE: Two key parameters, i.e., weigh_depth and decay_ratio, can be modified in config.py
   
@@ -88,8 +88,8 @@
 * Input: WFG file path
 * Output: Similarity
 * Cmds
-	*  `cd SimCompare`
-	*  `python cfgcmp.py  ../data/wfgs/cms_smime.c#do_free_upto_-1  ../data/wfgs/cms_smime.c#do_free_upto_131`
+	*  `cd ../SimCompare`
+	*  `python2.7 cfgcmp.py  ../data/wfgs/cms_smime.c#do_free_upto_-1  ../data/wfgs/cms_smime.c#do_free_upto_131`
 
 ### Others:
 * ./DataPrepare/stat_keywords.py is used to determine keywords for your own corpus
