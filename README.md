@@ -1,7 +1,9 @@
 # VulDetector
 
 ## Description
-* This project is for vulnerability detection using graph similarity. Please refer our [paper](https://ieeexplore.ieee.org/document/9309254) for more details. Here we provide the key modules on WFG generation.   
+* This project is for vulnerability detection using graph similarity. VulDetector is a static-analysis tool to detect C/C++ vulnerabilities based on graph comparison at the granularity of function. At the key of VulDetector is a weighted feature graph (WFG) model which characterizes function with a small yet semantically rich graph. It first pinpoints vulnerability-sensitive keywords to slice the control flow graph of a function, thereby reducing the graph size without compromising security-related semantics. Then, each sliced subgraph is characterized using WFG, which provides both syntactic and semantic features in varying degrees of security. Here we provide the key modules on WFG generation and comparison. 
+* Please refer our [paper](https://ieeexplore.ieee.org/document/9309254) for more details. 
+ 
 
 ## NOTE
 * Sorry that the source code is unavaiable for a while. The previous project contained too much snippets and scripts for testing, so we are cleaning these code and making it modular to facilitate usage. In addition, we got many 'TabError' when deploying it in a new environment, and we are fixing these issues.  
@@ -14,15 +16,17 @@
 
 
 ## Setup:
-### Install python packages (python2.7 currently): clang, matplotlib, hungarian
+### Install packages
+* Python packages (python2.7 currently): clang, matplotlib, hungarian
+* sklearn is only required for determining keywords
 
 ### Setup LLVM
 * Download sourcecode of LLVM-7.0.0
 * Replace files of LLVM-7.0.0 with files in directory llvm-clang:
-		tools/clang/include/clang/Analysis/CFG.h
-		tools/clang/lib/Analysis/CFG.cpp
-		tools/clang/lib/AST/ASTDumper.cpp
-		tools/clang/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp
+		tools/clang/include/clang/Analysis/CFG.h<br>
+		tools/clang/lib/Analysis/CFG.cpp<br>
+		tools/clang/lib/AST/ASTDumper.cpp<br>
+		tools/clang/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp<br>
 * build LLVM
 
 * NOTE: Just compiling clang probably works, yet not tested. Make sure the existence of /usr/local/lib/libclang.so.6.0
