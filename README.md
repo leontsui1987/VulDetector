@@ -23,10 +23,10 @@
 ### Setup LLVM
 * Download sourcecode of LLVM-7.0.0
 * Replace files of LLVM-7.0.0 with files in directory llvm-clang:
-		tools/clang/include/clang/Analysis/CFG.h<br>
-		tools/clang/lib/Analysis/CFG.cpp<br>
-		tools/clang/lib/AST/ASTDumper.cpp<br>
-		tools/clang/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp<br>
+	* tools/clang/include/clang/Analysis/CFG.h<br>
+	* tools/clang/lib/Analysis/CFG.cpp<br>
+	* tools/clang/lib/AST/ASTDumper.cpp<br>
+	* tools/clang/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp<br>
 * build LLVM
 
 * NOTE: Just compiling clang probably works, yet not tested. Make sure the existence of /usr/local/lib/libclang.so.6.0
