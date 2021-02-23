@@ -15,7 +15,7 @@
 * SimCompare: Compute the similarity of two WFGs
 
 
-## Setup:
+## Setup
 ### Install packages
 * Python packages (python2.7 currently): clang, matplotlib, hungarian
 * sklearn is only required for determining keywords
@@ -65,11 +65,13 @@
 
 ### WFG Generation 
 * Generate WFGs from CFG and sourcecode
-* NOTE: You can i)use the full graph as WFG (no slicing), ii) provide sensitive_line_no by yourself, or iii) leave it automatically
+* INPUT: cfg_file (necessary), code_file, and sensitive_line_no
+* OUTPUT: Dump the node {lines, ast_feature, weight} of the WFG, meanwhile storing the WFG as dict into ../data/wfgs
+* NOTE: You can i) use the full graph as WFG (no slicing), ii) provide sensitive_line_no by yourself, or iii) leave it automatically
 * 
 *  i) `cd WFGParse`
 *  `python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  no -1`
-*  Output: Dump the node {lines, ast_feature, weight} of the WFG, meanwhile storing the WFG as dict into ../data/wfgs
+*  Output: 
   
 *  ii) ` python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  ../data/func_code/cms_smime.c#small#do_free_upto#126.c  -1`
 *  Output: Automated seach of sensitive lines, and generate WFG for each sensitive line.
