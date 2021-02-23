@@ -19,15 +19,15 @@
 ### Install python packages (python2.7 currently): clang, matplotlib, hungarian
 
 ### Setup LLVM
-* download sourcecode of LLVM-7.0.0
-* replace files of LLVM-7.0.0 with files in directory llvm-clang:
-	    tools/clang/include/clang/Analysis/CFG.h
-	    tools/clang/lib/Analysis/CFG.cpp
-            tools/clang/lib/AST/ASTDumper.cpp
-            tools/clang/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp
+* Download sourcecode of LLVM-7.0.0
+* Replace files of LLVM-7.0.0 with files in directory llvm-clang:
+		tools/clang/include/clang/Analysis/CFG.h
+		tools/clang/lib/Analysis/CFG.cpp
+		tools/clang/lib/AST/ASTDumper.cpp
+		tools/clang/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp
 * build LLVM
 
-* NOTE: Make sure the existence of /usr/local/lib/libclang.so.6.0
+* NOTE: Just compiling clang probably works, yet not tested. Make sure the existence of /usr/local/lib/libclang.so.6.0
 
 
 Usage
