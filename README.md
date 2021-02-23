@@ -46,7 +46,7 @@
 * Output: output/OpenSSL_cfg_dir now contains the CFGs for each function 
 	* `cd DataPrepare`
 	* `python extract_cfg_desc.py output/cfg_desc.log ./output/OpenSSL_cfg_dir/`
-	*  Example: `python extract_cfg_desc.py  ../data/cfg_desc/cfg_desc.log  ../data/func_cfg/`
+	*  E.g. `python extract_cfg_desc.py  ../data/cfg_desc/cfg_desc.log  ../data/func_cfg/`
   
 ### Code Extraction 
 * Extract raw code for each function from sourcecode
@@ -62,8 +62,9 @@
 * Output: a list of matched keyword and line_no
 	* `cd SenLocate`
 	* `python sensitive_parse.py output/OpenSSL_code_dir/file_name`
-	*  Example: `python sensitive_parse.py ../data/func_code/cms_smime.c#small#do_free_upto#126.c`
+	*  E.g. `python sensitive_parse.py ../data/func_code/cms_smime.c#small#do_free_upto#126.c`
 *  NOTE: You can provide your own keywords in sensitive_parse.py
+
 
 ### Generate WFG from CFG_desc and sourcecode
 *  NOTE: You can i)use the full graph as WFG (no slicing), ii) provide sensitive_line_no by yourself, or iii) leave it automatically
