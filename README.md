@@ -1,17 +1,15 @@
 # VulDetector
 
-
 ## Description
-* This project is for vulnerability detection using graph similarity.
+* This project is for vulnerability detection using graph similarity. Please refer my paper for more details https://ieeexplore.ieee.org/document/9309254. Here we   
 
 ## NOTE
 * Sorry that the source code is unavaiable for a while. The previous project contained too much snippets and scripts for testing, so we are cleaning these code and making it modular to facilitate usage. In addition, we got many 'TabError' when deploying it in a new environment, and we are fixing these issues.  
 
-## Modules
-* CVECollect: Collect the {program, filename, functionname} of known vulnerabilities.
+## Key Modules
 * DataPrepare: Extract function codes and CFGs from a program.
 * SenLocate: Locate the sensitive lines.
-* DataParse: Generate WFGs from CFGs.
+* WFGParse: Generate WFGs from CFGs.
 * SimCompare: Compute the similarity of two WFGs
 
 
@@ -30,7 +28,7 @@
 * NOTE: Just compiling clang probably works, yet not tested. Make sure the existence of /usr/local/lib/libclang.so.6.0
 
 
-Usage
+## sage
 1. Generate raw CFG description for a project (e.g., OpenSSL)
   cd input/OpenSSL
   scan-build -enable-checker debug.DumpCFG make 2> output/OpenSSL/cfg_desc.log
