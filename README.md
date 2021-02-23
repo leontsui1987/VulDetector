@@ -38,12 +38,14 @@
 * Extract raw code for each function from sourcecode
 * Input: source code directory input/OpenSSL/ of the project
 * Output: output/OpenSSL_code_dir now contains the raw code for each function
+* Cmds
 	* `cd DataPrepare`
 	* `python extract_func.py input/OpenSSL/ output/OpenSSL_code_dir input/OpenSSL/`
 
 ### CFG Description Generation
 * Generate raw CFG description for a project (e.g., OpenSSL). 
 * Output: The cfg_desc.log records the parsed CFGs for the entire project
+* Cmds
 	* `cd input/OpenSSL`
 	* `scan-build -enable-checker debug.DumpCFG make 2>  data/cfg_desc/cfg_desc.log`
 *  NOTE: make sure using clang to compile the project
@@ -52,6 +54,7 @@
 * Extract CFG description for each function from cfg_desc.log
 * Input: generated cfg_desc.log in the above step
 * Output: ../data/func_cfg now contains the CFGs for each function 
+* Cmds
 	* `cd DataPrepare`
 	* `python extract_cfg_desc.py  ../data/cfg_desc/cfg_desc.log  ../data/func_cfg/`
 
@@ -59,6 +62,7 @@
 * Get sensitive lines for a function
 * Input: source code of a function
 * Output: a list of matched keyword and line_no
+* Cmds
 	* `cd SenLocate`
 	* `python sensitive_parse.py ../data/func_code/cms_smime.c#small#do_free_upto#126.c`
 *  NOTE: You can provide your own keywords in sensitive_parse.py
@@ -80,10 +84,9 @@
 *  NOTE: Two key parameters, i.e., weigh_depth and decay_ratio, can be modified in config.py
   
 ### WFG Comparison
-* Desc
-	* Compute the similarity of two WFGs
-	* INPUT: WFG file path
-	* OUTPUT: Similarity
+* Compute the similarity of two WFGs
+* INPUT: WFG file path
+* OUTPUT: Similarity
 * Cmds
 	*  `cd SimCompare`
 	*  `python cfgcmp.py  ../data/wfgs/cms_smime.c#do_free_upto_-1  ../data/wfgs/cms_smime.c#do_free_upto_131`
