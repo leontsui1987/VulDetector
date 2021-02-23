@@ -65,19 +65,19 @@
 
 ### WFG Generation 
 * Generate WFGs from CFG and sourcecode
-* INPUT: cfg_file (necessary), code_file, and sensitive_line_no
+* INPUT: cfg_file (necessary), code_file, and sensitive_line_no. The code_file and sensitive_line_no can be set 'no' for different requirements.
 * OUTPUT: Dump the node {lines, ast_feature, weight} of the WFG, meanwhile storing the WFG as dict into ../data/wfgs
-* NOTE: You can i) use the full graph as WFG (no slicing), ii) provide sensitive_line_no by yourself, or iii) leave it automatically
+* NOTE: Three cases on the You can i) , ii) provide sensitive_line_no by yourself, or iii) leave it automatically
 * 
-*  i) `cd WFGParse`
-*  `python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  no -1`
-*  Output: 
+*  i) leave code_file as 'no' to use the full graph as WFG (no slicing)	
+	*  `cd WFGParse`
+	*  `python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  no -1`
   
-*  ii) ` python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  ../data/func_code/cms_smime.c#small#do_free_upto#126.c  -1`
-*  Output: Automated seach of sensitive lines, and generate WFG for each sensitive line.
+*  ii) leave sensitive_line_no as '-1' to automated seach sensitive lines and generate WFG for each sensitive line.
+	*  ` python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  ../data/func_code/cms_smime.c#small#do_free_upto#126.c  -1`
   
-*  iii) `python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  ../data/func_code/cms_smime.c#small#do_free_upto#126.c  7`
-*  Output: Use the line_no is arg as root line to generate WFG
+*  iii) pass the specific sensitive_line_no to generate WFG
+	*  `python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  ../data/func_code/cms_smime.c#small#do_free_upto#126.c  7`
   
 *  NOTE: Two key parameters, i.e., weigh_depth and decay_ratio, can be modified in config.py
   
