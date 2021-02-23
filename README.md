@@ -15,11 +15,10 @@
 * SimCompare: Compute the similarity of two WFGs
 
 
-Setup:
-1. Install python packages, we use python2.7
-	clang, matplotlib, hungarian
+## Setup:
+* 1. Install python packages (python2.7 currently): clang, matplotlib, hungarian
 
-2. Setup LLVM
+* 2. Setup LLVM
 	download sourcecode of LLVM-7.0.0
 	replace files of LLVM-7.0.0 with files in directory llvm-clang:
 	    tools/clang/include/clang/Analysis/CFG.h
