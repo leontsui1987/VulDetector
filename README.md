@@ -1,7 +1,7 @@
 # VulDetector
 
 ## Description
-* This project is for vulnerability detection using graph similarity. VulDetector is a static-analysis tool to detect C/C++ vulnerabilities based on graph comparison at the granularity of function. At the key of VulDetector is a weighted feature graph (WFG) model which characterizes function with a small yet semantically rich graph. It first pinpoints vulnerability-sensitive keywords to slice the control flow graph of a function, thereby reducing the graph size without compromising security-related semantics. Then, each sliced subgraph is characterized using WFG, which provides both syntactic and semantic features in varying degrees of security. Here we provide the key modules on WFG generation and comparison. 
+* VulDetector is a static-analysis tool to detect C/C++ vulnerabilities based on graph comparison at the granularity of function. At the key of VulDetector is a weighted feature graph (WFG) model which characterizes function with a small yet semantically rich graph. It first pinpoints vulnerability-sensitive keywords to slice the control flow graph of a function, thereby reducing the graph size without compromising security-related semantics. Then, each sliced subgraph is characterized using WFG, which provides both syntactic and semantic features in varying degrees of security. Here we provide the key modules on WFG generation and comparison. 
 * Please refer our [paper](https://ieeexplore.ieee.org/document/9309254) for more details. 
  
 
@@ -32,7 +32,7 @@
 * NOTE: Just compiling clang probably works, yet not tested. Make sure the existence of /usr/local/lib/libclang.so.6.0
 
 
-## sage
+## Usage
 1. Generate raw CFG description for a project (e.g., OpenSSL)
   cd input/OpenSSL
   scan-build -enable-checker debug.DumpCFG make 2> output/OpenSSL/cfg_desc.log
