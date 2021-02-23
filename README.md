@@ -36,32 +36,32 @@
 ### CFG Description Generation
 * Generate raw CFG description for a project (e.g., OpenSSL). 
 * Output: The cfg_desc.log records the parsed CFGs for the entire project
-	* 1. `cd input/OpenSSL`
-	* 2. `scan-build -enable-checker debug.DumpCFG make 2> output/OpenSSL/cfg_desc.log`
+	* `cd input/OpenSSL`
+	* `scan-build -enable-checker debug.DumpCFG make 2> output/OpenSSL/cfg_desc.log`
 *  NOTE: make sure using clang to compile the project
 
 ### CFG Extraction 
 * Extract CFG description for each function from cfg_desc.log
 * Input: generated cfg_desc.log in the above step
 * Output: output/OpenSSL_cfg_dir now contains the CFGs for each function 
-	* 1. `cd DataPrepare`
-	* 2. `python extract_cfg_desc.py output/cfg_desc.log ./output/OpenSSL_cfg_dir/`
+	* `cd DataPrepare`
+	* `python extract_cfg_desc.py output/cfg_desc.log ./output/OpenSSL_cfg_dir/`
 	*  Example: `python extract_cfg_desc.py  ../data/cfg_desc/cfg_desc.log  ../data/func_cfg/`
   
 ### Code Extraction 
 * Extract raw code for each function from sourcecode
 * Input: source code directory of the project
 * Output: output/OpenSSL_code_dir now contains the raw code for each function
-* 1. `cd DataPrepare`
-* 2. `python extract_func.py input/OpenSSL/ output/OpenSSL_code_dir input/OpenSSL/`
+	* `cd DataPrepare`
+	* `python extract_func.py input/OpenSSL/ output/OpenSSL_code_dir input/OpenSSL/`
 
 
 ### Sensitive Line Location 
 * Get sensitive lines for a function
 * Input: source code of a function
 * Output: a list of matched keyword and line_no
-	*  `cd SenLocate`
-	* ` python sensitive_parse.py output/OpenSSL_code_dir/file_name`
+	* `cd SenLocate`
+	* `python sensitive_parse.py output/OpenSSL_code_dir/file_name`
 	*  Example: `python sensitive_parse.py ../data/func_code/cms_smime.c#small#do_free_upto#126.c`
 *  NOTE: You can provide your own keywords in sensitive_parse.py
 
