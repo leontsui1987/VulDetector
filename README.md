@@ -69,8 +69,8 @@
 
 ### WFG Generation 
 * Generate WFGs from CFG and sourcecode
-* INPUT: cfg_file (necessary), code_file, and sensitive_line_no. The code_file and sensitive_line_no can be set 'no' for different requirements.
-* OUTPUT: Dump the node {lines, ast_feature, weight} of the WFG, meanwhile storing the WFG as dict into ../data/wfgs
+* Input: cfg_file (necessary), code_file, and sensitive_line_no. The code_file and sensitive_line_no can be set 'no' for different requirements.
+* Output: Dump the node {lines, ast_feature, weight} of the WFG, meanwhile storing the WFG as dict into ../data/wfgs
 *  i) leave code_file as 'no' to use the full graph as WFG (no slicing)	
 	*  `cd WFGParse`
 	*  `python code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  no -1`
@@ -85,8 +85,8 @@
   
 ### WFG Comparison
 * Compute the similarity of two WFGs
-* INPUT: WFG file path
-* OUTPUT: Similarity
+* Input: WFG file path
+* Output: Similarity
 * Cmds
 	*  `cd SimCompare`
 	*  `python cfgcmp.py  ../data/wfgs/cms_smime.c#do_free_upto_-1  ../data/wfgs/cms_smime.c#do_free_upto_131`
