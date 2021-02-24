@@ -25,7 +25,7 @@
 * Use clang.path in llvm_clang to patch clang
 	* `xz -d cfe-6.0.1.src.tar.xz`
 	* `tar -xvf cfe-6.0.1.src.tar`
-	* `mv cfe-6.0.1 clang`
+	* `mv cfe-6.0.1.src clang`
 	* `patch -p0 < clang.path`
 	* `cp -r clang ./llvm-6.0.1/tools/`
 * Build LLVM, refer [Build LLVM and Clang](https://clang.llvm.org/get_started.html)
