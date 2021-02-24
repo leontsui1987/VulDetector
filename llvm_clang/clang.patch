@@ -1,0 +1,208 @@
+diff -Naur ./clang/include/clang/Analysis/CFG.h ./clang_vul/include/clang/Analysis/CFG.h
+--- ./clang/include/clang/Analysis/CFG.h	2017-12-07 21:55:09.000000000 +0000
++++ ./clang_vul/include/clang/Analysis/CFG.h	2021-02-24 05:20:20.087924840 +0000
+@@ -842,6 +842,7 @@
+ 
+   public:
+     using ForcedBlkExprs = llvm::DenseMap<const Stmt *, const CFGBlock *>;
++ 
+ 
+     ForcedBlkExprs **forcedBlkExprs = nullptr;
+     CFGCallback *Observer = nullptr;
+@@ -873,6 +874,13 @@
+     }
+   };
+ 
++
++    SourceManager * SM;
++    void setSM(SourceManager * oriSM) {
++        SM = oriSM;
++    }
++
++
+   /// buildCFG - Builds a CFG from an AST.
+   static std::unique_ptr<CFG> buildCFG(const Decl *D, Stmt *AST, ASTContext *C,
+                                        const BuildOptions &BO);
+diff -Naur ./clang/lib/Analysis/CFG.cpp ./clang_vul/lib/Analysis/CFG.cpp
+--- ./clang/lib/Analysis/CFG.cpp	2017-12-07 21:55:09.000000000 +0000
++++ ./clang_vul/lib/Analysis/CFG.cpp	2021-02-24 05:20:35.356026141 +0000
+@@ -4545,10 +4545,15 @@
+ } // namespace
+ 
+ static void print_elem(raw_ostream &OS, StmtPrinterHelper &Helper,
+-                       const CFGElement &E) {
++                       const CFGElement &E, SourceManager * SM) {
++  //OS << "----- PRINT ELEM ------ \n" ; // add by Lei
++
+   if (Optional<CFGStmt> CS = E.getAs<CFGStmt>()) {
+     const Stmt *S = CS->getStmt();
+     assert(S != nullptr && "Expecting non-null Stmt");
++    //OS << "**** CFGStmt **** \n"; // add by Lei
++
++    S->dump(OS, (*SM)); // add by Lei
+ 
+     // special printing for statement-expressions.
+     if (const StmtExpr *SE = dyn_cast<StmtExpr>(S)) {
+@@ -4593,6 +4598,7 @@
+     if (isa<Expr>(S))
+       OS << '\n';
+   } else if (Optional<CFGInitializer> IE = E.getAs<CFGInitializer>()) {
++    // OS << "**** CFGInitializer **** \n";
+     const CXXCtorInitializer *I = IE->getInitializer();
+     if (I->isBaseInitializer())
+       OS << I->getBaseClass()->getAsCXXRecordDecl()->getName();
+@@ -4612,6 +4618,7 @@
+     else OS << " (Member initializer)\n";
+   } else if (Optional<CFGAutomaticObjDtor> DE =
+                  E.getAs<CFGAutomaticObjDtor>()) {
++    //OS << "**** CFGAutomaticObjDtor **** \n";
+     const VarDecl *VD = DE->getVarDecl();
+     Helper.handleDecl(VD, OS);
+ 
+@@ -4623,19 +4630,23 @@
+     OS << ".~" << T->getAsCXXRecordDecl()->getName().str() << "()";
+     OS << " (Implicit destructor)\n";
+   } else if (Optional<CFGLifetimeEnds> DE = E.getAs<CFGLifetimeEnds>()) {
++    //OS << "**** CFGLifetimeEnds **** \n";
+     const VarDecl *VD = DE->getVarDecl();
+     Helper.handleDecl(VD, OS);
+ 
+     OS << " (Lifetime ends)\n";
+   } else if (Optional<CFGLoopExit> LE = E.getAs<CFGLoopExit>()) {
++    //OS << "**** CFGLoopExit **** \n";
+     const Stmt *LoopStmt = LE->getLoopStmt();
+     OS << LoopStmt->getStmtClassName() << " (LoopExit)\n";
+   } else if (Optional<CFGNewAllocator> NE = E.getAs<CFGNewAllocator>()) {
++    //OS << "**** CFGNewAllocator **** \n";
+     OS << "CFGNewAllocator(";
+     if (const CXXNewExpr *AllocExpr = NE->getAllocatorExpr())
+       AllocExpr->getType().print(OS, PrintingPolicy(Helper.getLangOpts()));
+     OS << ")\n";
+   } else if (Optional<CFGDeleteDtor> DE = E.getAs<CFGDeleteDtor>()) {
++    //OS << "**** CFGDeleteDtor **** \n";
+     const CXXRecordDecl *RD = DE->getCXXRecordDecl();
+     if (!RD)
+       return;
+@@ -4645,16 +4656,19 @@
+     OS << "->~" << RD->getName().str() << "()";
+     OS << " (Implicit destructor)\n";
+   } else if (Optional<CFGBaseDtor> BE = E.getAs<CFGBaseDtor>()) {
++    //OS << "**** CFGBaseDtor **** \n";
+     const CXXBaseSpecifier *BS = BE->getBaseSpecifier();
+     OS << "~" << BS->getType()->getAsCXXRecordDecl()->getName() << "()";
+     OS << " (Base object destructor)\n";
+   } else if (Optional<CFGMemberDtor> ME = E.getAs<CFGMemberDtor>()) {
++    //OS << "**** CFGMemberDtor **** \n";
+     const FieldDecl *FD = ME->getFieldDecl();
+     const Type *T = FD->getType()->getBaseElementTypeUnsafe();
+     OS << "this->" << FD->getName();
+     OS << ".~" << T->getAsCXXRecordDecl()->getName() << "()";
+     OS << " (Member object destructor)\n";
+   } else if (Optional<CFGTemporaryDtor> TE = E.getAs<CFGTemporaryDtor>()) {
++    //OS << "**** CFGTemporaryDtor **** \n";
+     const CXXBindTemporaryExpr *BT = TE->getBindTemporaryExpr();
+     OS << "~";
+     BT->getType().print(OS, PrintingPolicy(Helper.getLangOpts()));
+@@ -4668,6 +4682,9 @@
+                         bool ShowColors) {
+   Helper.setBlockID(B.getBlockID());
+ 
++  SourceManager *SM = cfg->SM; // add by Lei
++
++  //OS << "------ PRINT BLOCK ----\n"; // add by Lei
+   // Print the header.
+   if (ShowColors)
+     OS.changeColor(raw_ostream::YELLOW, true);
+@@ -4739,7 +4756,7 @@
+ 
+     Helper.setStmtID(j);
+ 
+-    print_elem(OS, Helper, *I);
++    print_elem(OS, Helper, *I, SM); // add by Lei
+   }
+ 
+   // Print the terminator of this block.
+@@ -4843,12 +4860,12 @@
+ }
+ 
+ /// dump - A simple pretty printer of a CFG that outputs to stderr.
+-void CFG::dump(const LangOptions &LO, bool ShowColors) const {
++void CFG::dump(const LangOptions &LO, bool ShowColors) const { 
+   print(llvm::errs(), LO, ShowColors);
+ }
+ 
+ /// print - A simple pretty printer of a CFG that outputs to an ostream.
+-void CFG::print(raw_ostream &OS, const LangOptions &LO, bool ShowColors) const {
++void CFG::print(raw_ostream &OS, const LangOptions &LO, bool ShowColors) const { 
+   StmtPrinterHelper Helper(this, LO);
+ 
+   // Print the entry block.
+diff -Naur ./clang/lib/AST/ASTDumper.cpp ./clang_vul/lib/AST/ASTDumper.cpp
+--- ./clang/lib/AST/ASTDumper.cpp	2017-12-21 21:42:42.000000000 +0000
++++ ./clang_vul/lib/AST/ASTDumper.cpp	2021-02-24 05:20:51.648133178 +0000
+@@ -605,8 +605,10 @@
+ 
+ void ASTDumper::dumpLocation(SourceLocation Loc) {
+   if (!SM)
++  {
++    //OS << "SM is null \n"; // add by Lei
+     return;
+-
++  }
+   ColorScope Color(*this, LocationColor);
+   SourceLocation SpellingLoc = SM->getSpellingLoc(Loc);
+ 
+@@ -636,8 +638,10 @@
+ void ASTDumper::dumpSourceRange(SourceRange R) {
+   // Can't translate locations if a SourceManager isn't available.
+   if (!SM)
++  {
++   // OS << "@@@  dumpSourceRange: SM is null @@@ \n";
+     return;
+-
++  }
+   OS << " <";
+   dumpLocation(R.getBegin());
+   if (R.getBegin() != R.getEnd()) {
+@@ -1029,6 +1033,10 @@
+ //===----------------------------------------------------------------------===//
+ 
+ void ASTDumper::dumpDecl(const Decl *D) {
++  //OS << "\n&&&& dumpDecl &&&& \n"; // add by Lei
++  dumpLocation(D->getLocation());
++  
++
+   dumpChild([=] {
+     if (!D) {
+       ColorScope Color(*this, NullColor);
+@@ -1947,10 +1955,12 @@
+     }
+ 
+     if (const DeclStmt *DS = dyn_cast<DeclStmt>(S)) {
++      //OS << "#### 1. VisitDeclStmt ####\n"; // add by Lei
+       VisitDeclStmt(DS);
+       return;
+     }
+ 
++    //OS << "#### 2. ConstStmt #### \n";
+     ConstStmtVisitor<ASTDumper>::Visit(S);
+ 
+     for (const Stmt *SubStmt : S->children())
+diff -Naur ./clang/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp ./clang_vul/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp
+--- ./clang/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp	2017-10-30 12:02:23.000000000 +0000
++++ ./clang_vul/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp	2021-02-24 05:21:13.260273545 +0000
+@@ -101,10 +101,13 @@
+     Policy.TerseOutput = true;
+     Policy.PolishForDeclaration = true;
+     D->print(llvm::errs(), Policy);
++    
+ 
+     if (CFG *cfg = mgr.getCFG(D)) {
++     //cfg->SM = D.getASTContext().getSourceManager(); // add by Lei
++      cfg->setSM( &(D->getASTContext().getSourceManager()) ); // add by Lei
+       cfg->dump(mgr.getLangOpts(),
+-                llvm::sys::Process::StandardErrHasColors());
++                llvm::sys::Process::StandardErrHasColors()); 
+     }
+   }
+ };
