@@ -368,6 +368,7 @@ if __name__=="__main__":
 	wfg2 = load_wfg(sys.argv[2])
 	if wfg1 == None or wfg2 == None:
 		print 'WFG is None'
+                return
 	sim = compare_wfg(wfg1, wfg2)
 	print "Similarity of two WFGs: ", sim
 	exit(0)

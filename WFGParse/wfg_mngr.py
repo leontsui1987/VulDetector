@@ -65,6 +65,7 @@ def load_wfg(wfg_file):
 			wfg = dict2graph(wfg_dict)
 			return wfg
 	except Exception, e:
+		print "Load wfg file %s failed %s" % (wfg_file, str(e))
 		return None
 
 

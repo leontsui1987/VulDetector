@@ -18,7 +18,7 @@
 ## Setup
 ### Install packages
 * Python packages (python2.7 currently)
-* Necessary: hungarian
+* Necessary: hungarian, networkx
 * On-demand: 
 	* sklearn is required for determining keywords in stat_keywords.py
 	* matplotlib is required for drawing graphs in code2graph.py, commented now  
