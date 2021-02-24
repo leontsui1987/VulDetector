@@ -12,6 +12,9 @@
 * SimCompare: Compute the similarity of two WFGs
 
 
+## Environment
+* Tested on Linux-3.10.0(Red hat 7.3) and Linux-4.15.0(Ubuntu 18.04.3)
+
 ## Setup
 ### Install packages
 * Python packages (python2.7 currently)
