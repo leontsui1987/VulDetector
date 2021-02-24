@@ -5,9 +5,6 @@
 * Please refer our [paper](https://ieeexplore.ieee.org/document/9309254) for more details. 
  
 
-## NOTE
-* Sorry that the source code is unavaiable for a while. The previous project contained too much snippets and scripts for testing, so we are cleaning these code and making it modular to facilitate usage. In addition, we got many 'TabError' when deploying it in a new environment, and we are fixing these issues.  
-
 ## Key Modules
 * DataPrepare: Extract function codes and CFGs from a program.
 * SenLocate: Locate the sensitive lines.
