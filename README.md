@@ -21,8 +21,8 @@
 	* matplotlib is required for drawing graphs in code2graph.py, commented now  
 
 ### Setup LLVM
-* Download sourcecode of LLVM-7.0.0
-* Replace files of LLVM-7.0.0 with files in directory llvm-clang:
+* Download sourcecode of LLVM-6.0.1
+* Replace files of LLVM-6.0.1 with files in directory llvm-clang:
 	* tools/clang/include/clang/Analysis/CFG.h<br>
 	* tools/clang/lib/Analysis/CFG.cpp<br>
 	* tools/clang/lib/AST/ASTDumper.cpp<br>
