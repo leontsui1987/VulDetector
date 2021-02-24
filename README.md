@@ -32,7 +32,7 @@
 	* tools/clang/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp<br>
 * Build LLVM
 
-* NOTE: Just compiling clang probably works, yet not tested. Make sure the existence of /usr/local/lib/libclang.so.6.0
+* NOTE: Just compiling clang probably works, yet not tested. 
 
 
 ## Usage
