@@ -1,0 +1,2119 @@
+static int asn1_d2i_read_bio(BIO *in, BUF_MEM **pb)
+ [B53 (ENTRY)]
+   Succs (1): B52
+
+ [B1]
+   1: IntegerLiteral 0xe9e4728 <a_d2i_fp.c:267:13> 'int' 1
+1
+   2: UnaryOperator 0xe9e4748 <a_d2i_fp.c:267:12, col:13> 'int' prefix '-'
+`-IntegerLiteral 0xe9e4728 <col:13> 'int' 1
+-[B1.1]
+   3: ReturnStmt 0xe9e4768 <a_d2i_fp.c:267:5, col:13>
+`-UnaryOperator 0xe9e4748 <col:12, col:13> 'int' prefix '-'
+  `-IntegerLiteral 0xe9e4728 <col:13> 'int' 1
+return [B1.2];
+   Preds (2): B2 B3
+   Succs (1): B0
+
+ [B2]
+   1: DeclRefExpr 0xe9e4628 <a_d2i_fp.c:266:9> 'void (BUF_MEM *)' Function 0xe883bb0 'BUF_MEM_free' 'void (BUF_MEM *)'
+BUF_MEM_free
+   2: ImplicitCastExpr 0xe9e4678 <a_d2i_fp.c:266:9> 'void (*)(BUF_MEM *)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e4628 <col:9> 'void (BUF_MEM *)' Function 0xe883bb0 'BUF_MEM_free' 'void (BUF_MEM *)'
+[B2.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(BUF_MEM *))
+   3: DeclRefExpr 0xe9e4650 <a_d2i_fp.c:266:22> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+b
+   4: ImplicitCastExpr 0xe9e46c0 <a_d2i_fp.c:266:22> 'BUF_MEM *' <LValueToRValue>
+`-DeclRefExpr 0xe9e4650 <col:22> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B2.3] (ImplicitCastExpr, LValueToRValue, BUF_MEM *)
+   5: CallExpr 0xe9e4690 <a_d2i_fp.c:266:9, col:23> 'void'
+|-ImplicitCastExpr 0xe9e4678 <col:9> 'void (*)(BUF_MEM *)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9e4628 <col:9> 'void (BUF_MEM *)' Function 0xe883bb0 'BUF_MEM_free' 'void (BUF_MEM *)'
+`-ImplicitCastExpr 0xe9e46c0 <col:22> 'BUF_MEM *' <LValueToRValue>
+  `-DeclRefExpr 0xe9e4650 <col:22> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B2.2]([B2.4])
+   Preds (1): B3
+   Succs (1): B1
+
+ [B3]
+  err:
+   1: DeclRefExpr 0xe9e4528 <a_d2i_fp.c:265:9> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+b
+   2: ImplicitCastExpr 0xe9e45d0 <a_d2i_fp.c:265:9> 'BUF_MEM *' <LValueToRValue>
+`-DeclRefExpr 0xe9e4528 <col:9> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B3.1] (ImplicitCastExpr, LValueToRValue, BUF_MEM *)
+   3: IntegerLiteral 0xe9e4550 </usr/local/lib/clang/6.0.1/include/stddef.h:105:24> 'int' 0
+0
+   4: CStyleCastExpr 0xe9e4588 </usr/local/lib/clang/6.0.1/include/stddef.h:105:17, col:24> 'void *' <NullToPointer>
+`-IntegerLiteral 0xe9e4550 <col:24> 'int' 0
+(void *)[B3.3] (CStyleCastExpr, NullToPointer, void *)
+   5: ImplicitCastExpr 0xe9e45e8 </usr/local/lib/clang/6.0.1/include/stddef.h:105:16, col:25> 'BUF_MEM *' <BitCast>
+`-ParenExpr 0xe9e45b0 <col:16, col:25> 'void *'
+  `-CStyleCastExpr 0xe9e4588 <col:17, col:24> 'void *' <NullToPointer>
+    `-IntegerLiteral 0xe9e4550 <col:24> 'int' 0
+([B3.4]) (ImplicitCastExpr, BitCast, BUF_MEM *)
+   6: BinaryOperator 0xe9e4600 <a_d2i_fp.c:265:9, /usr/local/lib/clang/6.0.1/include/stddef.h:105:25> 'int' '!='
+|-ImplicitCastExpr 0xe9e45d0 <a_d2i_fp.c:265:9> 'BUF_MEM *' <LValueToRValue>
+| `-DeclRefExpr 0xe9e4528 <col:9> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+`-ImplicitCastExpr 0xe9e45e8 </usr/local/lib/clang/6.0.1/include/stddef.h:105:16, col:25> 'BUF_MEM *' <BitCast>
+  `-ParenExpr 0xe9e45b0 <col:16, col:25> 'void *'
+    `-CStyleCastExpr 0xe9e4588 <col:17, col:24> 'void *' <NullToPointer>
+      `-IntegerLiteral 0xe9e4550 <col:24> 'int' 0
+[B3.2] != [B3.5]
+   T: if [B3.6]
+   Preds (10): B5 B11 B15 B18 B20 B31 B35 B39
+      B42 B45
+   Succs (2): B2 B1
+
+ [B4]
+   1: DeclRefExpr 0xe9e4450 <a_d2i_fp.c:262:11> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+b
+   2: ImplicitCastExpr 0xe9e4478 <a_d2i_fp.c:262:11> 'BUF_MEM *' <LValueToRValue>
+`-DeclRefExpr 0xe9e4450 <col:11> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B4.1] (ImplicitCastExpr, LValueToRValue, BUF_MEM *)
+   3: DeclRefExpr 0xe9e43f0 <a_d2i_fp.c:262:6> 'BUF_MEM **' lvalue ParmVar 0xe9dddd8 'pb' 'BUF_MEM **'
+pb
+   4: ImplicitCastExpr 0xe9e4418 <a_d2i_fp.c:262:6> 'BUF_MEM **' <LValueToRValue>
+`-DeclRefExpr 0xe9e43f0 <col:6> 'BUF_MEM **' lvalue ParmVar 0xe9dddd8 'pb' 'BUF_MEM **'
+[B4.3] (ImplicitCastExpr, LValueToRValue, BUF_MEM **)
+   5: UnaryOperator 0xe9e4430 <a_d2i_fp.c:262:5, col:6> 'BUF_MEM *' lvalue prefix '*'
+`-ImplicitCastExpr 0xe9e4418 <col:6> 'BUF_MEM **' <LValueToRValue>
+  `-DeclRefExpr 0xe9e43f0 <col:6> 'BUF_MEM **' lvalue ParmVar 0xe9dddd8 'pb' 'BUF_MEM **'
+*[B4.4]
+   6: BinaryOperator 0xe9e4490 <a_d2i_fp.c:262:5, col:11> 'BUF_MEM *' '='
+|-UnaryOperator 0xe9e4430 <col:5, col:6> 'BUF_MEM *' lvalue prefix '*'
+| `-ImplicitCastExpr 0xe9e4418 <col:6> 'BUF_MEM **' <LValueToRValue>
+|   `-DeclRefExpr 0xe9e43f0 <col:6> 'BUF_MEM **' lvalue ParmVar 0xe9dddd8 'pb' 'BUF_MEM **'
+`-ImplicitCastExpr 0xe9e4478 <col:11> 'BUF_MEM *' <LValueToRValue>
+  `-DeclRefExpr 0xe9e4450 <col:11> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B4.5] = [B4.2]
+   7: DeclRefExpr 0xe9e44b8 <a_d2i_fp.c:263:12> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+   8: ImplicitCastExpr 0xe9e44e0 <a_d2i_fp.c:263:12> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e44b8 <col:12> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B4.7] (ImplicitCastExpr, LValueToRValue, size_t)
+   9: ImplicitCastExpr 0xe9e44f8 <a_d2i_fp.c:263:12> 'int' <IntegralCast>
+`-ImplicitCastExpr 0xe9e44e0 <col:12> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e44b8 <col:12> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B4.8] (ImplicitCastExpr, IntegralCast, int)
+  10: ReturnStmt 0xe9e4510 <a_d2i_fp.c:263:5, col:12>
+`-ImplicitCastExpr 0xe9e44f8 <col:12> 'int' <IntegralCast>
+  `-ImplicitCastExpr 0xe9e44e0 <col:12> 'size_t':'unsigned long' <LValueToRValue>
+    `-DeclRefExpr 0xe9e44b8 <col:12> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+return [B4.9];
+   Preds (1): B6
+   Succs (1): B0
+
+ [B5]
+   1: DeclRefExpr 0xe9e41c8 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xe9e42e8 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e41c8 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B5.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xe9e41f0 <../../include/openssl/err.h:172:34> 'int' 13
+13
+   4: IntegerLiteral 0xe9e4210 <../../include/openssl/asn1.h:1184:59> 'int' 107
+107
+   5: IntegerLiteral 0xe9e4250 <../../include/openssl/asn1.h:1393:59> 'int' 155
+155
+   6: StringLiteral 0xe9e4290 <<scratch space>:211:1> 'char [11]' lvalue "a_d2i_fp.c"
+"a_d2i_fp.c"
+   7: ImplicitCastExpr 0xe9e4350 <<scratch space>:211:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xe9e4290 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B5.6] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+   8: ImplicitCastExpr 0xe9e4368 <<scratch space>:211:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xe9e4350 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xe9e4290 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B5.7] (ImplicitCastExpr, BitCast, const char *)
+   9: IntegerLiteral 0xe9e42c8 <<scratch space>:212:1> 'int' 258
+258
+  10: CallExpr 0xe9e4300 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xe9e42e8 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9e41c8 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xe9e41f0 <line:172:34> 'int' 13
+|-ParenExpr 0xe9e4230 <line:213:50, col:52> 'int'
+| `-IntegerLiteral 0xe9e4210 <../../include/openssl/asn1.h:1184:59> 'int' 107
+|-ParenExpr 0xe9e4270 <../../include/openssl/err.h:213:54, col:56> 'int'
+| `-IntegerLiteral 0xe9e4250 <../../include/openssl/asn1.h:1393:59> 'int' 155
+|-ImplicitCastExpr 0xe9e4368 <<scratch space>:211:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xe9e4350 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xe9e4290 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+`-IntegerLiteral 0xe9e42c8 <line:212:1> 'int' 258
+[B5.2]([B5.3], ([B5.4]), ([B5.5]), [B5.8], [B5.9])
+   T: goto err;
+   Preds (1): B6
+   Succs (1): B3
+
+ [B6]
+   1: DeclRefExpr 0xe9e4128 <a_d2i_fp.c:257:9> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+   2: ImplicitCastExpr 0xe9e4170 <a_d2i_fp.c:257:9> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e4128 <col:9> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B6.1] (ImplicitCastExpr, LValueToRValue, size_t)
+   3: IntegerLiteral 0xe9e4150 <<built-in>:37:21> 'int' 2147483647
+2147483647
+   4: ImplicitCastExpr 0xe9e4188 <<built-in>:37:21> 'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9e4150 <col:21> 'int' 2147483647
+[B6.3] (ImplicitCastExpr, IntegralCast, unsigned long)
+   5: BinaryOperator 0xe9e41a0 <a_d2i_fp.c:257:9, <built-in>:37:21> 'int' '>'
+|-ImplicitCastExpr 0xe9e4170 <a_d2i_fp.c:257:9> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e4128 <col:9> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e4188 <<built-in>:37:21> 'unsigned long' <IntegralCast>
+  `-IntegerLiteral 0xe9e4150 <col:21> 'int' 2147483647
+[B6.2] > [B6.4]
+   T: if [B6.5]
+   Preds (2): B9 B25
+   Succs (2): B5 B4
+
+ [B7]
+   Preds (3): B8 B24 B30
+   Succs (1): B49
+
+ [B8]
+   1: IntegerLiteral 0xe9e3f60 <a_d2i_fp.c:143:23> 'int' 8
+8
+   2: ImplicitCastExpr 0xe9e3f80 <a_d2i_fp.c:143:23> 'size_t':'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9e3f60 <col:23> 'int' 8
+[B8.1] (ImplicitCastExpr, IntegralCast, size_t)
+   3: DeclRefExpr 0xe9e3f38 <a_d2i_fp.c:253:17> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   4: BinaryOperator 0xe9e3f98 <a_d2i_fp.c:253:17, line:143:23> 'size_t':'unsigned long' '='
+|-DeclRefExpr 0xe9e3f38 <line:253:17> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e3f80 <line:143:23> 'size_t':'unsigned long' <IntegralCast>
+  `-IntegerLiteral 0xe9e3f60 <col:23> 'int' 8
+[B8.3] = [B8.2]
+   Preds (1): B10
+   Succs (1): B7
+
+ [B9]
+   T: break;
+   Preds (1): B10
+   Succs (1): B6
+
+ [B10]
+   1: DeclRefExpr 0xe9e3da0 <a_d2i_fp.c:249:13> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+   2: DeclRefExpr 0xe9e3dc8 <a_d2i_fp.c:249:20> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+   3: MemberExpr 0xe9e3df0 <a_d2i_fp.c:249:20, col:22> 'long' lvalue .slen 0xe9329c8
+`-DeclRefExpr 0xe9e3dc8 <col:20> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B10.2].slen
+   4: ImplicitCastExpr 0xe9e3e28 <a_d2i_fp.c:249:20, col:22> 'long' <LValueToRValue>
+`-MemberExpr 0xe9e3df0 <col:20, col:22> 'long' lvalue .slen 0xe9329c8
+  `-DeclRefExpr 0xe9e3dc8 <col:20> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B10.3] (ImplicitCastExpr, LValueToRValue, long)
+   5: ImplicitCastExpr 0xe9e3e40 <a_d2i_fp.c:249:20, col:22> 'unsigned long' <IntegralCast>
+`-ImplicitCastExpr 0xe9e3e28 <col:20, col:22> 'long' <LValueToRValue>
+  `-MemberExpr 0xe9e3df0 <col:20, col:22> 'long' lvalue .slen 0xe9329c8
+    `-DeclRefExpr 0xe9e3dc8 <col:20> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B10.4] (ImplicitCastExpr, IntegralCast, unsigned long)
+   6: CompoundAssignOperator 0xe9e3e58 <a_d2i_fp.c:249:13, col:22> 'size_t':'unsigned long' '+=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+|-DeclRefExpr 0xe9e3da0 <col:13> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e3e40 <col:20, col:22> 'unsigned long' <IntegralCast>
+  `-ImplicitCastExpr 0xe9e3e28 <col:20, col:22> 'long' <LValueToRValue>
+    `-MemberExpr 0xe9e3df0 <col:20, col:22> 'long' lvalue .slen 0xe9329c8
+      `-DeclRefExpr 0xe9e3dc8 <col:20> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B10.1] += [B10.5]
+   7: DeclRefExpr 0xe9e3e90 <a_d2i_fp.c:250:17> 'int' lvalue Var 0xe9de228 'eos' 'int'
+eos
+   8: ImplicitCastExpr 0xe9e3ed8 <a_d2i_fp.c:250:17> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9e3e90 <col:17> 'int' lvalue Var 0xe9de228 'eos' 'int'
+[B10.7] (ImplicitCastExpr, LValueToRValue, int)
+   9: IntegerLiteral 0xe9e3eb8 <a_d2i_fp.c:250:24> 'int' 0
+0
+  10: BinaryOperator 0xe9e3ef0 <a_d2i_fp.c:250:17, col:24> 'int' '<='
+|-ImplicitCastExpr 0xe9e3ed8 <col:17> 'int' <LValueToRValue>
+| `-DeclRefExpr 0xe9e3e90 <col:17> 'int' lvalue Var 0xe9de228 'eos' 'int'
+`-IntegerLiteral 0xe9e3eb8 <col:24> 'int' 0
+[B10.8] <= [B10.9]
+   T: if [B10.10]
+   Preds (1): B12
+   Succs (2): B9 B8
+
+ [B11]
+   1: DeclRefExpr 0xe9e3b78 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xe9e3c98 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e3b78 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B11.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xe9e3ba0 <../../include/openssl/err.h:172:34> 'int' 13
+13
+   4: IntegerLiteral 0xe9e3bc0 <../../include/openssl/asn1.h:1184:59> 'int' 107
+107
+   5: IntegerLiteral 0xe9e3c00 <../../include/openssl/asn1.h:1393:59> 'int' 155
+155
+   6: StringLiteral 0xe9e3c40 <<scratch space>:209:1> 'char [11]' lvalue "a_d2i_fp.c"
+"a_d2i_fp.c"
+   7: ImplicitCastExpr 0xe9e3d00 <<scratch space>:209:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xe9e3c40 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B11.6] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+   8: ImplicitCastExpr 0xe9e3d18 <<scratch space>:209:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xe9e3d00 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xe9e3c40 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B11.7] (ImplicitCastExpr, BitCast, const char *)
+   9: IntegerLiteral 0xe9e3c78 <<scratch space>:210:1> 'int' 246
+246
+  10: CallExpr 0xe9e3cb0 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xe9e3c98 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9e3b78 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xe9e3ba0 <line:172:34> 'int' 13
+|-ParenExpr 0xe9e3be0 <line:213:50, col:52> 'int'
+| `-IntegerLiteral 0xe9e3bc0 <../../include/openssl/asn1.h:1184:59> 'int' 107
+|-ParenExpr 0xe9e3c20 <../../include/openssl/err.h:213:54, col:56> 'int'
+| `-IntegerLiteral 0xe9e3c00 <../../include/openssl/asn1.h:1393:59> 'int' 155
+|-ImplicitCastExpr 0xe9e3d18 <<scratch space>:209:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xe9e3d00 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xe9e3c40 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+`-IntegerLiteral 0xe9e3c78 <line:210:1> 'int' 246
+[B11.2]([B11.3], ([B11.4]), ([B11.5]), [B11.8], [B11.9])
+   T: goto err;
+   Preds (1): B12
+   Succs (1): B3
+
+ [B12]
+   1: DeclRefExpr 0xe9e3a18 <a_d2i_fp.c:245:17> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+   2: ImplicitCastExpr 0xe9e3aa0 <a_d2i_fp.c:245:17> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e3a18 <col:17> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B12.1] (ImplicitCastExpr, LValueToRValue, size_t)
+   3: DeclRefExpr 0xe9e3a40 <a_d2i_fp.c:245:23> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+   4: MemberExpr 0xe9e3a68 <a_d2i_fp.c:245:23, col:25> 'long' lvalue .slen 0xe9329c8
+`-DeclRefExpr 0xe9e3a40 <col:23> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B12.3].slen
+   5: ImplicitCastExpr 0xe9e3ab8 <a_d2i_fp.c:245:23, col:25> 'long' <LValueToRValue>
+`-MemberExpr 0xe9e3a68 <col:23, col:25> 'long' lvalue .slen 0xe9329c8
+  `-DeclRefExpr 0xe9e3a40 <col:23> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B12.4] (ImplicitCastExpr, LValueToRValue, long)
+   6: ImplicitCastExpr 0xe9e3ad0 <a_d2i_fp.c:245:23, col:25> 'unsigned long' <IntegralCast>
+`-ImplicitCastExpr 0xe9e3ab8 <col:23, col:25> 'long' <LValueToRValue>
+  `-MemberExpr 0xe9e3a68 <col:23, col:25> 'long' lvalue .slen 0xe9329c8
+    `-DeclRefExpr 0xe9e3a40 <col:23> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B12.5] (ImplicitCastExpr, IntegralCast, unsigned long)
+   7: BinaryOperator 0xe9e3ae8 <a_d2i_fp.c:245:17, col:25> 'unsigned long' '+'
+|-ImplicitCastExpr 0xe9e3aa0 <col:17> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e3a18 <col:17> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e3ad0 <col:23, col:25> 'unsigned long' <IntegralCast>
+  `-ImplicitCastExpr 0xe9e3ab8 <col:23, col:25> 'long' <LValueToRValue>
+    `-MemberExpr 0xe9e3a68 <col:23, col:25> 'long' lvalue .slen 0xe9329c8
+      `-DeclRefExpr 0xe9e3a40 <col:23> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B12.2] + [B12.6]
+   8: DeclRefExpr 0xe9e3b10 <a_d2i_fp.c:245:32> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+   9: ImplicitCastExpr 0xe9e3b38 <a_d2i_fp.c:245:32> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e3b10 <col:32> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B12.8] (ImplicitCastExpr, LValueToRValue, size_t)
+  10: BinaryOperator 0xe9e3b50 <a_d2i_fp.c:245:17, col:32> 'int' '<'
+|-BinaryOperator 0xe9e3ae8 <col:17, col:25> 'unsigned long' '+'
+| |-ImplicitCastExpr 0xe9e3aa0 <col:17> 'size_t':'unsigned long' <LValueToRValue>
+| | `-DeclRefExpr 0xe9e3a18 <col:17> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+| `-ImplicitCastExpr 0xe9e3ad0 <col:23, col:25> 'unsigned long' <IntegralCast>
+|   `-ImplicitCastExpr 0xe9e3ab8 <col:23, col:25> 'long' <LValueToRValue>
+|     `-MemberExpr 0xe9e3a68 <col:23, col:25> 'long' lvalue .slen 0xe9329c8
+|       `-DeclRefExpr 0xe9e3a40 <col:23> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+`-ImplicitCastExpr 0xe9e3b38 <col:32> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e3b10 <col:32> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B12.7] < [B12.9]
+   T: if [B12.10]
+   Preds (2): B17 B23
+   Succs (2): B11 B10
+
+ [B13]
+   Preds (1): B14
+   Succs (1): B17
+
+ [B14]
+   1: DeclRefExpr 0xe9e30c8 <a_d2i_fp.c:241:21> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   2: DeclRefExpr 0xe9e30f0 <a_d2i_fp.c:241:28> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+   3: ImplicitCastExpr 0xe9e3118 <a_d2i_fp.c:241:28> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9e30f0 <col:28> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B14.2] (ImplicitCastExpr, LValueToRValue, int)
+   4: ImplicitCastExpr 0xe9e3130 <a_d2i_fp.c:241:28> 'unsigned long' <IntegralCast>
+`-ImplicitCastExpr 0xe9e3118 <col:28> 'int' <LValueToRValue>
+  `-DeclRefExpr 0xe9e30f0 <col:28> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B14.3] (ImplicitCastExpr, IntegralCast, unsigned long)
+   5: CompoundAssignOperator 0xe9e3148 <a_d2i_fp.c:241:21, col:28> 'size_t':'unsigned long' '+=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+|-DeclRefExpr 0xe9e30c8 <col:21> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e3130 <col:28> 'unsigned long' <IntegralCast>
+  `-ImplicitCastExpr 0xe9e3118 <col:28> 'int' <LValueToRValue>
+    `-DeclRefExpr 0xe9e30f0 <col:28> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B14.1] += [B14.4]
+   6: DeclRefExpr 0xe9e3180 <a_d2i_fp.c:242:21> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   7: DeclRefExpr 0xe9e31a8 <a_d2i_fp.c:242:29> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+   8: ImplicitCastExpr 0xe9e31d0 <a_d2i_fp.c:242:29> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9e31a8 <col:29> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B14.7] (ImplicitCastExpr, LValueToRValue, int)
+   9: ImplicitCastExpr 0xe9e31e8 <a_d2i_fp.c:242:29> 'unsigned long' <IntegralCast>
+`-ImplicitCastExpr 0xe9e31d0 <col:29> 'int' <LValueToRValue>
+  `-DeclRefExpr 0xe9e31a8 <col:29> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B14.8] (ImplicitCastExpr, IntegralCast, unsigned long)
+  10: CompoundAssignOperator 0xe9e3200 <a_d2i_fp.c:242:21, col:29> 'size_t':'unsigned long' '-=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+|-DeclRefExpr 0xe9e3180 <col:21> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e31e8 <col:29> 'unsigned long' <IntegralCast>
+  `-ImplicitCastExpr 0xe9e31d0 <col:29> 'int' <LValueToRValue>
+    `-DeclRefExpr 0xe9e31a8 <col:29> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B14.6] -= [B14.9]
+   Preds (1): B16
+   Succs (1): B13
+
+ [B15]
+   1: DeclRefExpr 0xe9e2ea0 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xe9e2fc0 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e2ea0 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B15.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xe9e2ec8 <../../include/openssl/err.h:172:34> 'int' 13
+13
+   4: IntegerLiteral 0xe9e2ee8 <../../include/openssl/asn1.h:1184:59> 'int' 107
+107
+   5: IntegerLiteral 0xe9e2f28 <../../include/openssl/asn1.h:1370:59> 'int' 142
+142
+   6: StringLiteral 0xe9e2f68 <<scratch space>:207:1> 'char [11]' lvalue "a_d2i_fp.c"
+"a_d2i_fp.c"
+   7: ImplicitCastExpr 0xe9e3028 <<scratch space>:207:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xe9e2f68 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B15.6] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+   8: ImplicitCastExpr 0xe9e3040 <<scratch space>:207:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xe9e3028 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xe9e2f68 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B15.7] (ImplicitCastExpr, BitCast, const char *)
+   9: IntegerLiteral 0xe9e2fa0 <<scratch space>:208:1> 'int' 234
+234
+  10: CallExpr 0xe9e2fd8 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xe9e2fc0 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9e2ea0 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xe9e2ec8 <line:172:34> 'int' 13
+|-ParenExpr 0xe9e2f08 <line:213:50, col:52> 'int'
+| `-IntegerLiteral 0xe9e2ee8 <../../include/openssl/asn1.h:1184:59> 'int' 107
+|-ParenExpr 0xe9e2f48 <../../include/openssl/err.h:213:54, col:56> 'int'
+| `-IntegerLiteral 0xe9e2f28 <../../include/openssl/asn1.h:1370:59> 'int' 142
+|-ImplicitCastExpr 0xe9e3040 <<scratch space>:207:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xe9e3028 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xe9e2f68 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+`-IntegerLiteral 0xe9e2fa0 <line:208:1> 'int' 234
+[B15.2]([B15.3], ([B15.4]), ([B15.5]), [B15.8], [B15.9])
+   T: goto err;
+   Preds (1): B16
+   Succs (1): B3
+
+ [B16]
+   1: DeclRefExpr 0xe9e2b88 <a_d2i_fp.c:231:25> 'int (BIO *, void *, int)' Function 0xe8b1968 'BIO_read' 'int (BIO *, void *, int)'
+BIO_read
+   2: ImplicitCastExpr 0xe9e2d38 <a_d2i_fp.c:231:25> 'int (*)(BIO *, void *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e2b88 <col:25> 'int (BIO *, void *, int)' Function 0xe8b1968 'BIO_read' 'int (BIO *, void *, int)'
+[B16.1] (ImplicitCastExpr, FunctionToPointerDecay, int (*)(BIO *, void *, int))
+   3: DeclRefExpr 0xe9e2bb0 <a_d2i_fp.c:231:34> 'BIO *' lvalue ParmVar 0xe9ddd60 'in' 'BIO *'
+in
+   4: ImplicitCastExpr 0xe9e2d90 <a_d2i_fp.c:231:34> 'BIO *' <LValueToRValue>
+`-DeclRefExpr 0xe9e2bb0 <col:34> 'BIO *' lvalue ParmVar 0xe9ddd60 'in' 'BIO *'
+[B16.3] (ImplicitCastExpr, LValueToRValue, BIO *)
+   5: DeclRefExpr 0xe9e2bd8 <a_d2i_fp.c:231:40> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+b
+   6: ImplicitCastExpr 0xe9e2c00 <a_d2i_fp.c:231:40> 'BUF_MEM *' <LValueToRValue>
+`-DeclRefExpr 0xe9e2bd8 <col:40> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B16.5] (ImplicitCastExpr, LValueToRValue, BUF_MEM *)
+   7: MemberExpr 0xe9e2c18 <a_d2i_fp.c:231:40, col:43> 'char *' lvalue ->data 0xe8837e8
+`-ImplicitCastExpr 0xe9e2c00 <col:40> 'BUF_MEM *' <LValueToRValue>
+  `-DeclRefExpr 0xe9e2bd8 <col:40> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B16.6]->data
+   8: ImplicitCastExpr 0xe9e2c78 <a_d2i_fp.c:231:40, col:43> 'char *' <LValueToRValue>
+`-MemberExpr 0xe9e2c18 <col:40, col:43> 'char *' lvalue ->data 0xe8837e8
+  `-ImplicitCastExpr 0xe9e2c00 <col:40> 'BUF_MEM *' <LValueToRValue>
+    `-DeclRefExpr 0xe9e2bd8 <col:40> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B16.7] (ImplicitCastExpr, LValueToRValue, char *)
+   9: DeclRefExpr 0xe9e2c50 <a_d2i_fp.c:231:48> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+  10: ImplicitCastExpr 0xe9e2c90 <a_d2i_fp.c:231:48> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e2c50 <col:48> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B16.9] (ImplicitCastExpr, LValueToRValue, size_t)
+  11: ArraySubscriptExpr 0xe9e2ca8 <a_d2i_fp.c:231:40, col:51> 'char' lvalue
+|-ImplicitCastExpr 0xe9e2c78 <col:40, col:43> 'char *' <LValueToRValue>
+| `-MemberExpr 0xe9e2c18 <col:40, col:43> 'char *' lvalue ->data 0xe8837e8
+|   `-ImplicitCastExpr 0xe9e2c00 <col:40> 'BUF_MEM *' <LValueToRValue>
+|     `-DeclRefExpr 0xe9e2bd8 <col:40> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+`-ImplicitCastExpr 0xe9e2c90 <col:48> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e2c50 <col:48> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B16.8][[B16.10]]
+  12: UnaryOperator 0xe9e2cf0 <a_d2i_fp.c:231:38, col:52> 'char *' prefix '&'
+`-ParenExpr 0xe9e2cd0 <col:39, col:52> 'char' lvalue
+  `-ArraySubscriptExpr 0xe9e2ca8 <col:40, col:51> 'char' lvalue
+    |-ImplicitCastExpr 0xe9e2c78 <col:40, col:43> 'char *' <LValueToRValue>
+    | `-MemberExpr 0xe9e2c18 <col:40, col:43> 'char *' lvalue ->data 0xe8837e8
+    |   `-ImplicitCastExpr 0xe9e2c00 <col:40> 'BUF_MEM *' <LValueToRValue>
+    |     `-DeclRefExpr 0xe9e2bd8 <col:40> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+    `-ImplicitCastExpr 0xe9e2c90 <col:48> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9e2c50 <col:48> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+&([B16.11])
+  13: ImplicitCastExpr 0xe9e2da8 <a_d2i_fp.c:231:38, col:52> 'void *' <BitCast>
+`-UnaryOperator 0xe9e2cf0 <col:38, col:52> 'char *' prefix '&'
+  `-ParenExpr 0xe9e2cd0 <col:39, col:52> 'char' lvalue
+    `-ArraySubscriptExpr 0xe9e2ca8 <col:40, col:51> 'char' lvalue
+      |-ImplicitCastExpr 0xe9e2c78 <col:40, col:43> 'char *' <LValueToRValue>
+      | `-MemberExpr 0xe9e2c18 <col:40, col:43> 'char *' lvalue ->data 0xe8837e8
+      |   `-ImplicitCastExpr 0xe9e2c00 <col:40> 'BUF_MEM *' <LValueToRValue>
+      |     `-DeclRefExpr 0xe9e2bd8 <col:40> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+      `-ImplicitCastExpr 0xe9e2c90 <col:48> 'size_t':'unsigned long' <LValueToRValue>
+        `-DeclRefExpr 0xe9e2c50 <col:48> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B16.12] (ImplicitCastExpr, BitCast, void *)
+  14: DeclRefExpr 0xe9e2d10 <a_d2i_fp.c:231:55> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+  15: ImplicitCastExpr 0xe9e2dc0 <a_d2i_fp.c:231:55> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e2d10 <col:55> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B16.14] (ImplicitCastExpr, LValueToRValue, size_t)
+  16: ImplicitCastExpr 0xe9e2dd8 <a_d2i_fp.c:231:55> 'int' <IntegralCast>
+`-ImplicitCastExpr 0xe9e2dc0 <col:55> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e2d10 <col:55> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B16.15] (ImplicitCastExpr, IntegralCast, int)
+  17: CallExpr 0xe9e2d50 <a_d2i_fp.c:231:25, col:59> 'int'
+|-ImplicitCastExpr 0xe9e2d38 <col:25> 'int (*)(BIO *, void *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9e2b88 <col:25> 'int (BIO *, void *, int)' Function 0xe8b1968 'BIO_read' 'int (BIO *, void *, int)'
+|-ImplicitCastExpr 0xe9e2d90 <col:34> 'BIO *' <LValueToRValue>
+| `-DeclRefExpr 0xe9e2bb0 <col:34> 'BIO *' lvalue ParmVar 0xe9ddd60 'in' 'BIO *'
+|-ImplicitCastExpr 0xe9e2da8 <col:38, col:52> 'void *' <BitCast>
+| `-UnaryOperator 0xe9e2cf0 <col:38, col:52> 'char *' prefix '&'
+|   `-ParenExpr 0xe9e2cd0 <col:39, col:52> 'char' lvalue
+|     `-ArraySubscriptExpr 0xe9e2ca8 <col:40, col:51> 'char' lvalue
+|       |-ImplicitCastExpr 0xe9e2c78 <col:40, col:43> 'char *' <LValueToRValue>
+|       | `-MemberExpr 0xe9e2c18 <col:40, col:43> 'char *' lvalue ->data 0xe8837e8
+|       |   `-ImplicitCastExpr 0xe9e2c00 <col:40> 'BUF_MEM *' <LValueToRValue>
+|       |     `-DeclRefExpr 0xe9e2bd8 <col:40> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+|       `-ImplicitCastExpr 0xe9e2c90 <col:48> 'size_t':'unsigned long' <LValueToRValue>
+|         `-DeclRefExpr 0xe9e2c50 <col:48> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e2dd8 <col:55> 'int' <IntegralCast>
+  `-ImplicitCastExpr 0xe9e2dc0 <col:55> 'size_t':'unsigned long' <LValueToRValue>
+    `-DeclRefExpr 0xe9e2d10 <col:55> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B16.2]([B16.4], [B16.13], [B16.16])
+  18: DeclRefExpr 0xe9e2b60 <a_d2i_fp.c:231:21> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+  19: BinaryOperator 0xe9e2df0 <a_d2i_fp.c:231:21, col:59> 'int' '='
+|-DeclRefExpr 0xe9e2b60 <col:21> 'int' lvalue Var 0xe9de050 'i' 'int'
+`-CallExpr 0xe9e2d50 <col:25, col:59> 'int'
+  |-ImplicitCastExpr 0xe9e2d38 <col:25> 'int (*)(BIO *, void *, int)' <FunctionToPointerDecay>
+  | `-DeclRefExpr 0xe9e2b88 <col:25> 'int (BIO *, void *, int)' Function 0xe8b1968 'BIO_read' 'int (BIO *, void *, int)'
+  |-ImplicitCastExpr 0xe9e2d90 <col:34> 'BIO *' <LValueToRValue>
+  | `-DeclRefExpr 0xe9e2bb0 <col:34> 'BIO *' lvalue ParmVar 0xe9ddd60 'in' 'BIO *'
+  |-ImplicitCastExpr 0xe9e2da8 <col:38, col:52> 'void *' <BitCast>
+  | `-UnaryOperator 0xe9e2cf0 <col:38, col:52> 'char *' prefix '&'
+  |   `-ParenExpr 0xe9e2cd0 <col:39, col:52> 'char' lvalue
+  |     `-ArraySubscriptExpr 0xe9e2ca8 <col:40, col:51> 'char' lvalue
+  |       |-ImplicitCastExpr 0xe9e2c78 <col:40, col:43> 'char *' <LValueToRValue>
+  |       | `-MemberExpr 0xe9e2c18 <col:40, col:43> 'char *' lvalue ->data 0xe8837e8
+  |       |   `-ImplicitCastExpr 0xe9e2c00 <col:40> 'BUF_MEM *' <LValueToRValue>
+  |       |     `-DeclRefExpr 0xe9e2bd8 <col:40> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+  |       `-ImplicitCastExpr 0xe9e2c90 <col:48> 'size_t':'unsigned long' <LValueToRValue>
+  |         `-DeclRefExpr 0xe9e2c50 <col:48> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+  `-ImplicitCastExpr 0xe9e2dd8 <col:55> 'int' <IntegralCast>
+    `-ImplicitCastExpr 0xe9e2dc0 <col:55> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9e2d10 <col:55> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B16.18] = [B16.17]
+  20: DeclRefExpr 0xe9e2e18 <a_d2i_fp.c:232:25> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+  21: ImplicitCastExpr 0xe9e2e60 <a_d2i_fp.c:232:25> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9e2e18 <col:25> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B16.20] (ImplicitCastExpr, LValueToRValue, int)
+  22: IntegerLiteral 0xe9e2e40 <a_d2i_fp.c:232:30> 'int' 0
+0
+  23: BinaryOperator 0xe9e2e78 <a_d2i_fp.c:232:25, col:30> 'int' '<='
+|-ImplicitCastExpr 0xe9e2e60 <col:25> 'int' <LValueToRValue>
+| `-DeclRefExpr 0xe9e2e18 <col:25> 'int' lvalue Var 0xe9de050 'i' 'int'
+`-IntegerLiteral 0xe9e2e40 <col:30> 'int' 0
+[B16.21] <= [B16.22]
+   T: if [B16.23]
+   Preds (1): B17
+   Succs (2): B15 B14
+
+ [B17]
+   1: DeclRefExpr 0xe9e2ac0 <a_d2i_fp.c:230:24> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   2: ImplicitCastExpr 0xe9e2b08 <a_d2i_fp.c:230:24> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e2ac0 <col:24> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B17.1] (ImplicitCastExpr, LValueToRValue, size_t)
+   3: IntegerLiteral 0xe9e2ae8 <a_d2i_fp.c:230:31> 'int' 0
+0
+   4: ImplicitCastExpr 0xe9e2b20 <a_d2i_fp.c:230:31> 'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9e2ae8 <col:31> 'int' 0
+[B17.3] (ImplicitCastExpr, IntegralCast, unsigned long)
+   5: BinaryOperator 0xe9e2b38 <a_d2i_fp.c:230:24, col:31> 'int' '>'
+|-ImplicitCastExpr 0xe9e2b08 <col:24> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e2ac0 <col:24> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e2b20 <col:31> 'unsigned long' <IntegralCast>
+  `-IntegerLiteral 0xe9e2ae8 <col:31> 'int' 0
+[B17.2] > [B17.4]
+   T: while [B17.5]
+   Preds (2): B13 B19
+   Succs (2): B16 B12
+
+ [B18]
+   1: DeclRefExpr 0xe9e2830 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xe9e29b8 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e2830 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B18.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xe9e2858 <../../include/openssl/err.h:172:34> 'int' 13
+13
+   4: IntegerLiteral 0xe9e2878 <../../include/openssl/asn1.h:1184:59> 'int' 107
+107
+   5: IntegerLiteral 0xe9e28b8 <../../include/openssl/err.h:302:51> 'int' 1
+1
+   6: IntegerLiteral 0xe9e28d8 <../../include/openssl/err.h:301:50> 'int' 64
+64
+   7: BinaryOperator 0xe9e28f8 <../../include/openssl/err.h:302:51, line:301:50> 'int' '|'
+|-IntegerLiteral 0xe9e28b8 <line:302:51> 'int' 1
+`-IntegerLiteral 0xe9e28d8 <line:301:50> 'int' 64
+[B18.5] | [B18.6]
+   8: StringLiteral 0xe9e2960 <<scratch space>:205:1> 'char [11]' lvalue "a_d2i_fp.c"
+"a_d2i_fp.c"
+   9: ImplicitCastExpr 0xe9e2a20 <<scratch space>:205:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xe9e2960 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B18.8] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+  10: ImplicitCastExpr 0xe9e2a38 <<scratch space>:205:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xe9e2a20 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xe9e2960 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B18.9] (ImplicitCastExpr, BitCast, const char *)
+  11: IntegerLiteral 0xe9e2998 <<scratch space>:206:1> 'int' 227
+227
+  12: CallExpr 0xe9e29d0 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xe9e29b8 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9e2830 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xe9e2858 <line:172:34> 'int' 13
+|-ParenExpr 0xe9e2898 <line:213:50, col:52> 'int'
+| `-IntegerLiteral 0xe9e2878 <../../include/openssl/asn1.h:1184:59> 'int' 107
+|-ParenExpr 0xe9e2940 <../../include/openssl/err.h:213:54, col:56> 'int'
+| `-ParenExpr 0xe9e2920 <line:302:50, col:64> 'int'
+|   `-BinaryOperator 0xe9e28f8 <col:51, line:301:50> 'int' '|'
+|     |-IntegerLiteral 0xe9e28b8 <line:302:51> 'int' 1
+|     `-IntegerLiteral 0xe9e28d8 <line:301:50> 'int' 64
+|-ImplicitCastExpr 0xe9e2a38 <<scratch space>:205:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xe9e2a20 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xe9e2960 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+`-IntegerLiteral 0xe9e2998 <line:206:1> 'int' 227
+[B18.2]([B18.3], ([B18.4]), (([B18.7])), [B18.10], [B18.11])
+   T: goto err;
+   Preds (1): B19
+   Succs (1): B3
+
+ [B19]
+   1: DeclRefExpr 0xe9e26b0 <a_d2i_fp.c:226:22> 'int (BUF_MEM *, size_t)' Function 0xe889120 'BUF_MEM_grow_clean' 'int (BUF_MEM *, size_t)'
+BUF_MEM_grow_clean
+   2: ImplicitCastExpr 0xe9e27a8 <a_d2i_fp.c:226:22> 'int (*)(BUF_MEM *, size_t)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e26b0 <col:22> 'int (BUF_MEM *, size_t)' Function 0xe889120 'BUF_MEM_grow_clean' 'int (BUF_MEM *, size_t)'
+[B19.1] (ImplicitCastExpr, FunctionToPointerDecay, int (*)(BUF_MEM *, size_t))
+   3: DeclRefExpr 0xe9e26d8 <a_d2i_fp.c:226:41> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+b
+   4: ImplicitCastExpr 0xe9e27f8 <a_d2i_fp.c:226:41> 'BUF_MEM *' <LValueToRValue>
+`-DeclRefExpr 0xe9e26d8 <col:41> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B19.3] (ImplicitCastExpr, LValueToRValue, BUF_MEM *)
+   5: DeclRefExpr 0xe9e2700 <a_d2i_fp.c:226:44> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   6: ImplicitCastExpr 0xe9e2750 <a_d2i_fp.c:226:44> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e2700 <col:44> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B19.5] (ImplicitCastExpr, LValueToRValue, size_t)
+   7: DeclRefExpr 0xe9e2728 <a_d2i_fp.c:226:50> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   8: ImplicitCastExpr 0xe9e2768 <a_d2i_fp.c:226:50> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e2728 <col:50> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B19.7] (ImplicitCastExpr, LValueToRValue, size_t)
+   9: BinaryOperator 0xe9e2780 <a_d2i_fp.c:226:44, col:50> 'unsigned long' '+'
+|-ImplicitCastExpr 0xe9e2750 <col:44> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e2700 <col:44> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e2768 <col:50> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e2728 <col:50> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B19.6] + [B19.8]
+  10: CallExpr 0xe9e27c0 <a_d2i_fp.c:226:22, col:54> 'int'
+|-ImplicitCastExpr 0xe9e27a8 <col:22> 'int (*)(BUF_MEM *, size_t)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9e26b0 <col:22> 'int (BUF_MEM *, size_t)' Function 0xe889120 'BUF_MEM_grow_clean' 'int (BUF_MEM *, size_t)'
+|-ImplicitCastExpr 0xe9e27f8 <col:41> 'BUF_MEM *' <LValueToRValue>
+| `-DeclRefExpr 0xe9e26d8 <col:41> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+`-BinaryOperator 0xe9e2780 <col:44, col:50> 'unsigned long' '+'
+  |-ImplicitCastExpr 0xe9e2750 <col:44> 'size_t':'unsigned long' <LValueToRValue>
+  | `-DeclRefExpr 0xe9e2700 <col:44> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+  `-ImplicitCastExpr 0xe9e2768 <col:50> 'size_t':'unsigned long' <LValueToRValue>
+    `-DeclRefExpr 0xe9e2728 <col:50> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B19.2]([B19.4], [B19.9])
+  11: UnaryOperator 0xe9e2810 <a_d2i_fp.c:226:21, col:54> 'int' prefix '!'
+`-CallExpr 0xe9e27c0 <col:22, col:54> 'int'
+  |-ImplicitCastExpr 0xe9e27a8 <col:22> 'int (*)(BUF_MEM *, size_t)' <FunctionToPointerDecay>
+  | `-DeclRefExpr 0xe9e26b0 <col:22> 'int (BUF_MEM *, size_t)' Function 0xe889120 'BUF_MEM_grow_clean' 'int (BUF_MEM *, size_t)'
+  |-ImplicitCastExpr 0xe9e27f8 <col:41> 'BUF_MEM *' <LValueToRValue>
+  | `-DeclRefExpr 0xe9e26d8 <col:41> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+  `-BinaryOperator 0xe9e2780 <col:44, col:50> 'unsigned long' '+'
+    |-ImplicitCastExpr 0xe9e2750 <col:44> 'size_t':'unsigned long' <LValueToRValue>
+    | `-DeclRefExpr 0xe9e2700 <col:44> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+    `-ImplicitCastExpr 0xe9e2768 <col:50> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9e2728 <col:50> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+![B19.10]
+   T: if [B19.11]
+   Preds (1): B21
+   Succs (2): B18 B17
+
+ [B20]
+   1: DeclRefExpr 0xe9e2488 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xe9e25a8 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e2488 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B20.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xe9e24b0 <../../include/openssl/err.h:172:34> 'int' 13
+13
+   4: IntegerLiteral 0xe9e24d0 <../../include/openssl/asn1.h:1184:59> 'int' 107
+107
+   5: IntegerLiteral 0xe9e2510 <../../include/openssl/asn1.h:1393:59> 'int' 155
+155
+   6: StringLiteral 0xe9e2550 <<scratch space>:203:1> 'char [11]' lvalue "a_d2i_fp.c"
+"a_d2i_fp.c"
+   7: ImplicitCastExpr 0xe9e2610 <<scratch space>:203:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xe9e2550 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B20.6] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+   8: ImplicitCastExpr 0xe9e2628 <<scratch space>:203:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xe9e2610 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xe9e2550 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B20.7] (ImplicitCastExpr, BitCast, const char *)
+   9: IntegerLiteral 0xe9e2588 <<scratch space>:204:1> 'int' 223
+223
+  10: CallExpr 0xe9e25c0 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xe9e25a8 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9e2488 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xe9e24b0 <line:172:34> 'int' 13
+|-ParenExpr 0xe9e24f0 <line:213:50, col:52> 'int'
+| `-IntegerLiteral 0xe9e24d0 <../../include/openssl/asn1.h:1184:59> 'int' 107
+|-ParenExpr 0xe9e2530 <../../include/openssl/err.h:213:54, col:56> 'int'
+| `-IntegerLiteral 0xe9e2510 <../../include/openssl/asn1.h:1393:59> 'int' 155
+|-ImplicitCastExpr 0xe9e2628 <<scratch space>:203:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xe9e2610 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xe9e2550 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+`-IntegerLiteral 0xe9e2588 <line:204:1> 'int' 223
+[B20.2]([B20.3], ([B20.4]), ([B20.5]), [B20.8], [B20.9])
+   T: goto err;
+   Preds (2): B21 B22
+   Succs (1): B3
+
+ [B21]
+   1: DeclRefExpr 0xe9e2350 <a_d2i_fp.c:222:21> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   2: ImplicitCastExpr 0xe9e23a0 <a_d2i_fp.c:222:21> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e2350 <col:21> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B21.1] (ImplicitCastExpr, LValueToRValue, size_t)
+   3: DeclRefExpr 0xe9e2378 <a_d2i_fp.c:222:27> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   4: ImplicitCastExpr 0xe9e23b8 <a_d2i_fp.c:222:27> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e2378 <col:27> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B21.3] (ImplicitCastExpr, LValueToRValue, size_t)
+   5: BinaryOperator 0xe9e23d0 <a_d2i_fp.c:222:21, col:27> 'unsigned long' '+'
+|-ImplicitCastExpr 0xe9e23a0 <col:21> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e2350 <col:21> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e23b8 <col:27> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e2378 <col:27> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B21.2] + [B21.4]
+   6: DeclRefExpr 0xe9e23f8 <a_d2i_fp.c:222:34> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   7: ImplicitCastExpr 0xe9e2420 <a_d2i_fp.c:222:34> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e23f8 <col:34> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B21.6] (ImplicitCastExpr, LValueToRValue, size_t)
+   8: BinaryOperator 0xe9e2438 <a_d2i_fp.c:222:21, col:34> 'int' '<'
+|-BinaryOperator 0xe9e23d0 <col:21, col:27> 'unsigned long' '+'
+| |-ImplicitCastExpr 0xe9e23a0 <col:21> 'size_t':'unsigned long' <LValueToRValue>
+| | `-DeclRefExpr 0xe9e2350 <col:21> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+| `-ImplicitCastExpr 0xe9e23b8 <col:27> 'size_t':'unsigned long' <LValueToRValue>
+|   `-DeclRefExpr 0xe9e2378 <col:27> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e2420 <col:34> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e23f8 <col:34> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B21.5] < [B21.7]
+   T: if [B22.12] || [B21.8]
+   Preds (1): B22
+   Succs (2): B20 B19
+
+ [B22]
+   1: DeclRefExpr 0xe9e2188 <a_d2i_fp.c:220:17> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   2: DeclRefExpr 0xe9e21b0 <a_d2i_fp.c:220:26> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   3: ImplicitCastExpr 0xe9e2200 <a_d2i_fp.c:220:26> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e21b0 <col:26> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B22.2] (ImplicitCastExpr, LValueToRValue, size_t)
+   4: DeclRefExpr 0xe9e21d8 <a_d2i_fp.c:220:32> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+   5: ImplicitCastExpr 0xe9e2218 <a_d2i_fp.c:220:32> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e21d8 <col:32> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B22.4] (ImplicitCastExpr, LValueToRValue, size_t)
+   6: BinaryOperator 0xe9e2230 <a_d2i_fp.c:220:26, col:32> 'unsigned long' '-'
+|-ImplicitCastExpr 0xe9e2200 <col:26> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e21b0 <col:26> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e2218 <col:32> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e21d8 <col:32> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B22.3] - [B22.5]
+   7: CompoundAssignOperator 0xe9e2278 <a_d2i_fp.c:220:17, col:35> 'size_t':'unsigned long' '-=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+|-DeclRefExpr 0xe9e2188 <col:17> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ParenExpr 0xe9e2258 <col:25, col:35> 'unsigned long'
+  `-BinaryOperator 0xe9e2230 <col:26, col:32> 'unsigned long' '-'
+    |-ImplicitCastExpr 0xe9e2200 <col:26> 'size_t':'unsigned long' <LValueToRValue>
+    | `-DeclRefExpr 0xe9e21b0 <col:26> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+    `-ImplicitCastExpr 0xe9e2218 <col:32> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9e21d8 <col:32> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B22.1] -= ([B22.6])
+   8: DeclRefExpr 0xe9e22b0 <a_d2i_fp.c:221:21> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   9: ImplicitCastExpr 0xe9e22f8 <a_d2i_fp.c:221:21> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e22b0 <col:21> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B22.8] (ImplicitCastExpr, LValueToRValue, size_t)
+  10: IntegerLiteral 0xe9e22d8 <<built-in>:37:21> 'int' 2147483647
+2147483647
+  11: ImplicitCastExpr 0xe9e2310 <<built-in>:37:21> 'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9e22d8 <col:21> 'int' 2147483647
+[B22.10] (ImplicitCastExpr, IntegralCast, unsigned long)
+  12: BinaryOperator 0xe9e2328 <a_d2i_fp.c:221:21, <built-in>:37:21> 'int' '>'
+|-ImplicitCastExpr 0xe9e22f8 <a_d2i_fp.c:221:21> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e22b0 <col:21> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e2310 <<built-in>:37:21> 'unsigned long' <IntegralCast>
+  `-IntegerLiteral 0xe9e22d8 <col:21> 'int' 2147483647
+[B22.9] > [B22.11]
+   T: [B22.12] || ...
+   Preds (1): B23
+   Succs (2): B20 B21
+
+ [B23]
+   1: DeclRefExpr 0xe9e1fa0 <a_d2i_fp.c:218:20> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+   2: MemberExpr 0xe9e1fc8 <a_d2i_fp.c:218:20, col:22> 'long' lvalue .slen 0xe9329c8
+`-DeclRefExpr 0xe9e1fa0 <col:20> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B23.1].slen
+   3: ImplicitCastExpr 0xe9e2000 <a_d2i_fp.c:218:20, col:22> 'long' <LValueToRValue>
+`-MemberExpr 0xe9e1fc8 <col:20, col:22> 'long' lvalue .slen 0xe9329c8
+  `-DeclRefExpr 0xe9e1fa0 <col:20> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B23.2] (ImplicitCastExpr, LValueToRValue, long)
+   4: ImplicitCastExpr 0xe9e2018 <a_d2i_fp.c:218:20, col:22> 'size_t':'unsigned long' <IntegralCast>
+`-ImplicitCastExpr 0xe9e2000 <col:20, col:22> 'long' <LValueToRValue>
+  `-MemberExpr 0xe9e1fc8 <col:20, col:22> 'long' lvalue .slen 0xe9329c8
+    `-DeclRefExpr 0xe9e1fa0 <col:20> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B23.3] (ImplicitCastExpr, IntegralCast, size_t)
+   5: DeclRefExpr 0xe9e1f78 <a_d2i_fp.c:218:13> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   6: BinaryOperator 0xe9e2030 <a_d2i_fp.c:218:13, col:22> 'size_t':'unsigned long' '='
+|-DeclRefExpr 0xe9e1f78 <col:13> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e2018 <col:20, col:22> 'size_t':'unsigned long' <IntegralCast>
+  `-ImplicitCastExpr 0xe9e2000 <col:20, col:22> 'long' <LValueToRValue>
+    `-MemberExpr 0xe9e1fc8 <col:20, col:22> 'long' lvalue .slen 0xe9329c8
+      `-DeclRefExpr 0xe9e1fa0 <col:20> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B23.5] = [B23.4]
+   7: DeclRefExpr 0xe9e2058 <a_d2i_fp.c:219:17> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   8: ImplicitCastExpr 0xe9e2148 <a_d2i_fp.c:219:17> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e2058 <col:17> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B23.7] (ImplicitCastExpr, LValueToRValue, size_t)
+   9: DeclRefExpr 0xe9e2080 <a_d2i_fp.c:219:25> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+  10: ImplicitCastExpr 0xe9e20d0 <a_d2i_fp.c:219:25> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e2080 <col:25> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B23.9] (ImplicitCastExpr, LValueToRValue, size_t)
+  11: DeclRefExpr 0xe9e20a8 <a_d2i_fp.c:219:31> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+  12: ImplicitCastExpr 0xe9e20e8 <a_d2i_fp.c:219:31> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e20a8 <col:31> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B23.11] (ImplicitCastExpr, LValueToRValue, size_t)
+  13: BinaryOperator 0xe9e2100 <a_d2i_fp.c:219:25, col:31> 'unsigned long' '-'
+|-ImplicitCastExpr 0xe9e20d0 <col:25> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e2080 <col:25> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e20e8 <col:31> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e20a8 <col:31> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B23.10] - [B23.12]
+  14: BinaryOperator 0xe9e2160 <a_d2i_fp.c:219:17, col:34> 'int' '>'
+|-ImplicitCastExpr 0xe9e2148 <col:17> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e2058 <col:17> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ParenExpr 0xe9e2128 <col:24, col:34> 'unsigned long'
+  `-BinaryOperator 0xe9e2100 <col:25, col:31> 'unsigned long' '-'
+    |-ImplicitCastExpr 0xe9e20d0 <col:25> 'size_t':'unsigned long' <LValueToRValue>
+    | `-DeclRefExpr 0xe9e2080 <col:25> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+    `-ImplicitCastExpr 0xe9e20e8 <col:31> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9e20a8 <col:31> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B23.8] > ([B23.13])
+   T: if [B23.14]
+   Preds (3): B27 B28 B29
+   Succs (2): B22 B12
+
+ [B24]
+   1: IntegerLiteral 0xe9e1ec0 <a_d2i_fp.c:143:23> 'int' 8
+8
+   2: ImplicitCastExpr 0xe9e1ee0 <a_d2i_fp.c:143:23> 'size_t':'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9e1ec0 <col:23> 'int' 8
+[B24.1] (ImplicitCastExpr, IntegralCast, size_t)
+   3: DeclRefExpr 0xe9e1e98 <a_d2i_fp.c:215:17> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   4: BinaryOperator 0xe9e1ef8 <a_d2i_fp.c:215:17, line:143:23> 'size_t':'unsigned long' '='
+|-DeclRefExpr 0xe9e1e98 <line:215:17> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e1ee0 <line:143:23> 'size_t':'unsigned long' <IntegralCast>
+  `-IntegerLiteral 0xe9e1ec0 <col:23> 'int' 8
+[B24.3] = [B24.2]
+   Preds (1): B26
+   Succs (1): B7
+
+ [B25]
+   T: break;
+   Preds (1): B26
+   Succs (1): B6
+
+ [B26]
+   1: DeclRefExpr 0xe9e1dc0 <a_d2i_fp.c:211:13> 'int' lvalue Var 0xe9de228 'eos' 'int'
+eos
+   2: UnaryOperator 0xe9e1de8 <a_d2i_fp.c:211:13, col:16> 'int' postfix '--'
+`-DeclRefExpr 0xe9e1dc0 <col:13> 'int' lvalue Var 0xe9de228 'eos' 'int'
+[B26.1]--
+   3: DeclRefExpr 0xe9e1e08 <a_d2i_fp.c:212:17> 'int' lvalue Var 0xe9de228 'eos' 'int'
+eos
+   4: ImplicitCastExpr 0xe9e1e50 <a_d2i_fp.c:212:17> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9e1e08 <col:17> 'int' lvalue Var 0xe9de228 'eos' 'int'
+[B26.3] (ImplicitCastExpr, LValueToRValue, int)
+   5: IntegerLiteral 0xe9e1e30 <a_d2i_fp.c:212:24> 'int' 0
+0
+   6: BinaryOperator 0xe9e1e68 <a_d2i_fp.c:212:17, col:24> 'int' '<='
+|-ImplicitCastExpr 0xe9e1e50 <col:17> 'int' <LValueToRValue>
+| `-DeclRefExpr 0xe9e1e08 <col:17> 'int' lvalue Var 0xe9de228 'eos' 'int'
+`-IntegerLiteral 0xe9e1e30 <col:24> 'int' 0
+[B26.4] <= [B26.5]
+   T: if [B26.6]
+   Preds (1): B27
+   Succs (2): B25 B24
+
+ [B27]
+   1: DeclRefExpr 0xe9e1cb8 <a_d2i_fp.c:209:45> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+   2: MemberExpr 0xe9e1ce0 <a_d2i_fp.c:209:45, col:47> 'int' lvalue .tag 0xe932908
+`-DeclRefExpr 0xe9e1cb8 <col:45> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B27.1].tag
+   3: ImplicitCastExpr 0xe9e1d38 <a_d2i_fp.c:209:45, col:47> 'int' <LValueToRValue>
+`-MemberExpr 0xe9e1ce0 <col:45, col:47> 'int' lvalue .tag 0xe932908
+  `-DeclRefExpr 0xe9e1cb8 <col:45> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B27.2] (ImplicitCastExpr, LValueToRValue, int)
+   4: IntegerLiteral 0xe9e1d18 <../../include/openssl/asn1.h:102:42> 'int' 0
+0
+   5: BinaryOperator 0xe9e1d50 <a_d2i_fp.c:209:45, ../../include/openssl/asn1.h:102:42> 'int' '=='
+|-ImplicitCastExpr 0xe9e1d38 <a_d2i_fp.c:209:45, col:47> 'int' <LValueToRValue>
+| `-MemberExpr 0xe9e1ce0 <col:45, col:47> 'int' lvalue .tag 0xe932908
+|   `-DeclRefExpr 0xe9e1cb8 <col:45> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+`-IntegerLiteral 0xe9e1d18 <../../include/openssl/asn1.h:102:42> 'int' 0
+[B27.3] == [B27.4]
+   T: if [B29.2] && ([B28.6]) && ([B27.5])
+   Preds (1): B28
+   Succs (2): B26 B23
+
+ [B28]
+   1: DeclRefExpr 0xe9e1b80 <a_d2i_fp.c:209:28> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+   2: MemberExpr 0xe9e1ba8 <a_d2i_fp.c:209:28, col:30> 'long' lvalue .slen 0xe9329c8
+`-DeclRefExpr 0xe9e1b80 <col:28> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B28.1].slen
+   3: ImplicitCastExpr 0xe9e1c00 <a_d2i_fp.c:209:28, col:30> 'long' <LValueToRValue>
+`-MemberExpr 0xe9e1ba8 <col:28, col:30> 'long' lvalue .slen 0xe9329c8
+  `-DeclRefExpr 0xe9e1b80 <col:28> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B28.2] (ImplicitCastExpr, LValueToRValue, long)
+   4: IntegerLiteral 0xe9e1be0 <a_d2i_fp.c:209:38> 'int' 0
+0
+   5: ImplicitCastExpr 0xe9e1c18 <a_d2i_fp.c:209:38> 'long' <IntegralCast>
+`-IntegerLiteral 0xe9e1be0 <col:38> 'int' 0
+[B28.4] (ImplicitCastExpr, IntegralCast, long)
+   6: BinaryOperator 0xe9e1c30 <a_d2i_fp.c:209:28, col:38> 'int' '=='
+|-ImplicitCastExpr 0xe9e1c00 <col:28, col:30> 'long' <LValueToRValue>
+| `-MemberExpr 0xe9e1ba8 <col:28, col:30> 'long' lvalue .slen 0xe9329c8
+|   `-DeclRefExpr 0xe9e1b80 <col:28> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+`-ImplicitCastExpr 0xe9e1c18 <col:38> 'long' <IntegralCast>
+  `-IntegerLiteral 0xe9e1be0 <col:38> 'int' 0
+[B28.3] == [B28.5]
+   T: [B29.2] && ([B28.6]) && ...
+   Preds (1): B29
+   Succs (2): B27 B23
+
+ [B29]
+   1: DeclRefExpr 0xe9e1b58 <a_d2i_fp.c:209:20> 'int' lvalue Var 0xe9de228 'eos' 'int'
+eos
+   2: ImplicitCastExpr 0xe9e1c78 <a_d2i_fp.c:209:20> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9e1b58 <col:20> 'int' lvalue Var 0xe9de228 'eos' 'int'
+[B29.1] (ImplicitCastExpr, LValueToRValue, int)
+   T: [B29.2] && ...
+   Preds (1): B33
+   Succs (2): B28 B23
+
+ [B30]
+   1: IntegerLiteral 0xe9e1ad0 <a_d2i_fp.c:143:23> 'int' 8
+8
+   2: ImplicitCastExpr 0xe9e1af0 <a_d2i_fp.c:143:23> 'size_t':'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9e1ad0 <col:23> 'int' 8
+[B30.1] (ImplicitCastExpr, IntegralCast, size_t)
+   3: DeclRefExpr 0xe9e1aa8 <a_d2i_fp.c:208:13> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   4: BinaryOperator 0xe9e1b08 <a_d2i_fp.c:208:13, line:143:23> 'size_t':'unsigned long' '='
+|-DeclRefExpr 0xe9e1aa8 <line:208:13> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e1af0 <line:143:23> 'size_t':'unsigned long' <IntegralCast>
+  `-IntegerLiteral 0xe9e1ad0 <col:23> 'int' 8
+[B30.3] = [B30.2]
+   Preds (1): B32
+   Succs (1): B7
+
+ [B31]
+   1: DeclRefExpr 0xe9e1880 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xe9e19a0 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e1880 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B31.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xe9e18a8 <../../include/openssl/err.h:172:34> 'int' 13
+13
+   4: IntegerLiteral 0xe9e18c8 <../../include/openssl/asn1.h:1184:59> 'int' 107
+107
+   5: IntegerLiteral 0xe9e1908 <../../include/openssl/asn1.h:1327:59> 'int' 123
+123
+   6: StringLiteral 0xe9e1948 <<scratch space>:201:1> 'char [11]' lvalue "a_d2i_fp.c"
+"a_d2i_fp.c"
+   7: ImplicitCastExpr 0xe9e1a08 <<scratch space>:201:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xe9e1948 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B31.6] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+   8: ImplicitCastExpr 0xe9e1a20 <<scratch space>:201:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xe9e1a08 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xe9e1948 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B31.7] (ImplicitCastExpr, BitCast, const char *)
+   9: IntegerLiteral 0xe9e1980 <<scratch space>:202:1> 'int' 205
+205
+  10: CallExpr 0xe9e19b8 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xe9e19a0 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9e1880 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xe9e18a8 <line:172:34> 'int' 13
+|-ParenExpr 0xe9e18e8 <line:213:50, col:52> 'int'
+| `-IntegerLiteral 0xe9e18c8 <../../include/openssl/asn1.h:1184:59> 'int' 107
+|-ParenExpr 0xe9e1928 <../../include/openssl/err.h:213:54, col:56> 'int'
+| `-IntegerLiteral 0xe9e1908 <../../include/openssl/asn1.h:1327:59> 'int' 123
+|-ImplicitCastExpr 0xe9e1a20 <<scratch space>:201:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xe9e1a08 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xe9e1948 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+`-IntegerLiteral 0xe9e1980 <line:202:1> 'int' 205
+[B31.2]([B31.3], ([B31.4]), ([B31.5]), [B31.8], [B31.9])
+   T: goto err;
+   Preds (1): B32
+   Succs (1): B3
+
+ [B32]
+   1: DeclRefExpr 0xe9e17b0 <a_d2i_fp.c:203:13> 'int' lvalue Var 0xe9de228 'eos' 'int'
+eos
+   2: UnaryOperator 0xe9e17d8 <a_d2i_fp.c:203:13, col:16> 'int' postfix '++'
+`-DeclRefExpr 0xe9e17b0 <col:13> 'int' lvalue Var 0xe9de228 'eos' 'int'
+[B32.1]++
+   3: DeclRefExpr 0xe9e17f8 <a_d2i_fp.c:204:17> 'int' lvalue Var 0xe9de228 'eos' 'int'
+eos
+   4: ImplicitCastExpr 0xe9e1840 <a_d2i_fp.c:204:17> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9e17f8 <col:17> 'int' lvalue Var 0xe9de228 'eos' 'int'
+[B32.3] (ImplicitCastExpr, LValueToRValue, int)
+   5: IntegerLiteral 0xe9e1820 <a_d2i_fp.c:204:23> 'int' 0
+0
+   6: BinaryOperator 0xe9e1858 <a_d2i_fp.c:204:17, col:23> 'int' '<'
+|-ImplicitCastExpr 0xe9e1840 <col:17> 'int' <LValueToRValue>
+| `-DeclRefExpr 0xe9e17f8 <col:17> 'int' lvalue Var 0xe9de228 'eos' 'int'
+`-IntegerLiteral 0xe9e1820 <col:23> 'int' 0
+[B32.4] < [B32.5]
+   T: if [B32.6]
+   Preds (1): B33
+   Succs (2): B31 B30
+
+ [B33]
+   1: DeclRefExpr 0xe9e1518 <a_d2i_fp.c:198:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+   2: MemberExpr 0xe9e1540 <a_d2i_fp.c:198:13, col:15> 'const unsigned char *' lvalue .p 0xe932788
+`-DeclRefExpr 0xe9e1518 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B33.1].p
+   3: ImplicitCastExpr 0xe9e15a0 <a_d2i_fp.c:198:13, col:15> 'const unsigned char *' <LValueToRValue>
+`-MemberExpr 0xe9e1540 <col:13, col:15> 'const unsigned char *' lvalue .p 0xe932788
+  `-DeclRefExpr 0xe9e1518 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B33.2] (ImplicitCastExpr, LValueToRValue, const unsigned char *)
+   4: DeclRefExpr 0xe9e1578 <a_d2i_fp.c:198:19> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+p
+   5: ImplicitCastExpr 0xe9e15b8 <a_d2i_fp.c:198:19> 'unsigned char *' <LValueToRValue>
+`-DeclRefExpr 0xe9e1578 <col:19> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+[B33.4] (ImplicitCastExpr, LValueToRValue, unsigned char *)
+   6: BinaryOperator 0xe9e15d0 <a_d2i_fp.c:198:13, col:19> 'long' '-'
+|-ImplicitCastExpr 0xe9e15a0 <col:13, col:15> 'const unsigned char *' <LValueToRValue>
+| `-MemberExpr 0xe9e1540 <col:13, col:15> 'const unsigned char *' lvalue .p 0xe932788
+|   `-DeclRefExpr 0xe9e1518 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+`-ImplicitCastExpr 0xe9e15b8 <col:19> 'unsigned char *' <LValueToRValue>
+  `-DeclRefExpr 0xe9e1578 <col:19> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+[B33.3] - [B33.5]
+   7: ImplicitCastExpr 0xe9e15f8 <a_d2i_fp.c:198:13, col:19> 'int' <IntegralCast>
+`-BinaryOperator 0xe9e15d0 <col:13, col:19> 'long' '-'
+  |-ImplicitCastExpr 0xe9e15a0 <col:13, col:15> 'const unsigned char *' <LValueToRValue>
+  | `-MemberExpr 0xe9e1540 <col:13, col:15> 'const unsigned char *' lvalue .p 0xe932788
+  |   `-DeclRefExpr 0xe9e1518 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+  `-ImplicitCastExpr 0xe9e15b8 <col:19> 'unsigned char *' <LValueToRValue>
+    `-DeclRefExpr 0xe9e1578 <col:19> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+[B33.6] (ImplicitCastExpr, IntegralCast, int)
+   8: DeclRefExpr 0xe9e14f0 <a_d2i_fp.c:198:9> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+   9: BinaryOperator 0xe9e1610 <a_d2i_fp.c:198:9, col:19> 'int' '='
+|-DeclRefExpr 0xe9e14f0 <col:9> 'int' lvalue Var 0xe9de050 'i' 'int'
+`-ImplicitCastExpr 0xe9e15f8 <col:13, col:19> 'int' <IntegralCast>
+  `-BinaryOperator 0xe9e15d0 <col:13, col:19> 'long' '-'
+    |-ImplicitCastExpr 0xe9e15a0 <col:13, col:15> 'const unsigned char *' <LValueToRValue>
+    | `-MemberExpr 0xe9e1540 <col:13, col:15> 'const unsigned char *' lvalue .p 0xe932788
+    |   `-DeclRefExpr 0xe9e1518 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+    `-ImplicitCastExpr 0xe9e15b8 <col:19> 'unsigned char *' <LValueToRValue>
+      `-DeclRefExpr 0xe9e1578 <col:19> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+[B33.8] = [B33.7]
+  10: DeclRefExpr 0xe9e1638 <a_d2i_fp.c:199:9> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+  11: DeclRefExpr 0xe9e1660 <a_d2i_fp.c:199:16> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+  12: ImplicitCastExpr 0xe9e1688 <a_d2i_fp.c:199:16> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9e1660 <col:16> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B33.11] (ImplicitCastExpr, LValueToRValue, int)
+  13: ImplicitCastExpr 0xe9e16a0 <a_d2i_fp.c:199:16> 'unsigned long' <IntegralCast>
+`-ImplicitCastExpr 0xe9e1688 <col:16> 'int' <LValueToRValue>
+  `-DeclRefExpr 0xe9e1660 <col:16> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B33.12] (ImplicitCastExpr, IntegralCast, unsigned long)
+  14: CompoundAssignOperator 0xe9e16b8 <a_d2i_fp.c:199:9, col:16> 'size_t':'unsigned long' '+=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+|-DeclRefExpr 0xe9e1638 <col:9> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e16a0 <col:16> 'unsigned long' <IntegralCast>
+  `-ImplicitCastExpr 0xe9e1688 <col:16> 'int' <LValueToRValue>
+    `-DeclRefExpr 0xe9e1660 <col:16> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B33.10] += [B33.13]
+  15: DeclRefExpr 0xe9e16f0 <a_d2i_fp.c:201:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+  16: MemberExpr 0xe9e1718 <a_d2i_fp.c:201:13, col:15> 'int' lvalue .inf 0xe9328a8
+`-DeclRefExpr 0xe9e16f0 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B33.15].inf
+  17: ImplicitCastExpr 0xe9e1770 <a_d2i_fp.c:201:13, col:15> 'int' <LValueToRValue>
+`-MemberExpr 0xe9e1718 <col:13, col:15> 'int' lvalue .inf 0xe9328a8
+  `-DeclRefExpr 0xe9e16f0 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B33.16] (ImplicitCastExpr, LValueToRValue, int)
+  18: IntegerLiteral 0xe9e1750 <a_d2i_fp.c:201:21> 'int' 1
+1
+  19: BinaryOperator 0xe9e1788 <a_d2i_fp.c:201:13, col:21> 'int' '&'
+|-ImplicitCastExpr 0xe9e1770 <col:13, col:15> 'int' <LValueToRValue>
+| `-MemberExpr 0xe9e1718 <col:13, col:15> 'int' lvalue .inf 0xe9328a8
+|   `-DeclRefExpr 0xe9e16f0 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+`-IntegerLiteral 0xe9e1750 <col:21> 'int' 1
+[B33.17] & [B33.18]
+   T: if [B33.19]
+   Preds (2): B34 B37
+   Succs (2): B32 B29
+
+ [B34]
+   1: DeclRefExpr 0xe9e13f0 <a_d2i_fp.c:196:17> 'void (void)' Function 0xe8f5da8 'ERR_clear_error' 'void (void)'
+ERR_clear_error
+   2: ImplicitCastExpr 0xe9e1418 <a_d2i_fp.c:196:17> 'void (*)(void)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e13f0 <col:17> 'void (void)' Function 0xe8f5da8 'ERR_clear_error' 'void (void)'
+[B34.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(void))
+   3: CallExpr 0xe9e1430 <a_d2i_fp.c:196:17, col:33> 'void'
+`-ImplicitCastExpr 0xe9e1418 <col:17> 'void (*)(void)' <FunctionToPointerDecay>
+  `-DeclRefExpr 0xe9e13f0 <col:17> 'void (void)' Function 0xe8f5da8 'ERR_clear_error' 'void (void)'
+[B34.2]()
+   Preds (1): B36
+   Succs (1): B33
+
+ [B35]
+   T: goto err;
+   Preds (1): B36
+   Succs (1): B3
+
+ [B36]
+   1: DeclStmt 0xe9e0990 <a_d2i_fp.c:190:13, col:28>col:27
+`-VarDecl 0xe9e0930 <col:13, col:27> col:27 used e 'unsigned long'
+unsigned long e;
+   2: DeclRefExpr 0xe9e09d0 <a_d2i_fp.c:192:32> 'unsigned long (void)' Function 0xe8e52a0 'ERR_peek_error' 'unsigned long (void)'
+ERR_peek_error
+   3: ImplicitCastExpr 0xe9e09f8 <a_d2i_fp.c:192:32> 'unsigned long (*)(void)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e09d0 <col:32> 'unsigned long (void)' Function 0xe8e52a0 'ERR_peek_error' 'unsigned long (void)'
+[B36.2] (ImplicitCastExpr, FunctionToPointerDecay, unsigned long (*)(void))
+   4: CallExpr 0xe9e0a10 <a_d2i_fp.c:192:32, col:47> 'unsigned long'
+`-ImplicitCastExpr 0xe9e09f8 <col:32> 'unsigned long (*)(void)' <FunctionToPointerDecay>
+  `-DeclRefExpr 0xe9e09d0 <col:32> 'unsigned long (void)' Function 0xe8e52a0 'ERR_peek_error' 'unsigned long (void)'
+[B36.3]()
+   5: IntegerLiteral 0xe9e0a58 <../../include/openssl/err.h:246:44> 'long' 4095
+4095L
+   6: ImplicitCastExpr 0xe9e0a78 <../../include/openssl/err.h:246:44> 'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9e0a58 <col:44> 'long' 4095
+[B36.5] (ImplicitCastExpr, IntegralCast, unsigned long)
+   7: BinaryOperator 0xe9e0a90 <../../include/openssl/err.h:246:40, col:44> 'unsigned long' '&'
+|-ParenExpr 0xe9e0a38 <col:40, col:42> 'unsigned long'
+| `-CallExpr 0xe9e0a10 <a_d2i_fp.c:192:32, col:47> 'unsigned long'
+|   `-ImplicitCastExpr 0xe9e09f8 <col:32> 'unsigned long (*)(void)' <FunctionToPointerDecay>
+|     `-DeclRefExpr 0xe9e09d0 <col:32> 'unsigned long (void)' Function 0xe8e52a0 'ERR_peek_error' 'unsigned long (void)'
+`-ImplicitCastExpr 0xe9e0a78 <../../include/openssl/err.h:246:44> 'unsigned long' <IntegralCast>
+  `-IntegerLiteral 0xe9e0a58 <col:44> 'long' 4095
+([B36.4]) & [B36.6]
+   8: CStyleCastExpr 0xe9e12d0 <../../include/openssl/err.h:246:34, col:50> 'int' <IntegralCast>
+`-ParenExpr 0xe9e0b00 <col:39, col:50> 'unsigned long'
+  `-BinaryOperator 0xe9e0a90 <col:40, col:44> 'unsigned long' '&'
+    |-ParenExpr 0xe9e0a38 <col:40, col:42> 'unsigned long'
+    | `-CallExpr 0xe9e0a10 <a_d2i_fp.c:192:32, col:47> 'unsigned long'
+    |   `-ImplicitCastExpr 0xe9e09f8 <col:32> 'unsigned long (*)(void)' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0xe9e09d0 <col:32> 'unsigned long (void)' Function 0xe8e52a0 'ERR_peek_error' 'unsigned long (void)'
+    `-ImplicitCastExpr 0xe9e0a78 <../../include/openssl/err.h:246:44> 'unsigned long' <IntegralCast>
+      `-IntegerLiteral 0xe9e0a58 <col:44> 'long' 4095
+(int)([B36.7]) (CStyleCastExpr, IntegralCast, int)
+   9: ImplicitCastExpr 0xe9e12f8 <../../include/openssl/err.h:246:34, col:50> 'unsigned long' <IntegralCast>
+`-CStyleCastExpr 0xe9e12d0 <col:34, col:50> 'int' <IntegralCast>
+  `-ParenExpr 0xe9e0b00 <col:39, col:50> 'unsigned long'
+    `-BinaryOperator 0xe9e0a90 <col:40, col:44> 'unsigned long' '&'
+      |-ParenExpr 0xe9e0a38 <col:40, col:42> 'unsigned long'
+      | `-CallExpr 0xe9e0a10 <a_d2i_fp.c:192:32, col:47> 'unsigned long'
+      |   `-ImplicitCastExpr 0xe9e09f8 <col:32> 'unsigned long (*)(void)' <FunctionToPointerDecay>
+      |     `-DeclRefExpr 0xe9e09d0 <col:32> 'unsigned long (void)' Function 0xe8e52a0 'ERR_peek_error' 'unsigned long (void)'
+      `-ImplicitCastExpr 0xe9e0a78 <../../include/openssl/err.h:246:44> 'unsigned long' <IntegralCast>
+        `-IntegerLiteral 0xe9e0a58 <col:44> 'long' 4095
+[B36.8] (ImplicitCastExpr, IntegralCast, unsigned long)
+  10: DeclRefExpr 0xe9e09a8 <a_d2i_fp.c:192:13> 'unsigned long' lvalue Var 0xe9e0930 'e' 'unsigned long'
+e
+  11: BinaryOperator 0xe9e1310 <a_d2i_fp.c:192:13, ../../include/openssl/err.h:246:50> 'unsigned long' '='
+|-DeclRefExpr 0xe9e09a8 <a_d2i_fp.c:192:13> 'unsigned long' lvalue Var 0xe9e0930 'e' 'unsigned long'
+`-ImplicitCastExpr 0xe9e12f8 <../../include/openssl/err.h:246:34, col:50> 'unsigned long' <IntegralCast>
+  `-CStyleCastExpr 0xe9e12d0 <col:34, col:50> 'int' <IntegralCast>
+    `-ParenExpr 0xe9e0b00 <col:39, col:50> 'unsigned long'
+      `-BinaryOperator 0xe9e0a90 <col:40, col:44> 'unsigned long' '&'
+        |-ParenExpr 0xe9e0a38 <col:40, col:42> 'unsigned long'
+        | `-CallExpr 0xe9e0a10 <a_d2i_fp.c:192:32, col:47> 'unsigned long'
+        |   `-ImplicitCastExpr 0xe9e09f8 <col:32> 'unsigned long (*)(void)' <FunctionToPointerDecay>
+        |     `-DeclRefExpr 0xe9e09d0 <col:32> 'unsigned long (void)' Function 0xe8e52a0 'ERR_peek_error' 'unsigned long (void)'
+        `-ImplicitCastExpr 0xe9e0a78 <../../include/openssl/err.h:246:44> 'unsigned long' <IntegralCast>
+          `-IntegerLiteral 0xe9e0a58 <col:44> 'long' 4095
+[B36.10] = [B36.9]
+  12: DeclRefExpr 0xe9e1338 <a_d2i_fp.c:193:17> 'unsigned long' lvalue Var 0xe9e0930 'e' 'unsigned long'
+e
+  13: ImplicitCastExpr 0xe9e1380 <a_d2i_fp.c:193:17> 'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e1338 <col:17> 'unsigned long' lvalue Var 0xe9e0930 'e' 'unsigned long'
+[B36.12] (ImplicitCastExpr, LValueToRValue, unsigned long)
+  14: IntegerLiteral 0xe9e1360 <../../include/openssl/asn1.h:1393:59> 'int' 155
+155
+  15: ImplicitCastExpr 0xe9e1398 <../../include/openssl/asn1.h:1393:59> 'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9e1360 <col:59> 'int' 155
+[B36.14] (ImplicitCastExpr, IntegralCast, unsigned long)
+  16: BinaryOperator 0xe9e13b0 <a_d2i_fp.c:193:17, ../../include/openssl/asn1.h:1393:59> 'int' '!='
+|-ImplicitCastExpr 0xe9e1380 <a_d2i_fp.c:193:17> 'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e1338 <col:17> 'unsigned long' lvalue Var 0xe9e0930 'e' 'unsigned long'
+`-ImplicitCastExpr 0xe9e1398 <../../include/openssl/asn1.h:1393:59> 'unsigned long' <IntegralCast>
+  `-IntegerLiteral 0xe9e1360 <col:59> 'int' 155
+[B36.13] != [B36.15]
+   T: if [B36.16]
+   Preds (1): B37
+   Succs (2): B35 B34
+
+ [B37]
+   1: DeclRefExpr 0xe9e00b8 <a_d2i_fp.c:185:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+b
+   2: ImplicitCastExpr 0xe9e00e0 <a_d2i_fp.c:185:32> 'BUF_MEM *' <LValueToRValue>
+`-DeclRefExpr 0xe9e00b8 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B37.1] (ImplicitCastExpr, LValueToRValue, BUF_MEM *)
+   3: MemberExpr 0xe9e00f8 <a_d2i_fp.c:185:32, col:35> 'char *' lvalue ->data 0xe8837e8
+`-ImplicitCastExpr 0xe9e00e0 <col:32> 'BUF_MEM *' <LValueToRValue>
+  `-DeclRefExpr 0xe9e00b8 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B37.2]->data
+   4: ImplicitCastExpr 0xe9e0158 <a_d2i_fp.c:185:32, col:35> 'char *' <LValueToRValue>
+`-MemberExpr 0xe9e00f8 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+  `-ImplicitCastExpr 0xe9e00e0 <col:32> 'BUF_MEM *' <LValueToRValue>
+    `-DeclRefExpr 0xe9e00b8 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B37.3] (ImplicitCastExpr, LValueToRValue, char *)
+   5: DeclRefExpr 0xe9e0130 <a_d2i_fp.c:185:40> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+   6: ImplicitCastExpr 0xe9e0170 <a_d2i_fp.c:185:40> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e0130 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B37.5] (ImplicitCastExpr, LValueToRValue, size_t)
+   7: ArraySubscriptExpr 0xe9e0188 <a_d2i_fp.c:185:32, col:43> 'char' lvalue
+|-ImplicitCastExpr 0xe9e0158 <col:32, col:35> 'char *' <LValueToRValue>
+| `-MemberExpr 0xe9e00f8 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+|   `-ImplicitCastExpr 0xe9e00e0 <col:32> 'BUF_MEM *' <LValueToRValue>
+|     `-DeclRefExpr 0xe9e00b8 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+`-ImplicitCastExpr 0xe9e0170 <col:40> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e0130 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B37.4][[B37.6]]
+   8: UnaryOperator 0xe9e01d0 <a_d2i_fp.c:185:30, col:44> 'char *' prefix '&'
+`-ParenExpr 0xe9e01b0 <col:31, col:44> 'char' lvalue
+  `-ArraySubscriptExpr 0xe9e0188 <col:32, col:43> 'char' lvalue
+    |-ImplicitCastExpr 0xe9e0158 <col:32, col:35> 'char *' <LValueToRValue>
+    | `-MemberExpr 0xe9e00f8 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+    |   `-ImplicitCastExpr 0xe9e00e0 <col:32> 'BUF_MEM *' <LValueToRValue>
+    |     `-DeclRefExpr 0xe9e00b8 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+    `-ImplicitCastExpr 0xe9e0170 <col:40> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9e0130 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+&([B37.7])
+   9: CStyleCastExpr 0xe9e0208 <a_d2i_fp.c:185:13, col:44> 'unsigned char *' <BitCast>
+`-UnaryOperator 0xe9e01d0 <col:30, col:44> 'char *' prefix '&'
+  `-ParenExpr 0xe9e01b0 <col:31, col:44> 'char' lvalue
+    `-ArraySubscriptExpr 0xe9e0188 <col:32, col:43> 'char' lvalue
+      |-ImplicitCastExpr 0xe9e0158 <col:32, col:35> 'char *' <LValueToRValue>
+      | `-MemberExpr 0xe9e00f8 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+      |   `-ImplicitCastExpr 0xe9e00e0 <col:32> 'BUF_MEM *' <LValueToRValue>
+      |     `-DeclRefExpr 0xe9e00b8 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+      `-ImplicitCastExpr 0xe9e0170 <col:40> 'size_t':'unsigned long' <LValueToRValue>
+        `-DeclRefExpr 0xe9e0130 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+(unsigned char *)[B37.8] (CStyleCastExpr, BitCast, unsigned char *)
+  10: DeclRefExpr 0xe9e0090 <a_d2i_fp.c:185:9> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+p
+  11: BinaryOperator 0xe9e0230 <a_d2i_fp.c:185:9, col:44> 'unsigned char *' '='
+|-DeclRefExpr 0xe9e0090 <col:9> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+`-CStyleCastExpr 0xe9e0208 <col:13, col:44> 'unsigned char *' <BitCast>
+  `-UnaryOperator 0xe9e01d0 <col:30, col:44> 'char *' prefix '&'
+    `-ParenExpr 0xe9e01b0 <col:31, col:44> 'char' lvalue
+      `-ArraySubscriptExpr 0xe9e0188 <col:32, col:43> 'char' lvalue
+        |-ImplicitCastExpr 0xe9e0158 <col:32, col:35> 'char *' <LValueToRValue>
+        | `-MemberExpr 0xe9e00f8 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+        |   `-ImplicitCastExpr 0xe9e00e0 <col:32> 'BUF_MEM *' <LValueToRValue>
+        |     `-DeclRefExpr 0xe9e00b8 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+        `-ImplicitCastExpr 0xe9e0170 <col:40> 'size_t':'unsigned long' <LValueToRValue>
+          `-DeclRefExpr 0xe9e0130 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B37.10] = [B37.9]
+  12: DeclRefExpr 0xe9e02b8 <a_d2i_fp.c:186:15> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+p
+  13: ImplicitCastExpr 0xe9e02e0 <a_d2i_fp.c:186:15> 'unsigned char *' <LValueToRValue>
+`-DeclRefExpr 0xe9e02b8 <col:15> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+[B37.12] (ImplicitCastExpr, LValueToRValue, unsigned char *)
+  14: ImplicitCastExpr 0xe9e02f8 <a_d2i_fp.c:186:15> 'const unsigned char *' <BitCast>
+`-ImplicitCastExpr 0xe9e02e0 <col:15> 'unsigned char *' <LValueToRValue>
+  `-DeclRefExpr 0xe9e02b8 <col:15> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+[B37.13] (ImplicitCastExpr, BitCast, const unsigned char *)
+  15: DeclRefExpr 0xe9e0258 <a_d2i_fp.c:186:9> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+  16: MemberExpr 0xe9e0280 <a_d2i_fp.c:186:9, col:11> 'const unsigned char *' lvalue .p 0xe932788
+`-DeclRefExpr 0xe9e0258 <col:9> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B37.15].p
+  17: BinaryOperator 0xe9e0310 <a_d2i_fp.c:186:9, col:15> 'const unsigned char *' '='
+|-MemberExpr 0xe9e0280 <col:9, col:11> 'const unsigned char *' lvalue .p 0xe932788
+| `-DeclRefExpr 0xe9e0258 <col:9> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+`-ImplicitCastExpr 0xe9e02f8 <col:15> 'const unsigned char *' <BitCast>
+  `-ImplicitCastExpr 0xe9e02e0 <col:15> 'unsigned char *' <LValueToRValue>
+    `-DeclRefExpr 0xe9e02b8 <col:15> 'unsigned char *' lvalue Var 0xe9ddfc0 'p' 'unsigned char *'
+[B37.16] = [B37.14]
+  18: DeclRefExpr 0xe9e0398 <a_d2i_fp.c:187:17> 'int (const unsigned char **, long *, int *, int *, long)' Function 0xe659ce8 'ASN1_get_object' 'int (const unsigned char **, long *, int *, int *, long)'
+ASN1_get_object
+  19: ImplicitCastExpr 0xe9e0718 <a_d2i_fp.c:187:17> 'int (*)(const unsigned char **, long *, int *, int *, long)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9e0398 <col:17> 'int (const unsigned char **, long *, int *, int *, long)' Function 0xe659ce8 'ASN1_get_object' 'int (const unsigned char **, long *, int *, int *, long)'
+[B37.18] (ImplicitCastExpr, FunctionToPointerDecay, int (*)(const unsigned char **, long *, int *, int *, long))
+  20: DeclRefExpr 0xe9e03c0 <a_d2i_fp.c:187:35> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+  21: MemberExpr 0xe9e03e8 <a_d2i_fp.c:187:35, col:37> 'const unsigned char *' lvalue .p 0xe932788
+`-DeclRefExpr 0xe9e03c0 <col:35> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B37.20].p
+  22: UnaryOperator 0xe9e0440 <a_d2i_fp.c:187:33, col:38> 'const unsigned char **' prefix '&'
+`-ParenExpr 0xe9e0420 <col:34, col:38> 'const unsigned char *' lvalue
+  `-MemberExpr 0xe9e03e8 <col:35, col:37> 'const unsigned char *' lvalue .p 0xe932788
+    `-DeclRefExpr 0xe9e03c0 <col:35> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+&([B37.21])
+  23: DeclRefExpr 0xe9e0460 <a_d2i_fp.c:187:43> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+  24: MemberExpr 0xe9e0488 <a_d2i_fp.c:187:43, col:45> 'long' lvalue .slen 0xe9329c8
+`-DeclRefExpr 0xe9e0460 <col:43> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B37.23].slen
+  25: UnaryOperator 0xe9e04e0 <a_d2i_fp.c:187:41, col:49> 'long *' prefix '&'
+`-ParenExpr 0xe9e04c0 <col:42, col:49> 'long' lvalue
+  `-MemberExpr 0xe9e0488 <col:43, col:45> 'long' lvalue .slen 0xe9329c8
+    `-DeclRefExpr 0xe9e0460 <col:43> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+&([B37.24])
+  26: DeclRefExpr 0xe9e0500 <a_d2i_fp.c:187:54> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+  27: MemberExpr 0xe9e0528 <a_d2i_fp.c:187:54, col:56> 'int' lvalue .tag 0xe932908
+`-DeclRefExpr 0xe9e0500 <col:54> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B37.26].tag
+  28: UnaryOperator 0xe9e0580 <a_d2i_fp.c:187:52, col:59> 'int *' prefix '&'
+`-ParenExpr 0xe9e0560 <col:53, col:59> 'int' lvalue
+  `-MemberExpr 0xe9e0528 <col:54, col:56> 'int' lvalue .tag 0xe932908
+    `-DeclRefExpr 0xe9e0500 <col:54> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+&([B37.27])
+  29: DeclRefExpr 0xe9e05a0 <a_d2i_fp.c:187:64> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+  30: MemberExpr 0xe9e05c8 <a_d2i_fp.c:187:64, col:66> 'int' lvalue .xclass 0xe932968
+`-DeclRefExpr 0xe9e05a0 <col:64> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B37.29].xclass
+  31: UnaryOperator 0xe9e0620 <a_d2i_fp.c:187:62, col:72> 'int *' prefix '&'
+`-ParenExpr 0xe9e0600 <col:63, col:72> 'int' lvalue
+  `-MemberExpr 0xe9e05c8 <col:64, col:66> 'int' lvalue .xclass 0xe932968
+    `-DeclRefExpr 0xe9e05a0 <col:64> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+&([B37.30])
+  32: DeclRefExpr 0xe9e0640 <a_d2i_fp.c:188:33> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+  33: ImplicitCastExpr 0xe9e0690 <a_d2i_fp.c:188:33> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e0640 <col:33> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B37.32] (ImplicitCastExpr, LValueToRValue, size_t)
+  34: DeclRefExpr 0xe9e0668 <a_d2i_fp.c:188:39> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+  35: ImplicitCastExpr 0xe9e06a8 <a_d2i_fp.c:188:39> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9e0668 <col:39> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B37.34] (ImplicitCastExpr, LValueToRValue, size_t)
+  36: BinaryOperator 0xe9e06c0 <a_d2i_fp.c:188:33, col:39> 'unsigned long' '-'
+|-ImplicitCastExpr 0xe9e0690 <col:33> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9e0640 <col:33> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9e06a8 <col:39> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9e0668 <col:39> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B37.33] - [B37.35]
+  37: ImplicitCastExpr 0xe9e0780 <a_d2i_fp.c:188:33, col:39> 'long' <IntegralCast>
+`-BinaryOperator 0xe9e06c0 <col:33, col:39> 'unsigned long' '-'
+  |-ImplicitCastExpr 0xe9e0690 <col:33> 'size_t':'unsigned long' <LValueToRValue>
+  | `-DeclRefExpr 0xe9e0640 <col:33> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+  `-ImplicitCastExpr 0xe9e06a8 <col:39> 'size_t':'unsigned long' <LValueToRValue>
+    `-DeclRefExpr 0xe9e0668 <col:39> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B37.36] (ImplicitCastExpr, IntegralCast, long)
+  38: CallExpr 0xe9e0730 <a_d2i_fp.c:187:17, line:188:42> 'int'
+|-ImplicitCastExpr 0xe9e0718 <line:187:17> 'int (*)(const unsigned char **, long *, int *, int *, long)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9e0398 <col:17> 'int (const unsigned char **, long *, int *, int *, long)' Function 0xe659ce8 'ASN1_get_object' 'int (const unsigned char **, long *, int *, int *, long)'
+|-UnaryOperator 0xe9e0440 <col:33, col:38> 'const unsigned char **' prefix '&'
+| `-ParenExpr 0xe9e0420 <col:34, col:38> 'const unsigned char *' lvalue
+|   `-MemberExpr 0xe9e03e8 <col:35, col:37> 'const unsigned char *' lvalue .p 0xe932788
+|     `-DeclRefExpr 0xe9e03c0 <col:35> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+|-UnaryOperator 0xe9e04e0 <col:41, col:49> 'long *' prefix '&'
+| `-ParenExpr 0xe9e04c0 <col:42, col:49> 'long' lvalue
+|   `-MemberExpr 0xe9e0488 <col:43, col:45> 'long' lvalue .slen 0xe9329c8
+|     `-DeclRefExpr 0xe9e0460 <col:43> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+|-UnaryOperator 0xe9e0580 <col:52, col:59> 'int *' prefix '&'
+| `-ParenExpr 0xe9e0560 <col:53, col:59> 'int' lvalue
+|   `-MemberExpr 0xe9e0528 <col:54, col:56> 'int' lvalue .tag 0xe932908
+|     `-DeclRefExpr 0xe9e0500 <col:54> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+|-UnaryOperator 0xe9e0620 <col:62, col:72> 'int *' prefix '&'
+| `-ParenExpr 0xe9e0600 <col:63, col:72> 'int' lvalue
+|   `-MemberExpr 0xe9e05c8 <col:64, col:66> 'int' lvalue .xclass 0xe932968
+|     `-DeclRefExpr 0xe9e05a0 <col:64> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+`-ImplicitCastExpr 0xe9e0780 <line:188:33, col:39> 'long' <IntegralCast>
+  `-BinaryOperator 0xe9e06c0 <col:33, col:39> 'unsigned long' '-'
+    |-ImplicitCastExpr 0xe9e0690 <col:33> 'size_t':'unsigned long' <LValueToRValue>
+    | `-DeclRefExpr 0xe9e0640 <col:33> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+    `-ImplicitCastExpr 0xe9e06a8 <col:39> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9e0668 <col:39> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B37.19]([B37.22], [B37.25], [B37.28], [B37.31], [B37.37])
+  39: DeclRefExpr 0xe9e0338 <a_d2i_fp.c:187:9> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+  40: MemberExpr 0xe9e0360 <a_d2i_fp.c:187:9, col:11> 'int' lvalue .inf 0xe9328a8
+`-DeclRefExpr 0xe9e0338 <col:9> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B37.39].inf
+  41: BinaryOperator 0xe9e0798 <a_d2i_fp.c:187:9, line:188:42> 'int' '='
+|-MemberExpr 0xe9e0360 <line:187:9, col:11> 'int' lvalue .inf 0xe9328a8
+| `-DeclRefExpr 0xe9e0338 <col:9> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+`-CallExpr 0xe9e0730 <col:17, line:188:42> 'int'
+  |-ImplicitCastExpr 0xe9e0718 <line:187:17> 'int (*)(const unsigned char **, long *, int *, int *, long)' <FunctionToPointerDecay>
+  | `-DeclRefExpr 0xe9e0398 <col:17> 'int (const unsigned char **, long *, int *, int *, long)' Function 0xe659ce8 'ASN1_get_object' 'int (const unsigned char **, long *, int *, int *, long)'
+  |-UnaryOperator 0xe9e0440 <col:33, col:38> 'const unsigned char **' prefix '&'
+  | `-ParenExpr 0xe9e0420 <col:34, col:38> 'const unsigned char *' lvalue
+  |   `-MemberExpr 0xe9e03e8 <col:35, col:37> 'const unsigned char *' lvalue .p 0xe932788
+  |     `-DeclRefExpr 0xe9e03c0 <col:35> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+  |-UnaryOperator 0xe9e04e0 <col:41, col:49> 'long *' prefix '&'
+  | `-ParenExpr 0xe9e04c0 <col:42, col:49> 'long' lvalue
+  |   `-MemberExpr 0xe9e0488 <col:43, col:45> 'long' lvalue .slen 0xe9329c8
+  |     `-DeclRefExpr 0xe9e0460 <col:43> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+  |-UnaryOperator 0xe9e0580 <col:52, col:59> 'int *' prefix '&'
+  | `-ParenExpr 0xe9e0560 <col:53, col:59> 'int' lvalue
+  |   `-MemberExpr 0xe9e0528 <col:54, col:56> 'int' lvalue .tag 0xe932908
+  |     `-DeclRefExpr 0xe9e0500 <col:54> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+  |-UnaryOperator 0xe9e0620 <col:62, col:72> 'int *' prefix '&'
+  | `-ParenExpr 0xe9e0600 <col:63, col:72> 'int' lvalue
+  |   `-MemberExpr 0xe9e05c8 <col:64, col:66> 'int' lvalue .xclass 0xe932968
+  |     `-DeclRefExpr 0xe9e05a0 <col:64> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+  `-ImplicitCastExpr 0xe9e0780 <line:188:33, col:39> 'long' <IntegralCast>
+    `-BinaryOperator 0xe9e06c0 <col:33, col:39> 'unsigned long' '-'
+      |-ImplicitCastExpr 0xe9e0690 <col:33> 'size_t':'unsigned long' <LValueToRValue>
+      | `-DeclRefExpr 0xe9e0640 <col:33> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+      `-ImplicitCastExpr 0xe9e06a8 <col:39> 'size_t':'unsigned long' <LValueToRValue>
+        `-DeclRefExpr 0xe9e0668 <col:39> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B37.40] = [B37.38]
+  42: DeclRefExpr 0xe9e0858 <a_d2i_fp.c:189:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+c
+  43: MemberExpr 0xe9e0880 <a_d2i_fp.c:189:13, col:15> 'int' lvalue .inf 0xe9328a8
+`-DeclRefExpr 0xe9e0858 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B37.42].inf
+  44: ImplicitCastExpr 0xe9e08d8 <a_d2i_fp.c:189:13, col:15> 'int' <LValueToRValue>
+`-MemberExpr 0xe9e0880 <col:13, col:15> 'int' lvalue .inf 0xe9328a8
+  `-DeclRefExpr 0xe9e0858 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+[B37.43] (ImplicitCastExpr, LValueToRValue, int)
+  45: IntegerLiteral 0xe9e08b8 <a_d2i_fp.c:189:21> 'int' 128
+128
+  46: BinaryOperator 0xe9e08f0 <a_d2i_fp.c:189:13, col:21> 'int' '&'
+|-ImplicitCastExpr 0xe9e08d8 <col:13, col:15> 'int' <LValueToRValue>
+| `-MemberExpr 0xe9e0880 <col:13, col:15> 'int' lvalue .inf 0xe9328a8
+|   `-DeclRefExpr 0xe9e0858 <col:13> 'ASN1_const_CTX':'struct asn1_const_ctx_st' lvalue Var 0xe9de0d8 'c' 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+`-IntegerLiteral 0xe9e08b8 <col:21> 'int' 128
+[B37.44] & [B37.45]
+   T: if [B37.46]
+   Preds (3): B38 B41 B48
+   Succs (2): B36 B33
+
+ [B38]
+   1: DeclRefExpr 0xe9dff10 <a_d2i_fp.c:180:17> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   2: DeclRefExpr 0xe9dff38 <a_d2i_fp.c:180:24> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+   3: ImplicitCastExpr 0xe9dff60 <a_d2i_fp.c:180:24> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9dff38 <col:24> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B38.2] (ImplicitCastExpr, LValueToRValue, int)
+   4: ImplicitCastExpr 0xe9dff78 <a_d2i_fp.c:180:24> 'unsigned long' <IntegralCast>
+`-ImplicitCastExpr 0xe9dff60 <col:24> 'int' <LValueToRValue>
+  `-DeclRefExpr 0xe9dff38 <col:24> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B38.3] (ImplicitCastExpr, IntegralCast, unsigned long)
+   5: CompoundAssignOperator 0xe9dff90 <a_d2i_fp.c:180:17, col:24> 'size_t':'unsigned long' '+=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+|-DeclRefExpr 0xe9dff10 <col:17> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9dff78 <col:24> 'unsigned long' <IntegralCast>
+  `-ImplicitCastExpr 0xe9dff60 <col:24> 'int' <LValueToRValue>
+    `-DeclRefExpr 0xe9dff38 <col:24> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B38.1] += [B38.4]
+   Preds (1): B40
+   Succs (1): B37
+
+ [B39]
+   1: DeclRefExpr 0xe9dfce8 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xe9dfe08 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9dfce8 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B39.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xe9dfd10 <../../include/openssl/err.h:172:34> 'int' 13
+13
+   4: IntegerLiteral 0xe9dfd30 <../../include/openssl/asn1.h:1184:59> 'int' 107
+107
+   5: IntegerLiteral 0xe9dfd70 <../../include/openssl/asn1.h:1393:59> 'int' 155
+155
+   6: StringLiteral 0xe9dfdb0 <<scratch space>:199:1> 'char [11]' lvalue "a_d2i_fp.c"
+"a_d2i_fp.c"
+   7: ImplicitCastExpr 0xe9dfe70 <<scratch space>:199:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xe9dfdb0 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B39.6] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+   8: ImplicitCastExpr 0xe9dfe88 <<scratch space>:199:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xe9dfe70 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xe9dfdb0 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B39.7] (ImplicitCastExpr, BitCast, const char *)
+   9: IntegerLiteral 0xe9dfde8 <<scratch space>:200:1> 'int' 177
+177
+  10: CallExpr 0xe9dfe20 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xe9dfe08 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9dfce8 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xe9dfd10 <line:172:34> 'int' 13
+|-ParenExpr 0xe9dfd50 <line:213:50, col:52> 'int'
+| `-IntegerLiteral 0xe9dfd30 <../../include/openssl/asn1.h:1184:59> 'int' 107
+|-ParenExpr 0xe9dfd90 <../../include/openssl/err.h:213:54, col:56> 'int'
+| `-IntegerLiteral 0xe9dfd70 <../../include/openssl/asn1.h:1393:59> 'int' 155
+|-ImplicitCastExpr 0xe9dfe88 <<scratch space>:199:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xe9dfe70 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xe9dfdb0 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+`-IntegerLiteral 0xe9dfde8 <line:200:1> 'int' 177
+[B39.2]([B39.3], ([B39.4]), ([B39.5]), [B39.8], [B39.9])
+   T: goto err;
+   Preds (1): B40
+   Succs (1): B3
+
+ [B40]
+   1: DeclRefExpr 0xe9dfbc0 <a_d2i_fp.c:176:21> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   2: ImplicitCastExpr 0xe9dfc10 <a_d2i_fp.c:176:21> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9dfbc0 <col:21> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B40.1] (ImplicitCastExpr, LValueToRValue, size_t)
+   3: DeclRefExpr 0xe9dfbe8 <a_d2i_fp.c:176:27> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+   4: ImplicitCastExpr 0xe9dfc28 <a_d2i_fp.c:176:27> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9dfbe8 <col:27> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B40.3] (ImplicitCastExpr, LValueToRValue, int)
+   5: ImplicitCastExpr 0xe9dfc40 <a_d2i_fp.c:176:27> 'unsigned long' <IntegralCast>
+`-ImplicitCastExpr 0xe9dfc28 <col:27> 'int' <LValueToRValue>
+  `-DeclRefExpr 0xe9dfbe8 <col:27> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B40.4] (ImplicitCastExpr, IntegralCast, unsigned long)
+   6: BinaryOperator 0xe9dfc58 <a_d2i_fp.c:176:21, col:27> 'unsigned long' '+'
+|-ImplicitCastExpr 0xe9dfc10 <col:21> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9dfbc0 <col:21> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9dfc40 <col:27> 'unsigned long' <IntegralCast>
+  `-ImplicitCastExpr 0xe9dfc28 <col:27> 'int' <LValueToRValue>
+    `-DeclRefExpr 0xe9dfbe8 <col:27> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B40.2] + [B40.5]
+   7: DeclRefExpr 0xe9dfc80 <a_d2i_fp.c:176:31> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   8: ImplicitCastExpr 0xe9dfca8 <a_d2i_fp.c:176:31> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9dfc80 <col:31> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B40.7] (ImplicitCastExpr, LValueToRValue, size_t)
+   9: BinaryOperator 0xe9dfcc0 <a_d2i_fp.c:176:21, col:31> 'int' '<'
+|-BinaryOperator 0xe9dfc58 <col:21, col:27> 'unsigned long' '+'
+| |-ImplicitCastExpr 0xe9dfc10 <col:21> 'size_t':'unsigned long' <LValueToRValue>
+| | `-DeclRefExpr 0xe9dfbc0 <col:21> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+| `-ImplicitCastExpr 0xe9dfc40 <col:27> 'unsigned long' <IntegralCast>
+|   `-ImplicitCastExpr 0xe9dfc28 <col:27> 'int' <LValueToRValue>
+|     `-DeclRefExpr 0xe9dfbe8 <col:27> 'int' lvalue Var 0xe9de050 'i' 'int'
+`-ImplicitCastExpr 0xe9dfca8 <col:31> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9dfc80 <col:31> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B40.6] < [B40.8]
+   T: if [B40.9]
+   Preds (1): B41
+   Succs (2): B39 B38
+
+ [B41]
+   1: DeclRefExpr 0xe9dfb38 <a_d2i_fp.c:175:17> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+   2: ImplicitCastExpr 0xe9dfb80 <a_d2i_fp.c:175:17> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9dfb38 <col:17> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B41.1] (ImplicitCastExpr, LValueToRValue, int)
+   3: IntegerLiteral 0xe9dfb60 <a_d2i_fp.c:175:21> 'int' 0
+0
+   4: BinaryOperator 0xe9dfb98 <a_d2i_fp.c:175:17, col:21> 'int' '>'
+|-ImplicitCastExpr 0xe9dfb80 <col:17> 'int' <LValueToRValue>
+| `-DeclRefExpr 0xe9dfb38 <col:17> 'int' lvalue Var 0xe9de050 'i' 'int'
+`-IntegerLiteral 0xe9dfb60 <col:21> 'int' 0
+[B41.2] > [B41.3]
+   T: if [B41.4]
+   Preds (2): B43 B44
+   Succs (2): B40 B37
+
+ [B42]
+   1: DeclRefExpr 0xe9df910 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xe9dfa30 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9df910 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B42.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xe9df938 <../../include/openssl/err.h:172:34> 'int' 13
+13
+   4: IntegerLiteral 0xe9df958 <../../include/openssl/asn1.h:1184:59> 'int' 107
+107
+   5: IntegerLiteral 0xe9df998 <../../include/openssl/asn1.h:1370:59> 'int' 142
+142
+   6: StringLiteral 0xe9df9d8 <<scratch space>:197:1> 'char [11]' lvalue "a_d2i_fp.c"
+"a_d2i_fp.c"
+   7: ImplicitCastExpr 0xe9dfa98 <<scratch space>:197:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xe9df9d8 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B42.6] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+   8: ImplicitCastExpr 0xe9dfab0 <<scratch space>:197:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xe9dfa98 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xe9df9d8 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B42.7] (ImplicitCastExpr, BitCast, const char *)
+   9: IntegerLiteral 0xe9dfa10 <<scratch space>:198:1> 'int' 172
+172
+  10: CallExpr 0xe9dfa48 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xe9dfa30 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9df910 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xe9df938 <line:172:34> 'int' 13
+|-ParenExpr 0xe9df978 <line:213:50, col:52> 'int'
+| `-IntegerLiteral 0xe9df958 <../../include/openssl/asn1.h:1184:59> 'int' 107
+|-ParenExpr 0xe9df9b8 <../../include/openssl/err.h:213:54, col:56> 'int'
+| `-IntegerLiteral 0xe9df998 <../../include/openssl/asn1.h:1370:59> 'int' 142
+|-ImplicitCastExpr 0xe9dfab0 <<scratch space>:197:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xe9dfa98 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xe9df9d8 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+`-IntegerLiteral 0xe9dfa10 <line:198:1> 'int' 172
+[B42.2]([B42.3], ([B42.4]), ([B42.5]), [B42.8], [B42.9])
+   T: goto err;
+   Preds (1): B43
+   Succs (1): B3
+
+ [B43]
+   1: DeclRefExpr 0xe9df7a0 <a_d2i_fp.c:171:30> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   2: ImplicitCastExpr 0xe9df7f0 <a_d2i_fp.c:171:30> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9df7a0 <col:30> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B43.1] (ImplicitCastExpr, LValueToRValue, size_t)
+   3: DeclRefExpr 0xe9df7c8 <a_d2i_fp.c:171:36> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+   4: ImplicitCastExpr 0xe9df808 <a_d2i_fp.c:171:36> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9df7c8 <col:36> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B43.3] (ImplicitCastExpr, LValueToRValue, size_t)
+   5: BinaryOperator 0xe9df820 <a_d2i_fp.c:171:30, col:36> 'unsigned long' '-'
+|-ImplicitCastExpr 0xe9df7f0 <col:30> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9df7a0 <col:30> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9df808 <col:36> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9df7c8 <col:36> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B43.2] - [B43.4]
+   6: IntegerLiteral 0xe9df868 <a_d2i_fp.c:171:44> 'int' 0
+0
+   7: ImplicitCastExpr 0xe9df888 <a_d2i_fp.c:171:44> 'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9df868 <col:44> 'int' 0
+[B43.6] (ImplicitCastExpr, IntegralCast, unsigned long)
+   8: BinaryOperator 0xe9df8a0 <a_d2i_fp.c:171:29, col:44> 'int' '=='
+|-ParenExpr 0xe9df848 <col:29, col:39> 'unsigned long'
+| `-BinaryOperator 0xe9df820 <col:30, col:36> 'unsigned long' '-'
+|   |-ImplicitCastExpr 0xe9df7f0 <col:30> 'size_t':'unsigned long' <LValueToRValue>
+|   | `-DeclRefExpr 0xe9df7a0 <col:30> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+|   `-ImplicitCastExpr 0xe9df808 <col:36> 'size_t':'unsigned long' <LValueToRValue>
+|     `-DeclRefExpr 0xe9df7c8 <col:36> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9df888 <col:44> 'unsigned long' <IntegralCast>
+  `-IntegerLiteral 0xe9df868 <col:44> 'int' 0
+([B43.5]) == [B43.7]
+   T: if ([B44.23]) && ([B43.8])
+   Preds (1): B44
+   Succs (2): B42 B41
+
+ [B44]
+   1: DeclRefExpr 0xe9df408 <a_d2i_fp.c:170:17> 'int (BIO *, void *, int)' Function 0xe8b1968 'BIO_read' 'int (BIO *, void *, int)'
+BIO_read
+   2: ImplicitCastExpr 0xe9df618 <a_d2i_fp.c:170:17> 'int (*)(BIO *, void *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9df408 <col:17> 'int (BIO *, void *, int)' Function 0xe8b1968 'BIO_read' 'int (BIO *, void *, int)'
+[B44.1] (ImplicitCastExpr, FunctionToPointerDecay, int (*)(BIO *, void *, int))
+   3: DeclRefExpr 0xe9df430 <a_d2i_fp.c:170:26> 'BIO *' lvalue ParmVar 0xe9ddd60 'in' 'BIO *'
+in
+   4: ImplicitCastExpr 0xe9df670 <a_d2i_fp.c:170:26> 'BIO *' <LValueToRValue>
+`-DeclRefExpr 0xe9df430 <col:26> 'BIO *' lvalue ParmVar 0xe9ddd60 'in' 'BIO *'
+[B44.3] (ImplicitCastExpr, LValueToRValue, BIO *)
+   5: DeclRefExpr 0xe9df458 <a_d2i_fp.c:170:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+b
+   6: ImplicitCastExpr 0xe9df480 <a_d2i_fp.c:170:32> 'BUF_MEM *' <LValueToRValue>
+`-DeclRefExpr 0xe9df458 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B44.5] (ImplicitCastExpr, LValueToRValue, BUF_MEM *)
+   7: MemberExpr 0xe9df498 <a_d2i_fp.c:170:32, col:35> 'char *' lvalue ->data 0xe8837e8
+`-ImplicitCastExpr 0xe9df480 <col:32> 'BUF_MEM *' <LValueToRValue>
+  `-DeclRefExpr 0xe9df458 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B44.6]->data
+   8: ImplicitCastExpr 0xe9df4f8 <a_d2i_fp.c:170:32, col:35> 'char *' <LValueToRValue>
+`-MemberExpr 0xe9df498 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+  `-ImplicitCastExpr 0xe9df480 <col:32> 'BUF_MEM *' <LValueToRValue>
+    `-DeclRefExpr 0xe9df458 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B44.7] (ImplicitCastExpr, LValueToRValue, char *)
+   9: DeclRefExpr 0xe9df4d0 <a_d2i_fp.c:170:40> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+  10: ImplicitCastExpr 0xe9df510 <a_d2i_fp.c:170:40> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9df4d0 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B44.9] (ImplicitCastExpr, LValueToRValue, size_t)
+  11: ArraySubscriptExpr 0xe9df528 <a_d2i_fp.c:170:32, col:43> 'char' lvalue
+|-ImplicitCastExpr 0xe9df4f8 <col:32, col:35> 'char *' <LValueToRValue>
+| `-MemberExpr 0xe9df498 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+|   `-ImplicitCastExpr 0xe9df480 <col:32> 'BUF_MEM *' <LValueToRValue>
+|     `-DeclRefExpr 0xe9df458 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+`-ImplicitCastExpr 0xe9df510 <col:40> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9df4d0 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B44.8][[B44.10]]
+  12: UnaryOperator 0xe9df570 <a_d2i_fp.c:170:30, col:44> 'char *' prefix '&'
+`-ParenExpr 0xe9df550 <col:31, col:44> 'char' lvalue
+  `-ArraySubscriptExpr 0xe9df528 <col:32, col:43> 'char' lvalue
+    |-ImplicitCastExpr 0xe9df4f8 <col:32, col:35> 'char *' <LValueToRValue>
+    | `-MemberExpr 0xe9df498 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+    |   `-ImplicitCastExpr 0xe9df480 <col:32> 'BUF_MEM *' <LValueToRValue>
+    |     `-DeclRefExpr 0xe9df458 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+    `-ImplicitCastExpr 0xe9df510 <col:40> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9df4d0 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+&([B44.11])
+  13: ImplicitCastExpr 0xe9df688 <a_d2i_fp.c:170:30, col:44> 'void *' <BitCast>
+`-UnaryOperator 0xe9df570 <col:30, col:44> 'char *' prefix '&'
+  `-ParenExpr 0xe9df550 <col:31, col:44> 'char' lvalue
+    `-ArraySubscriptExpr 0xe9df528 <col:32, col:43> 'char' lvalue
+      |-ImplicitCastExpr 0xe9df4f8 <col:32, col:35> 'char *' <LValueToRValue>
+      | `-MemberExpr 0xe9df498 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+      |   `-ImplicitCastExpr 0xe9df480 <col:32> 'BUF_MEM *' <LValueToRValue>
+      |     `-DeclRefExpr 0xe9df458 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+      `-ImplicitCastExpr 0xe9df510 <col:40> 'size_t':'unsigned long' <LValueToRValue>
+        `-DeclRefExpr 0xe9df4d0 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B44.12] (ImplicitCastExpr, BitCast, void *)
+  14: DeclRefExpr 0xe9df590 <a_d2i_fp.c:170:47> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+  15: ImplicitCastExpr 0xe9df6a0 <a_d2i_fp.c:170:47> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9df590 <col:47> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B44.14] (ImplicitCastExpr, LValueToRValue, size_t)
+  16: ImplicitCastExpr 0xe9df6b8 <a_d2i_fp.c:170:47> 'int' <IntegralCast>
+`-ImplicitCastExpr 0xe9df6a0 <col:47> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9df590 <col:47> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B44.15] (ImplicitCastExpr, IntegralCast, int)
+  17: CallExpr 0xe9df630 <a_d2i_fp.c:170:17, col:51> 'int'
+|-ImplicitCastExpr 0xe9df618 <col:17> 'int (*)(BIO *, void *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9df408 <col:17> 'int (BIO *, void *, int)' Function 0xe8b1968 'BIO_read' 'int (BIO *, void *, int)'
+|-ImplicitCastExpr 0xe9df670 <col:26> 'BIO *' <LValueToRValue>
+| `-DeclRefExpr 0xe9df430 <col:26> 'BIO *' lvalue ParmVar 0xe9ddd60 'in' 'BIO *'
+|-ImplicitCastExpr 0xe9df688 <col:30, col:44> 'void *' <BitCast>
+| `-UnaryOperator 0xe9df570 <col:30, col:44> 'char *' prefix '&'
+|   `-ParenExpr 0xe9df550 <col:31, col:44> 'char' lvalue
+|     `-ArraySubscriptExpr 0xe9df528 <col:32, col:43> 'char' lvalue
+|       |-ImplicitCastExpr 0xe9df4f8 <col:32, col:35> 'char *' <LValueToRValue>
+|       | `-MemberExpr 0xe9df498 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+|       |   `-ImplicitCastExpr 0xe9df480 <col:32> 'BUF_MEM *' <LValueToRValue>
+|       |     `-DeclRefExpr 0xe9df458 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+|       `-ImplicitCastExpr 0xe9df510 <col:40> 'size_t':'unsigned long' <LValueToRValue>
+|         `-DeclRefExpr 0xe9df4d0 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9df6b8 <col:47> 'int' <IntegralCast>
+  `-ImplicitCastExpr 0xe9df6a0 <col:47> 'size_t':'unsigned long' <LValueToRValue>
+    `-DeclRefExpr 0xe9df590 <col:47> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B44.2]([B44.4], [B44.13], [B44.16])
+  18: DeclRefExpr 0xe9df3e0 <a_d2i_fp.c:170:13> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+  19: BinaryOperator 0xe9df6d0 <a_d2i_fp.c:170:13, col:51> 'int' '='
+|-DeclRefExpr 0xe9df3e0 <col:13> 'int' lvalue Var 0xe9de050 'i' 'int'
+`-CallExpr 0xe9df630 <col:17, col:51> 'int'
+  |-ImplicitCastExpr 0xe9df618 <col:17> 'int (*)(BIO *, void *, int)' <FunctionToPointerDecay>
+  | `-DeclRefExpr 0xe9df408 <col:17> 'int (BIO *, void *, int)' Function 0xe8b1968 'BIO_read' 'int (BIO *, void *, int)'
+  |-ImplicitCastExpr 0xe9df670 <col:26> 'BIO *' <LValueToRValue>
+  | `-DeclRefExpr 0xe9df430 <col:26> 'BIO *' lvalue ParmVar 0xe9ddd60 'in' 'BIO *'
+  |-ImplicitCastExpr 0xe9df688 <col:30, col:44> 'void *' <BitCast>
+  | `-UnaryOperator 0xe9df570 <col:30, col:44> 'char *' prefix '&'
+  |   `-ParenExpr 0xe9df550 <col:31, col:44> 'char' lvalue
+  |     `-ArraySubscriptExpr 0xe9df528 <col:32, col:43> 'char' lvalue
+  |       |-ImplicitCastExpr 0xe9df4f8 <col:32, col:35> 'char *' <LValueToRValue>
+  |       | `-MemberExpr 0xe9df498 <col:32, col:35> 'char *' lvalue ->data 0xe8837e8
+  |       |   `-ImplicitCastExpr 0xe9df480 <col:32> 'BUF_MEM *' <LValueToRValue>
+  |       |     `-DeclRefExpr 0xe9df458 <col:32> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+  |       `-ImplicitCastExpr 0xe9df510 <col:40> 'size_t':'unsigned long' <LValueToRValue>
+  |         `-DeclRefExpr 0xe9df4d0 <col:40> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+  `-ImplicitCastExpr 0xe9df6b8 <col:47> 'int' <IntegralCast>
+    `-ImplicitCastExpr 0xe9df6a0 <col:47> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9df590 <col:47> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B44.18] = [B44.17]
+  20: DeclRefExpr 0xe9df6f8 <a_d2i_fp.c:171:18> 'int' lvalue Var 0xe9de050 'i' 'int'
+i
+  21: ImplicitCastExpr 0xe9df740 <a_d2i_fp.c:171:18> 'int' <LValueToRValue>
+`-DeclRefExpr 0xe9df6f8 <col:18> 'int' lvalue Var 0xe9de050 'i' 'int'
+[B44.20] (ImplicitCastExpr, LValueToRValue, int)
+  22: IntegerLiteral 0xe9df720 <a_d2i_fp.c:171:22> 'int' 0
+0
+  23: BinaryOperator 0xe9df758 <a_d2i_fp.c:171:18, col:22> 'int' '<'
+|-ImplicitCastExpr 0xe9df740 <col:18> 'int' <LValueToRValue>
+| `-DeclRefExpr 0xe9df6f8 <col:18> 'int' lvalue Var 0xe9de050 'i' 'int'
+`-IntegerLiteral 0xe9df720 <col:22> 'int' 0
+[B44.21] < [B44.22]
+   T: ([B44.23]) && ...
+   Preds (1): B46
+   Succs (2): B43 B41
+
+ [B45]
+   1: DeclRefExpr 0xe9df108 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xe9df290 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9df108 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B45.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xe9df130 <../../include/openssl/err.h:172:34> 'int' 13
+13
+   4: IntegerLiteral 0xe9df150 <../../include/openssl/asn1.h:1184:59> 'int' 107
+107
+   5: IntegerLiteral 0xe9df190 <../../include/openssl/err.h:302:51> 'int' 1
+1
+   6: IntegerLiteral 0xe9df1b0 <../../include/openssl/err.h:301:50> 'int' 64
+64
+   7: BinaryOperator 0xe9df1d0 <../../include/openssl/err.h:302:51, line:301:50> 'int' '|'
+|-IntegerLiteral 0xe9df190 <line:302:51> 'int' 1
+`-IntegerLiteral 0xe9df1b0 <line:301:50> 'int' 64
+[B45.5] | [B45.6]
+   8: StringLiteral 0xe9df238 <<scratch space>:195:1> 'char [11]' lvalue "a_d2i_fp.c"
+"a_d2i_fp.c"
+   9: ImplicitCastExpr 0xe9df2f8 <<scratch space>:195:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xe9df238 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B45.8] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+  10: ImplicitCastExpr 0xe9df310 <<scratch space>:195:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xe9df2f8 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xe9df238 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B45.9] (ImplicitCastExpr, BitCast, const char *)
+  11: IntegerLiteral 0xe9df270 <<scratch space>:196:1> 'int' 167
+167
+  12: CallExpr 0xe9df2a8 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xe9df290 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9df108 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xe9df130 <line:172:34> 'int' 13
+|-ParenExpr 0xe9df170 <line:213:50, col:52> 'int'
+| `-IntegerLiteral 0xe9df150 <../../include/openssl/asn1.h:1184:59> 'int' 107
+|-ParenExpr 0xe9df218 <../../include/openssl/err.h:213:54, col:56> 'int'
+| `-ParenExpr 0xe9df1f8 <line:302:50, col:64> 'int'
+|   `-BinaryOperator 0xe9df1d0 <col:51, line:301:50> 'int' '|'
+|     |-IntegerLiteral 0xe9df190 <line:302:51> 'int' 1
+|     `-IntegerLiteral 0xe9df1b0 <line:301:50> 'int' 64
+|-ImplicitCastExpr 0xe9df310 <<scratch space>:195:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xe9df2f8 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xe9df238 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+`-IntegerLiteral 0xe9df270 <line:196:1> 'int' 167
+[B45.2]([B45.3], ([B45.4]), (([B45.7])), [B45.10], [B45.11])
+   T: goto err;
+   Preds (2): B46 B47
+   Succs (1): B3
+
+ [B46]
+   1: DeclRefExpr 0xe9def00 <a_d2i_fp.c:166:38> 'int (BUF_MEM *, size_t)' Function 0xe889120 'BUF_MEM_grow_clean' 'int (BUF_MEM *, size_t)'
+BUF_MEM_grow_clean
+   2: ImplicitCastExpr 0xe9df058 <a_d2i_fp.c:166:38> 'int (*)(BUF_MEM *, size_t)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9def00 <col:38> 'int (BUF_MEM *, size_t)' Function 0xe889120 'BUF_MEM_grow_clean' 'int (BUF_MEM *, size_t)'
+[B46.1] (ImplicitCastExpr, FunctionToPointerDecay, int (*)(BUF_MEM *, size_t))
+   3: DeclRefExpr 0xe9def28 <a_d2i_fp.c:166:57> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+b
+   4: ImplicitCastExpr 0xe9df0a8 <a_d2i_fp.c:166:57> 'BUF_MEM *' <LValueToRValue>
+`-DeclRefExpr 0xe9def28 <col:57> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B46.3] (ImplicitCastExpr, LValueToRValue, BUF_MEM *)
+   5: DeclRefExpr 0xe9def50 <a_d2i_fp.c:166:60> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   6: ImplicitCastExpr 0xe9defa0 <a_d2i_fp.c:166:60> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9def50 <col:60> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B46.5] (ImplicitCastExpr, LValueToRValue, size_t)
+   7: DeclRefExpr 0xe9def78 <a_d2i_fp.c:166:66> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   8: ImplicitCastExpr 0xe9defb8 <a_d2i_fp.c:166:66> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9def78 <col:66> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B46.7] (ImplicitCastExpr, LValueToRValue, size_t)
+   9: BinaryOperator 0xe9defd0 <a_d2i_fp.c:166:60, col:66> 'unsigned long' '+'
+|-ImplicitCastExpr 0xe9defa0 <col:60> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9def50 <col:60> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9defb8 <col:66> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9def78 <col:66> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B46.6] + [B46.8]
+  10: CallExpr 0xe9df070 <a_d2i_fp.c:166:38, col:70> 'int'
+|-ImplicitCastExpr 0xe9df058 <col:38> 'int (*)(BUF_MEM *, size_t)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9def00 <col:38> 'int (BUF_MEM *, size_t)' Function 0xe889120 'BUF_MEM_grow_clean' 'int (BUF_MEM *, size_t)'
+|-ImplicitCastExpr 0xe9df0a8 <col:57> 'BUF_MEM *' <LValueToRValue>
+| `-DeclRefExpr 0xe9def28 <col:57> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+`-BinaryOperator 0xe9defd0 <col:60, col:66> 'unsigned long' '+'
+  |-ImplicitCastExpr 0xe9defa0 <col:60> 'size_t':'unsigned long' <LValueToRValue>
+  | `-DeclRefExpr 0xe9def50 <col:60> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+  `-ImplicitCastExpr 0xe9defb8 <col:66> 'size_t':'unsigned long' <LValueToRValue>
+    `-DeclRefExpr 0xe9def78 <col:66> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B46.2]([B46.4], [B46.9])
+  11: UnaryOperator 0xe9df0c0 <a_d2i_fp.c:166:37, col:70> 'int' prefix '!'
+`-CallExpr 0xe9df070 <col:38, col:70> 'int'
+  |-ImplicitCastExpr 0xe9df058 <col:38> 'int (*)(BUF_MEM *, size_t)' <FunctionToPointerDecay>
+  | `-DeclRefExpr 0xe9def00 <col:38> 'int (BUF_MEM *, size_t)' Function 0xe889120 'BUF_MEM_grow_clean' 'int (BUF_MEM *, size_t)'
+  |-ImplicitCastExpr 0xe9df0a8 <col:57> 'BUF_MEM *' <LValueToRValue>
+  | `-DeclRefExpr 0xe9def28 <col:57> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+  `-BinaryOperator 0xe9defd0 <col:60, col:66> 'unsigned long' '+'
+    |-ImplicitCastExpr 0xe9defa0 <col:60> 'size_t':'unsigned long' <LValueToRValue>
+    | `-DeclRefExpr 0xe9def50 <col:60> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+    `-ImplicitCastExpr 0xe9defb8 <col:66> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9def78 <col:66> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+![B46.10]
+   T: if [B47.15] || [B46.11]
+   Preds (1): B47
+   Succs (2): B45 B44
+
+ [B47]
+   1: DeclRefExpr 0xe9decc8 <a_d2i_fp.c:164:13> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   2: DeclRefExpr 0xe9decf0 <a_d2i_fp.c:164:22> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   3: ImplicitCastExpr 0xe9ded40 <a_d2i_fp.c:164:22> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9decf0 <col:22> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B47.2] (ImplicitCastExpr, LValueToRValue, size_t)
+   4: DeclRefExpr 0xe9ded18 <a_d2i_fp.c:164:28> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+   5: ImplicitCastExpr 0xe9ded58 <a_d2i_fp.c:164:28> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9ded18 <col:28> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B47.4] (ImplicitCastExpr, LValueToRValue, size_t)
+   6: BinaryOperator 0xe9ded70 <a_d2i_fp.c:164:22, col:28> 'unsigned long' '-'
+|-ImplicitCastExpr 0xe9ded40 <col:22> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9decf0 <col:22> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9ded58 <col:28> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9ded18 <col:28> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B47.3] - [B47.5]
+   7: CompoundAssignOperator 0xe9dedb8 <a_d2i_fp.c:164:13, col:31> 'size_t':'unsigned long' '-=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+|-DeclRefExpr 0xe9decc8 <col:13> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ParenExpr 0xe9ded98 <col:21, col:31> 'unsigned long'
+  `-BinaryOperator 0xe9ded70 <col:22, col:28> 'unsigned long' '-'
+    |-ImplicitCastExpr 0xe9ded40 <col:22> 'size_t':'unsigned long' <LValueToRValue>
+    | `-DeclRefExpr 0xe9decf0 <col:22> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+    `-ImplicitCastExpr 0xe9ded58 <col:28> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9ded18 <col:28> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B47.1] -= ([B47.6])
+   8: DeclRefExpr 0xe9dedf0 <a_d2i_fp.c:166:17> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   9: ImplicitCastExpr 0xe9dee40 <a_d2i_fp.c:166:17> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9dedf0 <col:17> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B47.8] (ImplicitCastExpr, LValueToRValue, size_t)
+  10: DeclRefExpr 0xe9dee18 <a_d2i_fp.c:166:23> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+  11: ImplicitCastExpr 0xe9dee58 <a_d2i_fp.c:166:23> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9dee18 <col:23> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B47.10] (ImplicitCastExpr, LValueToRValue, size_t)
+  12: BinaryOperator 0xe9dee70 <a_d2i_fp.c:166:17, col:23> 'unsigned long' '+'
+|-ImplicitCastExpr 0xe9dee40 <col:17> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9dedf0 <col:17> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9dee58 <col:23> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9dee18 <col:23> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B47.9] + [B47.11]
+  13: DeclRefExpr 0xe9dee98 <a_d2i_fp.c:166:30> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+  14: ImplicitCastExpr 0xe9deec0 <a_d2i_fp.c:166:30> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9dee98 <col:30> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B47.13] (ImplicitCastExpr, LValueToRValue, size_t)
+  15: BinaryOperator 0xe9deed8 <a_d2i_fp.c:166:17, col:30> 'int' '<'
+|-BinaryOperator 0xe9dee70 <col:17, col:23> 'unsigned long' '+'
+| |-ImplicitCastExpr 0xe9dee40 <col:17> 'size_t':'unsigned long' <LValueToRValue>
+| | `-DeclRefExpr 0xe9dedf0 <col:17> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+| `-ImplicitCastExpr 0xe9dee58 <col:23> 'size_t':'unsigned long' <LValueToRValue>
+|   `-DeclRefExpr 0xe9dee18 <col:23> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9deec0 <col:30> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9dee98 <col:30> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B47.12] < [B47.14]
+   T: [B47.15] || ...
+   Preds (1): B48
+   Succs (2): B45 B46
+
+ [B48]
+   1: DeclRefExpr 0xe9deb98 <a_d2i_fp.c:163:13> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+want
+   2: ImplicitCastExpr 0xe9dec88 <a_d2i_fp.c:163:13> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9deb98 <col:13> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+[B48.1] (ImplicitCastExpr, LValueToRValue, size_t)
+   3: DeclRefExpr 0xe9debc0 <a_d2i_fp.c:163:22> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+len
+   4: ImplicitCastExpr 0xe9dec10 <a_d2i_fp.c:163:22> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9debc0 <col:22> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+[B48.3] (ImplicitCastExpr, LValueToRValue, size_t)
+   5: DeclRefExpr 0xe9debe8 <a_d2i_fp.c:163:28> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+off
+   6: ImplicitCastExpr 0xe9dec28 <a_d2i_fp.c:163:28> 'size_t':'unsigned long' <LValueToRValue>
+`-DeclRefExpr 0xe9debe8 <col:28> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B48.5] (ImplicitCastExpr, LValueToRValue, size_t)
+   7: BinaryOperator 0xe9dec40 <a_d2i_fp.c:163:22, col:28> 'unsigned long' '-'
+|-ImplicitCastExpr 0xe9dec10 <col:22> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9debc0 <col:22> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+`-ImplicitCastExpr 0xe9dec28 <col:28> 'size_t':'unsigned long' <LValueToRValue>
+  `-DeclRefExpr 0xe9debe8 <col:28> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B48.4] - [B48.6]
+   8: BinaryOperator 0xe9deca0 <a_d2i_fp.c:163:13, col:31> 'int' '>='
+|-ImplicitCastExpr 0xe9dec88 <col:13> 'size_t':'unsigned long' <LValueToRValue>
+| `-DeclRefExpr 0xe9deb98 <col:13> 'size_t':'unsigned long' lvalue Var 0xe9de160 'want' 'size_t':'unsigned long'
+`-ParenExpr 0xe9dec68 <col:21, col:31> 'unsigned long'
+  `-BinaryOperator 0xe9dec40 <col:22, col:28> 'unsigned long' '-'
+    |-ImplicitCastExpr 0xe9dec10 <col:22> 'size_t':'unsigned long' <LValueToRValue>
+    | `-DeclRefExpr 0xe9debc0 <col:22> 'size_t':'unsigned long' lvalue Var 0xe9de390 'len' 'size_t':'unsigned long'
+    `-ImplicitCastExpr 0xe9dec28 <col:28> 'size_t':'unsigned long' <LValueToRValue>
+      `-DeclRefExpr 0xe9debe8 <col:28> 'size_t':'unsigned long' lvalue Var 0xe9de2d0 'off' 'size_t':'unsigned long'
+[B48.2] >= ([B48.7])
+   T: if [B48.8]
+   Preds (1): B49
+   Succs (2): B47 B37
+
+ [B49]
+   T: for (; ; )
+   Preds (2): B7 B50
+   Succs (2): B48 NULL
+
+ [B50]
+   1: DeclRefExpr 0xe9deb30 <a_d2i_fp.c:161:5> 'void (void)' Function 0xe8f5da8 'ERR_clear_error' 'void (void)'
+ERR_clear_error
+   2: ImplicitCastExpr 0xe9deb58 <a_d2i_fp.c:161:5> 'void (*)(void)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9deb30 <col:5> 'void (void)' Function 0xe8f5da8 'ERR_clear_error' 'void (void)'
+[B50.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(void))
+   3: CallExpr 0xe9deb70 <a_d2i_fp.c:161:5, col:21> 'void'
+`-ImplicitCastExpr 0xe9deb58 <col:5> 'void (*)(void)' <FunctionToPointerDecay>
+  `-DeclRefExpr 0xe9deb30 <col:5> 'void (void)' Function 0xe8f5da8 'ERR_clear_error' 'void (void)'
+[B50.2]()
+   Preds (1): B52
+   Succs (1): B49
+
+ [B51]
+   1: DeclRefExpr 0xe9de650 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xe9de7d8 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9de650 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B51.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xe9de678 <../../include/openssl/err.h:172:34> 'int' 13
+13
+   4: IntegerLiteral 0xe9de698 <../../include/openssl/asn1.h:1184:59> 'int' 107
+107
+   5: IntegerLiteral 0xe9de6d8 <../../include/openssl/err.h:302:51> 'int' 1
+1
+   6: IntegerLiteral 0xe9de6f8 <../../include/openssl/err.h:301:50> 'int' 64
+64
+   7: BinaryOperator 0xe9de718 <../../include/openssl/err.h:302:51, line:301:50> 'int' '|'
+|-IntegerLiteral 0xe9de6d8 <line:302:51> 'int' 1
+`-IntegerLiteral 0xe9de6f8 <line:301:50> 'int' 64
+[B51.5] | [B51.6]
+   8: StringLiteral 0xe9de780 <<scratch space>:193:1> 'char [11]' lvalue "a_d2i_fp.c"
+"a_d2i_fp.c"
+   9: ImplicitCastExpr 0xe9de840 <<scratch space>:193:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xe9de780 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B51.8] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+  10: ImplicitCastExpr 0xe9de858 <<scratch space>:193:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xe9de840 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xe9de780 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+[B51.9] (ImplicitCastExpr, BitCast, const char *)
+  11: IntegerLiteral 0xe9de7b8 <<scratch space>:194:1> 'int' 157
+157
+  12: CallExpr 0xe9de7f0 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xe9de7d8 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xe9de650 <col:43> 'void (int, int, int, const char *, int)' Function 0xe8e4860 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xe9de678 <line:172:34> 'int' 13
+|-ParenExpr 0xe9de6b8 <line:213:50, col:52> 'int'
+| `-IntegerLiteral 0xe9de698 <../../include/openssl/asn1.h:1184:59> 'int' 107
+|-ParenExpr 0xe9de760 <../../include/openssl/err.h:213:54, col:56> 'int'
+| `-ParenExpr 0xe9de740 <line:302:50, col:64> 'int'
+|   `-BinaryOperator 0xe9de718 <col:51, line:301:50> 'int' '|'
+|     |-IntegerLiteral 0xe9de6d8 <line:302:51> 'int' 1
+|     `-IntegerLiteral 0xe9de6f8 <line:301:50> 'int' 64
+|-ImplicitCastExpr 0xe9de858 <<scratch space>:193:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xe9de840 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xe9de780 <col:1> 'char [11]' lvalue "a_d2i_fp.c"
+`-IntegerLiteral 0xe9de7b8 <line:194:1> 'int' 157
+[B51.2]([B51.3], ([B51.4]), (([B51.7])), [B51.10], [B51.11])
+  13: IntegerLiteral 0xe9de870 <a_d2i_fp.c:158:17> 'int' 1
+1
+  14: UnaryOperator 0xe9de890 <a_d2i_fp.c:158:16, col:17> 'int' prefix '-'
+`-IntegerLiteral 0xe9de870 <col:17> 'int' 1
+-[B51.13]
+  15: ReturnStmt 0xe9de8b0 <a_d2i_fp.c:158:9, col:17>
+`-UnaryOperator 0xe9de890 <col:16, col:17> 'int' prefix '-'
+  `-IntegerLiteral 0xe9de870 <col:17> 'int' 1
+return [B51.14];
+   Preds (1): B52
+   Succs (1): B0
+
+ [B52]
+   1: DeclStmt 0xe9ddf90 <a_d2i_fp.c:146:5, col:15>col:14
+`-VarDecl 0xe9ddf30 <col:5, col:14> col:14 used b 'BUF_MEM *'
+BUF_MEM *b;
+   2: DeclStmt 0xe9de020 <a_d2i_fp.c:147:5, col:21>col:20
+`-VarDecl 0xe9ddfc0 <col:5, col:20> col:20 used p 'unsigned char *'
+unsigned char *p;
+   3: DeclStmt 0xe9de0b0 <a_d2i_fp.c:148:5, col:10>col:9
+`-VarDecl 0xe9de050 <col:5, col:9> col:9 used i 'int'
+int i;
+   4: DeclStmt 0xe9de138 <a_d2i_fp.c:149:5, col:21>col:20
+`-VarDecl 0xe9de0d8 <col:5, col:20> col:20 used c 'ASN1_const_CTX':'struct asn1_const_ctx_st'
+ASN1_const_CTX c;
+   5: IntegerLiteral 0xe9de1c0 <a_d2i_fp.c:143:23> 'int' 8
+8
+   6: ImplicitCastExpr 0xe9de1e0 <a_d2i_fp.c:143:23> 'size_t':'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9de1c0 <col:23> 'int' 8
+[B52.5] (ImplicitCastExpr, IntegralCast, size_t)
+   7: DeclStmt 0xe9de1f8 <a_d2i_fp.c:150:5, col:30>col:12
+`-VarDecl 0xe9de160 <col:5, line:143:23> line:150:12 used want 'size_t':'unsigned long' cinit
+  `-ImplicitCastExpr 0xe9de1e0 <line:143:23> 'size_t':'unsigned long' <IntegralCast>
+    `-IntegerLiteral 0xe9de1c0 <col:23> 'int' 8
+size_t want = 8;
+   8: IntegerLiteral 0xe9de288 <a_d2i_fp.c:151:15> 'int' 0
+0
+   9: DeclStmt 0xe9de2a8 <a_d2i_fp.c:151:5, col:16>col:9
+`-VarDecl 0xe9de228 <col:5, col:15> col:9 used eos 'int' cinit
+  `-IntegerLiteral 0xe9de288 <col:15> 'int' 0
+int eos = 0;
+  10: IntegerLiteral 0xe9de330 <a_d2i_fp.c:152:18> 'int' 0
+0
+  11: ImplicitCastExpr 0xe9de350 <a_d2i_fp.c:152:18> 'size_t':'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9de330 <col:18> 'int' 0
+[B52.10] (ImplicitCastExpr, IntegralCast, size_t)
+  12: DeclStmt 0xe9de368 <a_d2i_fp.c:152:5, col:19>col:12
+`-VarDecl 0xe9de2d0 <col:5, col:18> col:12 used off 'size_t':'unsigned long' cinit
+  `-ImplicitCastExpr 0xe9de350 <col:18> 'size_t':'unsigned long' <IntegralCast>
+    `-IntegerLiteral 0xe9de330 <col:18> 'int' 0
+size_t off = 0;
+  13: IntegerLiteral 0xe9de3f0 <a_d2i_fp.c:153:18> 'int' 0
+0
+  14: ImplicitCastExpr 0xe9de410 <a_d2i_fp.c:153:18> 'size_t':'unsigned long' <IntegralCast>
+`-IntegerLiteral 0xe9de3f0 <col:18> 'int' 0
+[B52.13] (ImplicitCastExpr, IntegralCast, size_t)
+  15: DeclStmt 0xe9de428 <a_d2i_fp.c:153:5, col:19>col:12
+`-VarDecl 0xe9de390 <col:5, col:18> col:12 used len 'size_t':'unsigned long' cinit
+  `-ImplicitCastExpr 0xe9de410 <col:18> 'size_t':'unsigned long' <IntegralCast>
+    `-IntegerLiteral 0xe9de3f0 <col:18> 'int' 0
+size_t len = 0;
+  16: DeclRefExpr 0xe9de468 <a_d2i_fp.c:155:9> 'BUF_MEM *(void)' Function 0xe883a00 'BUF_MEM_new' 'BUF_MEM *(void)'
+BUF_MEM_new
+  17: ImplicitCastExpr 0xe9de4e8 <a_d2i_fp.c:155:9> 'BUF_MEM *(*)(void)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xe9de468 <col:9> 'BUF_MEM *(void)' Function 0xe883a00 'BUF_MEM_new' 'BUF_MEM *(void)'
+[B52.16] (ImplicitCastExpr, FunctionToPointerDecay, BUF_MEM *(*)(void))
+  18: CallExpr 0xe9de500 <a_d2i_fp.c:155:9, col:21> 'BUF_MEM *'
+`-ImplicitCastExpr 0xe9de4e8 <col:9> 'BUF_MEM *(*)(void)' <FunctionToPointerDecay>
+  `-DeclRefExpr 0xe9de468 <col:9> 'BUF_MEM *(void)' Function 0xe883a00 'BUF_MEM_new' 'BUF_MEM *(void)'
+[B52.17]()
+  19: DeclRefExpr 0xe9de440 <a_d2i_fp.c:155:5> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+b
+  20: BinaryOperator 0xe9de528 <a_d2i_fp.c:155:5, col:21> 'BUF_MEM *' '='
+|-DeclRefExpr 0xe9de440 <col:5> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+`-CallExpr 0xe9de500 <col:9, col:21> 'BUF_MEM *'
+  `-ImplicitCastExpr 0xe9de4e8 <col:9> 'BUF_MEM *(*)(void)' <FunctionToPointerDecay>
+    `-DeclRefExpr 0xe9de468 <col:9> 'BUF_MEM *(void)' Function 0xe883a00 'BUF_MEM_new' 'BUF_MEM *(void)'
+[B52.19] = [B52.18]
+  21: DeclRefExpr 0xe9de550 <a_d2i_fp.c:156:9> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+b
+  22: ImplicitCastExpr 0xe9de5f8 <a_d2i_fp.c:156:9> 'BUF_MEM *' <LValueToRValue>
+`-DeclRefExpr 0xe9de550 <col:9> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+[B52.21] (ImplicitCastExpr, LValueToRValue, BUF_MEM *)
+  23: IntegerLiteral 0xe9de578 </usr/local/lib/clang/6.0.1/include/stddef.h:105:24> 'int' 0
+0
+  24: CStyleCastExpr 0xe9de5b0 </usr/local/lib/clang/6.0.1/include/stddef.h:105:17, col:24> 'void *' <NullToPointer>
+`-IntegerLiteral 0xe9de578 <col:24> 'int' 0
+(void *)[B52.23] (CStyleCastExpr, NullToPointer, void *)
+  25: ImplicitCastExpr 0xe9de610 </usr/local/lib/clang/6.0.1/include/stddef.h:105:16, col:25> 'BUF_MEM *' <BitCast>
+`-ParenExpr 0xe9de5d8 <col:16, col:25> 'void *'
+  `-CStyleCastExpr 0xe9de5b0 <col:17, col:24> 'void *' <NullToPointer>
+    `-IntegerLiteral 0xe9de578 <col:24> 'int' 0
+([B52.24]) (ImplicitCastExpr, BitCast, BUF_MEM *)
+  26: BinaryOperator 0xe9de628 <a_d2i_fp.c:156:9, /usr/local/lib/clang/6.0.1/include/stddef.h:105:25> 'int' '=='
+|-ImplicitCastExpr 0xe9de5f8 <a_d2i_fp.c:156:9> 'BUF_MEM *' <LValueToRValue>
+| `-DeclRefExpr 0xe9de550 <col:9> 'BUF_MEM *' lvalue Var 0xe9ddf30 'b' 'BUF_MEM *'
+`-ImplicitCastExpr 0xe9de610 </usr/local/lib/clang/6.0.1/include/stddef.h:105:16, col:25> 'BUF_MEM *' <BitCast>
+  `-ParenExpr 0xe9de5d8 <col:16, col:25> 'void *'
+    `-CStyleCastExpr 0xe9de5b0 <col:17, col:24> 'void *' <NullToPointer>
+      `-IntegerLiteral 0xe9de578 <col:24> 'int' 0
+[B52.22] == [B52.25]
+   T: if [B52.26]
+   Preds (1): B53
+   Succs (2): B51 B50
+
+ [B0 (EXIT)]
+   Preds (3): B1 B4 B51

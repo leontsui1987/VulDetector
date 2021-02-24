@@ -1,0 +1,126 @@
+static void do_free_upto(BIO *f, BIO *upto)
+ [B7 (ENTRY)]
+   Succs (1): B6
+
+ [B1]
+   1: DeclRefExpr 0xf068ed0 <cms_smime.c:137:9> 'void (BIO *)' Function 0xebc6550 'BIO_free_all' 'void (BIO *)'
+BIO_free_all
+   2: ImplicitCastExpr 0xf068f78 <cms_smime.c:137:9> 'void (*)(BIO *)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xf068ed0 <col:9> 'void (BIO *)' Function 0xebc6550 'BIO_free_all' 'void (BIO *)'
+[B1.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(BIO *))
+   3: DeclRefExpr 0xf068ef8 <cms_smime.c:137:22> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+f
+   4: ImplicitCastExpr 0xf068fc0 <cms_smime.c:137:22> 'BIO *' <LValueToRValue>
+`-DeclRefExpr 0xf068ef8 <col:22> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+[B1.3] (ImplicitCastExpr, LValueToRValue, BIO *)
+   5: CallExpr 0xf068f90 <cms_smime.c:137:9, col:23> 'void'
+|-ImplicitCastExpr 0xf068f78 <col:9> 'void (*)(BIO *)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xf068ed0 <col:9> 'void (BIO *)' Function 0xebc6550 'BIO_free_all' 'void (BIO *)'
+`-ImplicitCastExpr 0xf068fc0 <col:22> 'BIO *' <LValueToRValue>
+  `-DeclRefExpr 0xf068ef8 <col:22> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+[B1.2]([B1.4])
+   Preds (1): B6
+   Succs (1): B0
+
+ [B2]
+   1: DeclRefExpr 0xf068de8 <cms_smime.c:135:16> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+f
+   2: ImplicitCastExpr 0xf068e38 <cms_smime.c:135:16> 'BIO *' <LValueToRValue>
+`-DeclRefExpr 0xf068de8 <col:16> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+[B2.1] (ImplicitCastExpr, LValueToRValue, BIO *)
+   3: DeclRefExpr 0xf068e10 <cms_smime.c:135:21> 'BIO *' lvalue ParmVar 0xf068898 'upto' 'BIO *'
+upto
+   4: ImplicitCastExpr 0xf068e50 <cms_smime.c:135:21> 'BIO *' <LValueToRValue>
+`-DeclRefExpr 0xf068e10 <col:21> 'BIO *' lvalue ParmVar 0xf068898 'upto' 'BIO *'
+[B2.3] (ImplicitCastExpr, LValueToRValue, BIO *)
+   5: BinaryOperator 0xf068e68 <cms_smime.c:135:16, col:21> 'int' '!='
+|-ImplicitCastExpr 0xf068e38 <col:16> 'BIO *' <LValueToRValue>
+| `-DeclRefExpr 0xf068de8 <col:16> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+`-ImplicitCastExpr 0xf068e50 <col:21> 'BIO *' <LValueToRValue>
+  `-DeclRefExpr 0xf068e10 <col:21> 'BIO *' lvalue ParmVar 0xf068898 'upto' 'BIO *'
+[B2.2] != [B2.4]
+   T: do ... while [B2.5]
+   Preds (1): B3
+   Succs (2): B4 B0
+
+ [B3]
+   1: DeclRefExpr 0xf068b50 <cms_smime.c:131:20> 'BIO *(BIO *)' Function 0xebc6410 'BIO_pop' 'BIO *(BIO *)'
+BIO_pop
+   2: ImplicitCastExpr 0xf068bf8 <cms_smime.c:131:20> 'BIO *(*)(BIO *)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xf068b50 <col:20> 'BIO *(BIO *)' Function 0xebc6410 'BIO_pop' 'BIO *(BIO *)'
+[B3.1] (ImplicitCastExpr, FunctionToPointerDecay, BIO *(*)(BIO *))
+   3: DeclRefExpr 0xf068b78 <cms_smime.c:131:28> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+f
+   4: ImplicitCastExpr 0xf068c40 <cms_smime.c:131:28> 'BIO *' <LValueToRValue>
+`-DeclRefExpr 0xf068b78 <col:28> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+[B3.3] (ImplicitCastExpr, LValueToRValue, BIO *)
+   5: CallExpr 0xf068c10 <cms_smime.c:131:20, col:29> 'BIO *'
+|-ImplicitCastExpr 0xf068bf8 <col:20> 'BIO *(*)(BIO *)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xf068b50 <col:20> 'BIO *(BIO *)' Function 0xebc6410 'BIO_pop' 'BIO *(BIO *)'
+`-ImplicitCastExpr 0xf068c40 <col:28> 'BIO *' <LValueToRValue>
+  `-DeclRefExpr 0xf068b78 <col:28> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+[B3.2]([B3.4])
+   6: DeclRefExpr 0xf068b28 <cms_smime.c:131:13> 'BIO *' lvalue Var 0xf068ab0 'tbio' 'BIO *'
+tbio
+   7: BinaryOperator 0xf068c58 <cms_smime.c:131:13, col:29> 'BIO *' '='
+|-DeclRefExpr 0xf068b28 <col:13> 'BIO *' lvalue Var 0xf068ab0 'tbio' 'BIO *'
+`-CallExpr 0xf068c10 <col:20, col:29> 'BIO *'
+  |-ImplicitCastExpr 0xf068bf8 <col:20> 'BIO *(*)(BIO *)' <FunctionToPointerDecay>
+  | `-DeclRefExpr 0xf068b50 <col:20> 'BIO *(BIO *)' Function 0xebc6410 'BIO_pop' 'BIO *(BIO *)'
+  `-ImplicitCastExpr 0xf068c40 <col:28> 'BIO *' <LValueToRValue>
+    `-DeclRefExpr 0xf068b78 <col:28> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+[B3.6] = [B3.5]
+   8: DeclRefExpr 0xf068c80 <cms_smime.c:132:13> 'int (BIO *)' Function 0xebc41c8 'BIO_free' 'int (BIO *)'
+BIO_free
+   9: ImplicitCastExpr 0xf068cd0 <cms_smime.c:132:13> 'int (*)(BIO *)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xf068c80 <col:13> 'int (BIO *)' Function 0xebc41c8 'BIO_free' 'int (BIO *)'
+[B3.8] (ImplicitCastExpr, FunctionToPointerDecay, int (*)(BIO *))
+  10: DeclRefExpr 0xf068ca8 <cms_smime.c:132:22> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+f
+  11: ImplicitCastExpr 0xf068d18 <cms_smime.c:132:22> 'BIO *' <LValueToRValue>
+`-DeclRefExpr 0xf068ca8 <col:22> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+[B3.10] (ImplicitCastExpr, LValueToRValue, BIO *)
+  12: CallExpr 0xf068ce8 <cms_smime.c:132:13, col:23> 'int'
+|-ImplicitCastExpr 0xf068cd0 <col:13> 'int (*)(BIO *)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xf068c80 <col:13> 'int (BIO *)' Function 0xebc41c8 'BIO_free' 'int (BIO *)'
+`-ImplicitCastExpr 0xf068d18 <col:22> 'BIO *' <LValueToRValue>
+  `-DeclRefExpr 0xf068ca8 <col:22> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+[B3.9]([B3.11])
+  13: DeclRefExpr 0xf068d58 <cms_smime.c:133:17> 'BIO *' lvalue Var 0xf068ab0 'tbio' 'BIO *'
+tbio
+  14: ImplicitCastExpr 0xf068d80 <cms_smime.c:133:17> 'BIO *' <LValueToRValue>
+`-DeclRefExpr 0xf068d58 <col:17> 'BIO *' lvalue Var 0xf068ab0 'tbio' 'BIO *'
+[B3.13] (ImplicitCastExpr, LValueToRValue, BIO *)
+  15: DeclRefExpr 0xf068d30 <cms_smime.c:133:13> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+f
+  16: BinaryOperator 0xf068d98 <cms_smime.c:133:13, col:17> 'BIO *' '='
+|-DeclRefExpr 0xf068d30 <col:13> 'BIO *' lvalue ParmVar 0xf068828 'f' 'BIO *'
+`-ImplicitCastExpr 0xf068d80 <col:17> 'BIO *' <LValueToRValue>
+  `-DeclRefExpr 0xf068d58 <col:17> 'BIO *' lvalue Var 0xf068ab0 'tbio' 'BIO *'
+[B3.15] = [B3.14]
+   Preds (2): B4 B5
+   Succs (1): B2
+
+ [B4]
+   Preds (1): B2
+   Succs (1): B3
+
+ [B5]
+   1: DeclStmt 0xf068b10 <cms_smime.c:129:9, col:18>col:14
+`-VarDecl 0xf068ab0 <col:9, col:14> col:14 used tbio 'BIO *'
+BIO *tbio;
+   Preds (1): B6
+   Succs (1): B3
+
+ [B6]
+   1: DeclRefExpr 0xf068a60 <cms_smime.c:128:9> 'BIO *' lvalue ParmVar 0xf068898 'upto' 'BIO *'
+upto
+   2: ImplicitCastExpr 0xf068a88 <cms_smime.c:128:9> 'BIO *' <LValueToRValue>
+`-DeclRefExpr 0xf068a60 <col:9> 'BIO *' lvalue ParmVar 0xf068898 'upto' 'BIO *'
+[B6.1] (ImplicitCastExpr, LValueToRValue, BIO *)
+   T: if [B6.2]
+   Preds (1): B7
+   Succs (2): B5 B1
+
+ [B0 (EXIT)]
+   Preds (2): B1 B2

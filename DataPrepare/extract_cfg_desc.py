@@ -1,8 +1,16 @@
+#!/bin/python
+
+# =================================================================================
+# Copyright 2020 IIE, CAS
 #
-# This file extract all the subgraphs in a log produced from scan_build dumpCFG
+# This file extract all the CFGs in a log produced from scan_build dumpCFG
 # Input: the log file
-# Output: A directory of subgraphs, named as file.c#func_name
-##
+# Output: A directory of CFGs, named as file.c#func_name
+#
+# Author: Lei Cui
+# Contact: cuilei@iie.ac.cn
+# =================================================================================
+
 
 import os
 import sys
@@ -166,7 +174,7 @@ def traverse_log(log_file, output_dir):
 if __name__ == '__main__':
 
 	if len(sys.argv) != 3:
-		print "extract_scanbuild.py <graph_log>	 <output_folder>\n"
+		print "extract_cfg_desc.py <graph_log>	 <output_folder>\n"
 		exit(-1)
 
 	print sys.argv[1]

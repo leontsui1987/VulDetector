@@ -1,0 +1,195 @@
+static int rsa_item_verify(EVP_MD_CTX *ctx, const ASN1_ITEM *it, void *asn, X509_ALGOR *sigalg, ASN1_BIT_STRING *sig, EVP_PKEY *pkey)
+ [B6 (ENTRY)]
+   Succs (1): B5
+
+ [B1]
+   1: IntegerLiteral 0xdb46610 <rsa_ameth.c:705:13> 'int' 1
+1
+   2: UnaryOperator 0xdb46630 <rsa_ameth.c:705:12, col:13> 'int' prefix '-'
+`-IntegerLiteral 0xdb46610 <col:13> 'int' 1
+-[B1.1]
+   3: ReturnStmt 0xdb46650 <rsa_ameth.c:705:5, col:13>
+`-UnaryOperator 0xdb46630 <col:12, col:13> 'int' prefix '-'
+  `-IntegerLiteral 0xdb46610 <col:13> 'int' 1
+return [B1.2];
+   Preds (1): B3
+   Succs (1): B0
+
+ [B2]
+   1: IntegerLiteral 0xdb46588 <rsa_ameth.c:703:16> 'int' 2
+2
+   2: ReturnStmt 0xdb465a8 <rsa_ameth.c:703:9, col:16>
+`-IntegerLiteral 0xdb46588 <col:16> 'int' 2
+return [B2.1];
+   Preds (1): B3
+   Succs (1): B0
+
+ [B3]
+   1: DeclRefExpr 0xdb46360 <rsa_ameth.c:701:9> 'int (EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)' Function 0xdb40d18 'rsa_pss_to_ctx' 'int (EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)'
+rsa_pss_to_ctx
+   2: ImplicitCastExpr 0xdb46480 <rsa_ameth.c:701:9> 'int (*)(EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xdb46360 <col:9> 'int (EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)' Function 0xdb40d18 'rsa_pss_to_ctx' 'int (EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)'
+[B3.1] (ImplicitCastExpr, FunctionToPointerDecay, int (*)(EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *))
+   3: DeclRefExpr 0xdb46388 <rsa_ameth.c:701:24> 'EVP_MD_CTX *' lvalue ParmVar 0xdb45bd8 'ctx' 'EVP_MD_CTX *'
+ctx
+   4: ImplicitCastExpr 0xdb464e0 <rsa_ameth.c:701:24> 'EVP_MD_CTX *' <LValueToRValue>
+`-DeclRefExpr 0xdb46388 <col:24> 'EVP_MD_CTX *' lvalue ParmVar 0xdb45bd8 'ctx' 'EVP_MD_CTX *'
+[B3.3] (ImplicitCastExpr, LValueToRValue, EVP_MD_CTX *)
+   5: IntegerLiteral 0xdb463b0 </usr/local/lib/clang/6.0.1/include/stddef.h:105:24> 'int' 0
+0
+   6: CStyleCastExpr 0xdb463e8 </usr/local/lib/clang/6.0.1/include/stddef.h:105:17, col:24> 'void *' <NullToPointer>
+`-IntegerLiteral 0xdb463b0 <col:24> 'int' 0
+(void *)[B3.5] (CStyleCastExpr, NullToPointer, void *)
+   7: ImplicitCastExpr 0xdb464f8 </usr/local/lib/clang/6.0.1/include/stddef.h:105:16, col:25> 'EVP_PKEY_CTX *' <NullToPointer>
+`-ParenExpr 0xdb46410 <col:16, col:25> 'void *'
+  `-CStyleCastExpr 0xdb463e8 <col:17, col:24> 'void *' <NullToPointer>
+    `-IntegerLiteral 0xdb463b0 <col:24> 'int' 0
+([B3.6]) (ImplicitCastExpr, NullToPointer, EVP_PKEY_CTX *)
+   8: DeclRefExpr 0xdb46430 <rsa_ameth.c:701:35> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+sigalg
+   9: ImplicitCastExpr 0xdb46510 <rsa_ameth.c:701:35> 'X509_ALGOR *' <LValueToRValue>
+`-DeclRefExpr 0xdb46430 <col:35> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+[B3.8] (ImplicitCastExpr, LValueToRValue, X509_ALGOR *)
+  10: DeclRefExpr 0xdb46458 <rsa_ameth.c:701:43> 'EVP_PKEY *' lvalue ParmVar 0xdb45e10 'pkey' 'EVP_PKEY *'
+pkey
+  11: ImplicitCastExpr 0xdb46528 <rsa_ameth.c:701:43> 'EVP_PKEY *' <LValueToRValue>
+`-DeclRefExpr 0xdb46458 <col:43> 'EVP_PKEY *' lvalue ParmVar 0xdb45e10 'pkey' 'EVP_PKEY *'
+[B3.10] (ImplicitCastExpr, LValueToRValue, EVP_PKEY *)
+  12: CallExpr 0xdb46498 <rsa_ameth.c:701:9, col:47> 'int'
+|-ImplicitCastExpr 0xdb46480 <col:9> 'int (*)(EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xdb46360 <col:9> 'int (EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)' Function 0xdb40d18 'rsa_pss_to_ctx' 'int (EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)'
+|-ImplicitCastExpr 0xdb464e0 <col:24> 'EVP_MD_CTX *' <LValueToRValue>
+| `-DeclRefExpr 0xdb46388 <col:24> 'EVP_MD_CTX *' lvalue ParmVar 0xdb45bd8 'ctx' 'EVP_MD_CTX *'
+|-ImplicitCastExpr 0xdb464f8 </usr/local/lib/clang/6.0.1/include/stddef.h:105:16, col:25> 'EVP_PKEY_CTX *' <NullToPointer>
+| `-ParenExpr 0xdb46410 <col:16, col:25> 'void *'
+|   `-CStyleCastExpr 0xdb463e8 <col:17, col:24> 'void *' <NullToPointer>
+|     `-IntegerLiteral 0xdb463b0 <col:24> 'int' 0
+|-ImplicitCastExpr 0xdb46510 <rsa_ameth.c:701:35> 'X509_ALGOR *' <LValueToRValue>
+| `-DeclRefExpr 0xdb46430 <col:35> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+`-ImplicitCastExpr 0xdb46528 <col:43> 'EVP_PKEY *' <LValueToRValue>
+  `-DeclRefExpr 0xdb46458 <col:43> 'EVP_PKEY *' lvalue ParmVar 0xdb45e10 'pkey' 'EVP_PKEY *'
+[B3.2]([B3.4], [B3.7], [B3.9], [B3.11])
+  13: IntegerLiteral 0xdb46540 <rsa_ameth.c:701:51> 'int' 0
+0
+  14: BinaryOperator 0xdb46560 <rsa_ameth.c:701:9, col:51> 'int' '>'
+|-CallExpr 0xdb46498 <col:9, col:47> 'int'
+| |-ImplicitCastExpr 0xdb46480 <col:9> 'int (*)(EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)' <FunctionToPointerDecay>
+| | `-DeclRefExpr 0xdb46360 <col:9> 'int (EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)' Function 0xdb40d18 'rsa_pss_to_ctx' 'int (EVP_MD_CTX *, EVP_PKEY_CTX *, X509_ALGOR *, EVP_PKEY *)'
+| |-ImplicitCastExpr 0xdb464e0 <col:24> 'EVP_MD_CTX *' <LValueToRValue>
+| | `-DeclRefExpr 0xdb46388 <col:24> 'EVP_MD_CTX *' lvalue ParmVar 0xdb45bd8 'ctx' 'EVP_MD_CTX *'
+| |-ImplicitCastExpr 0xdb464f8 </usr/local/lib/clang/6.0.1/include/stddef.h:105:16, col:25> 'EVP_PKEY_CTX *' <NullToPointer>
+| | `-ParenExpr 0xdb46410 <col:16, col:25> 'void *'
+| |   `-CStyleCastExpr 0xdb463e8 <col:17, col:24> 'void *' <NullToPointer>
+| |     `-IntegerLiteral 0xdb463b0 <col:24> 'int' 0
+| |-ImplicitCastExpr 0xdb46510 <rsa_ameth.c:701:35> 'X509_ALGOR *' <LValueToRValue>
+| | `-DeclRefExpr 0xdb46430 <col:35> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+| `-ImplicitCastExpr 0xdb46528 <col:43> 'EVP_PKEY *' <LValueToRValue>
+|   `-DeclRefExpr 0xdb46458 <col:43> 'EVP_PKEY *' lvalue ParmVar 0xdb45e10 'pkey' 'EVP_PKEY *'
+`-IntegerLiteral 0xdb46540 <col:51> 'int' 0
+[B3.12] > [B3.13]
+   T: if [B3.14]
+   Preds (1): B5
+   Succs (2): B2 B1
+
+ [B4]
+   1: DeclRefExpr 0xdb460f8 <../../include/openssl/err.h:135:43> 'void (int, int, int, const char *, int)' Function 0xd721380 'ERR_put_error' 'void (int, int, int, const char *, int)'
+ERR_put_error
+   2: ImplicitCastExpr 0xdb46218 <../../include/openssl/err.h:135:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xdb460f8 <col:43> 'void (int, int, int, const char *, int)' Function 0xd721380 'ERR_put_error' 'void (int, int, int, const char *, int)'
+[B4.1] (ImplicitCastExpr, FunctionToPointerDecay, void (*)(int, int, int, const char *, int))
+   3: IntegerLiteral 0xdb46120 <../../include/openssl/err.h:163:34> 'int' 4
+4
+   4: IntegerLiteral 0xdb46140 <../../include/openssl/rsa.h:548:59> 'int' 156
+156
+   5: IntegerLiteral 0xdb46180 <../../include/openssl/rsa.h:657:59> 'int' 155
+155
+   6: StringLiteral 0xdb461c0 <<scratch space>:134:1> 'char [12]' lvalue "rsa_ameth.c"
+"rsa_ameth.c"
+   7: ImplicitCastExpr 0xdb46280 <<scratch space>:134:1> 'char *' <ArrayToPointerDecay>
+`-StringLiteral 0xdb461c0 <col:1> 'char [12]' lvalue "rsa_ameth.c"
+[B4.6] (ImplicitCastExpr, ArrayToPointerDecay, char *)
+   8: ImplicitCastExpr 0xdb46298 <<scratch space>:134:1> 'const char *' <BitCast>
+`-ImplicitCastExpr 0xdb46280 <col:1> 'char *' <ArrayToPointerDecay>
+  `-StringLiteral 0xdb461c0 <col:1> 'char [12]' lvalue "rsa_ameth.c"
+[B4.7] (ImplicitCastExpr, BitCast, const char *)
+   9: IntegerLiteral 0xdb461f8 <<scratch space>:135:1> 'int' 698
+698
+  10: CallExpr 0xdb46230 <../../include/openssl/err.h:135:43, col:66> 'void'
+|-ImplicitCastExpr 0xdb46218 <col:43> 'void (*)(int, int, int, const char *, int)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xdb460f8 <col:43> 'void (int, int, int, const char *, int)' Function 0xd721380 'ERR_put_error' 'void (int, int, int, const char *, int)'
+|-IntegerLiteral 0xdb46120 <line:163:34> 'int' 4
+|-ParenExpr 0xdb46160 <line:205:49, col:51> 'int'
+| `-IntegerLiteral 0xdb46140 <../../include/openssl/rsa.h:548:59> 'int' 156
+|-ParenExpr 0xdb461a0 <../../include/openssl/err.h:205:53, col:55> 'int'
+| `-IntegerLiteral 0xdb46180 <../../include/openssl/rsa.h:657:59> 'int' 155
+|-ImplicitCastExpr 0xdb46298 <<scratch space>:134:1> 'const char *' <BitCast>
+| `-ImplicitCastExpr 0xdb46280 <col:1> 'char *' <ArrayToPointerDecay>
+|   `-StringLiteral 0xdb461c0 <col:1> 'char [12]' lvalue "rsa_ameth.c"
+`-IntegerLiteral 0xdb461f8 <line:135:1> 'int' 698
+[B4.2]([B4.3], ([B4.4]), ([B4.5]), [B4.8], [B4.9])
+  11: IntegerLiteral 0xdb462b0 <rsa_ameth.c:699:17> 'int' 1
+1
+  12: UnaryOperator 0xdb462d0 <rsa_ameth.c:699:16, col:17> 'int' prefix '-'
+`-IntegerLiteral 0xdb462b0 <col:17> 'int' 1
+-[B4.11]
+  13: ReturnStmt 0xdb462f0 <rsa_ameth.c:699:9, col:17>
+`-UnaryOperator 0xdb462d0 <col:16, col:17> 'int' prefix '-'
+  `-IntegerLiteral 0xdb462b0 <col:17> 'int' 1
+return [B4.12];
+   Preds (1): B5
+   Succs (1): B0
+
+ [B5]
+   1: DeclRefExpr 0xdb45f98 <rsa_ameth.c:697:9> 'int (const ASN1_OBJECT *)' Function 0xd9151f8 'OBJ_obj2nid' 'int (const ASN1_OBJECT *)'
+OBJ_obj2nid
+   2: ImplicitCastExpr 0xdb46038 <rsa_ameth.c:697:9> 'int (*)(const ASN1_OBJECT *)' <FunctionToPointerDecay>
+`-DeclRefExpr 0xdb45f98 <col:9> 'int (const ASN1_OBJECT *)' Function 0xd9151f8 'OBJ_obj2nid' 'int (const ASN1_OBJECT *)'
+[B5.1] (ImplicitCastExpr, FunctionToPointerDecay, int (*)(const ASN1_OBJECT *))
+   3: DeclRefExpr 0xdb45fc0 <rsa_ameth.c:697:21> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+sigalg
+   4: ImplicitCastExpr 0xdb45fe8 <rsa_ameth.c:697:21> 'X509_ALGOR *' <LValueToRValue>
+`-DeclRefExpr 0xdb45fc0 <col:21> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+[B5.3] (ImplicitCastExpr, LValueToRValue, X509_ALGOR *)
+   5: MemberExpr 0xdb46000 <rsa_ameth.c:697:21, col:29> 'ASN1_OBJECT *' lvalue ->algorithm 0xda1a978
+`-ImplicitCastExpr 0xdb45fe8 <col:21> 'X509_ALGOR *' <LValueToRValue>
+  `-DeclRefExpr 0xdb45fc0 <col:21> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+[B5.4]->algorithm
+   6: ImplicitCastExpr 0xdb46080 <rsa_ameth.c:697:21, col:29> 'ASN1_OBJECT *' <LValueToRValue>
+`-MemberExpr 0xdb46000 <col:21, col:29> 'ASN1_OBJECT *' lvalue ->algorithm 0xda1a978
+  `-ImplicitCastExpr 0xdb45fe8 <col:21> 'X509_ALGOR *' <LValueToRValue>
+    `-DeclRefExpr 0xdb45fc0 <col:21> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+[B5.5] (ImplicitCastExpr, LValueToRValue, ASN1_OBJECT *)
+   7: ImplicitCastExpr 0xdb46098 <rsa_ameth.c:697:21, col:29> 'const ASN1_OBJECT *' <BitCast>
+`-ImplicitCastExpr 0xdb46080 <col:21, col:29> 'ASN1_OBJECT *' <LValueToRValue>
+  `-MemberExpr 0xdb46000 <col:21, col:29> 'ASN1_OBJECT *' lvalue ->algorithm 0xda1a978
+    `-ImplicitCastExpr 0xdb45fe8 <col:21> 'X509_ALGOR *' <LValueToRValue>
+      `-DeclRefExpr 0xdb45fc0 <col:21> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+[B5.6] (ImplicitCastExpr, BitCast, const ASN1_OBJECT *)
+   8: CallExpr 0xdb46050 <rsa_ameth.c:697:9, col:38> 'int'
+|-ImplicitCastExpr 0xdb46038 <col:9> 'int (*)(const ASN1_OBJECT *)' <FunctionToPointerDecay>
+| `-DeclRefExpr 0xdb45f98 <col:9> 'int (const ASN1_OBJECT *)' Function 0xd9151f8 'OBJ_obj2nid' 'int (const ASN1_OBJECT *)'
+`-ImplicitCastExpr 0xdb46098 <col:21, col:29> 'const ASN1_OBJECT *' <BitCast>
+  `-ImplicitCastExpr 0xdb46080 <col:21, col:29> 'ASN1_OBJECT *' <LValueToRValue>
+    `-MemberExpr 0xdb46000 <col:21, col:29> 'ASN1_OBJECT *' lvalue ->algorithm 0xda1a978
+      `-ImplicitCastExpr 0xdb45fe8 <col:21> 'X509_ALGOR *' <LValueToRValue>
+        `-DeclRefExpr 0xdb45fc0 <col:21> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+[B5.2]([B5.7])
+   9: IntegerLiteral 0xdb460b0 <../../include/openssl/obj_mac.h:600:33> 'int' 912
+912
+  10: BinaryOperator 0xdb460d0 <rsa_ameth.c:697:9, ../../include/openssl/obj_mac.h:600:33> 'int' '!='
+|-CallExpr 0xdb46050 <rsa_ameth.c:697:9, col:38> 'int'
+| |-ImplicitCastExpr 0xdb46038 <col:9> 'int (*)(const ASN1_OBJECT *)' <FunctionToPointerDecay>
+| | `-DeclRefExpr 0xdb45f98 <col:9> 'int (const ASN1_OBJECT *)' Function 0xd9151f8 'OBJ_obj2nid' 'int (const ASN1_OBJECT *)'
+| `-ImplicitCastExpr 0xdb46098 <col:21, col:29> 'const ASN1_OBJECT *' <BitCast>
+|   `-ImplicitCastExpr 0xdb46080 <col:21, col:29> 'ASN1_OBJECT *' <LValueToRValue>
+|     `-MemberExpr 0xdb46000 <col:21, col:29> 'ASN1_OBJECT *' lvalue ->algorithm 0xda1a978
+|       `-ImplicitCastExpr 0xdb45fe8 <col:21> 'X509_ALGOR *' <LValueToRValue>
+|         `-DeclRefExpr 0xdb45fc0 <col:21> 'X509_ALGOR *' lvalue ParmVar 0xdb45d30 'sigalg' 'X509_ALGOR *'
+`-IntegerLiteral 0xdb460b0 <../../include/openssl/obj_mac.h:600:33> 'int' 912
+[B5.8] != [B5.9]
+   T: if [B5.10]
+   Preds (1): B6
+   Succs (2): B4 B3
+
+ [B0 (EXIT)]
+   Preds (3): B1 B2 B4

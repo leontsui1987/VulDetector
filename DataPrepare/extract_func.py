@@ -1,12 +1,19 @@
-#/bin/python
+#!/bin/python
+
+# =================================================================================
+# Copyright 2020 IIE, CAS
+#
 # This file extract the descired code part of a function for similarity computation
 # It works in two modes:  
 #	 1. Extract only the code part of a function, used for string based comparision
 #	 2. Extract the code part with include, function declarations, etc, used for Clang CFG based comparision
-
+#
 # Input: Directory a project
 # Output: A set file of functions, format: c_file_name#function_name.c
-##
+#
+# Author: Lei Cui
+# Contact: cuilei@iie.ac.cn
+# =================================================================================
 
 
 import os
@@ -61,9 +68,9 @@ def delete_funcs_from_line(input_file, funcs_to_delete, output_file):
 			line_index = 0
 			for line in fp:
 				line_index += 1
-		if line_to_delete(line_index, funcs_to_delete):
+				if line_to_delete(line_index, funcs_to_delete):
 					continue
-				else:	 
+				else:
 					fp_out.write(line)
 	
 
@@ -93,7 +100,7 @@ def delete_funcs_from_file(file_path, version, output_folder):
 			output_file = os.path.join(output_folder, "temp.cpp")
 			delete_funcs_from_line(file_path, funcs_to_delete, output_file)
 
-		cmd = 'mv %s %s ' % (output_file, os.path.join(output_folder, version + "#" + func_name + "#" + str(start_line) + ".c") )
+			cmd = 'mv %s %s ' % (output_file, os.path.join(output_folder, version + "#" + func_name + "#" + str(start_line) + ".c") )
 			safe_exec(cmd)
 
 			#change_style = "clang-format -style=llvm " + output_file + " > " + os.path.join(output_folder, version + "#" + func_name + "_all.cpp")
@@ -121,7 +128,6 @@ def extract_func_from_file(file_path, version, output_folder):
 
 	if len(func_list) != 0:
 		for item in func_list:
-	#for item in func_list:
 			#print item
 			line_start = item[2]
 			line_end = item[3]
@@ -194,17 +200,15 @@ def get_ast(input_file, temp_file):
 			start_line = int((func_info[0]).split(':')[1])
 			end_line = int((func_info[1]).split(':')[1])
 			# TODO: may uncomment for small functions
-		#if end_line - start_line <= 3: # small function
+			#if end_line - start_line <= 3: # small function
 			#	 continue
 
-			if DEBUG: #print func_str
-			print func_name, start_line, end_line, '\n\n'
+			if DEBUG: print func_name, start_line, end_line, '\n\n'
 
-		# Ensure it is indeed a function definition
+			# Ensure it is indeed a function definition
 			cmd = 'grep -in %s %s | grep %d' % (func_name, input_file , start_line)
 			ret = commands.getstatusoutput(cmd)
-			if DEBUG:
-			print 'Cmd: %s, Ret: %s ' % (cmd, ret)
+			if DEBUG: print 'Cmd: %s, Ret: %s ' % (cmd, ret)
 			if ret[0] != 0: 
 				cmd = 'grep -in %s %s | grep %d' % (func_name, input_file , start_line+1) # Case: func_type and func_name are in different lines 
 				ret = commands.getstatusoutput(cmd)
@@ -214,8 +218,7 @@ def get_ast(input_file, temp_file):
 			# Ensure it is not a function declaration
 			cmd = 'grep -in \'%s\' %s | grep -w %d' % (';', input_file, end_line) #	 function declaration ends with ;
 			ret = commands.getstatusoutput(cmd)
-			if DEBUG:
-			print 'Cmd: %s, Ret: %s ' % (cmd, ret)
+			if DEBUG: print 'Cmd: %s, Ret: %s ' % (cmd, ret)
 			if ret[0] == 0:
 				cmd = 'grep -in \'%s\' %s | grep -w %d | grep \'}\'' % (';', input_file, end_line) # function definition ends with ;}
 				print cmd
@@ -224,7 +227,7 @@ def get_ast(input_file, temp_file):
 					print ret
 					continue
 			
-		#print func_name, start_line, end_line
+			#print func_name, start_line, end_line
 			result_list.append([input_file, func_name, start_line, end_line, end_line - start_line + 1])
 		else:
 			pass #print 'not'
@@ -245,10 +248,9 @@ def extract_funcs(input_folder, output_folder):
 		file_name = input_folder.split('/')[-1].strip()
 		if not correct_file_types(file_name):
 			return
-	# TODO:
 		if SMALL_FUNC: 
 			extract_func_from_file(input_folder, file_name, output_folder)
-	delete_funcs_from_file(input_folder, file_name, output_folder)
+		delete_funcs_from_file(input_folder, file_name, output_folder)
 		print 'Extract funcs is done\n'
 		return
 
@@ -269,13 +271,12 @@ def extract_funcs(input_folder, output_folder):
 					if SMALL_FUNC:
 						extract_func_from_file(file_path, file_one, output_folder) # File_One
 					delete_funcs_from_file(file_path, file_one, output_folder) # File_One
-	else:
+		else:
 			if not correct_file_types(file_name):
 				continue
-		#TODO:
 			if SMALL_FUNC:
 				extract_func_from_file(file_folder, file_name, output_folder)
-		delete_funcs_from_file(file_folder, file_name, output_folder)
+			delete_funcs_from_file(file_folder, file_name, output_folder)
 		
 	print("Extract funcs is done\n" )
 

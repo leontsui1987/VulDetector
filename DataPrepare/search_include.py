@@ -1,15 +1,12 @@
-#/bin/python
-# This file extract the descired code part of a function for similarity computation
-# It works in two modes:  
-#    1. Extract only the code part of a function, used for string based comparision
-#    2. Extract the code part with include, function declarations, etc, used for Clang CFG based comparision
+#!/bin/python
 
-# Input: Directory a project
-# Output: A set file of functions, format: c_file_name#function_name.c
-##
+# =================================================================================
+# Copyright 2020 IIE, CAS
+#
+# Author: Lei Cui
+# Contact: cuilei@iie.ac.cn
+# =================================================================================
 
-
-import os
 import sys
 import re
 import csv
