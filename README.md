@@ -17,8 +17,11 @@
 
 ## Setup
 ### Install packages
-* Python packages (python2.7 currently): clang, matplotlib, hungarian
-* sklearn is only required for determining keywords
+* Python packages (python2.7 currently)
+* Necessary: hungarian
+* On-demand: 
+	* sklearn is required for determining keywords in stat_keywords.py
+	* matplotlib is required for drawing graphs in code2graph.py, commented now  
 
 ### Setup LLVM
 * Download sourcecode of LLVM-7.0.0
