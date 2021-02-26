@@ -13,7 +13,7 @@
 
 
 ## Environment
-* Tested on Linux-3.10.0(Red hat 7.3) and Linux-4.15.0(Ubuntu 18.04.3)
+* Tested on Linux-3.10.0 (Red hat 7.3) and Linux-4.15.0 (Ubuntu 18.04.3)
 
 ## Setup
 ### Install packages
@@ -70,14 +70,14 @@
 *  NOTE: You can provide your own keywords in sensitive_parse.py
 
 ### WFG Generation 
-* Generate WFGs from CFG and sourcecode
-* Input: cfg_file (necessary), code_file, and sensitive_line_no. The code_file and sensitive_line_no can be set 'no' for different requirements.
+* Generate WFGs from CFG and sourcecode. 
+* Input: cfg_file (necessary), code_file, and sensitive_line_no. The code_file and sensitive_line_no can be set 'no' for different requirements. Refer to the three cases below.
 * Output: Dump the node {lines, ast_feature, weight} of the WFG, meanwhile storing the WFG as dict into ../data/wfgs
 *  i) leave code_file as 'no' to use the full graph as WFG (no slicing)	
 	*  `cd ../WFGParse`
 	*  `python2.7 code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  no -1`
   
-*  ii) leave sensitive_line_no as '-1' to automated seach sensitive lines and generate WFG for each sensitive line.
+*  ii) leave sensitive_line_no as '-1' to automatically seach sensitive lines and generate WFG for each sensitive line.
 	*  `python2.7 code2graph.py ../data/func_cfg/cms_smime.c#do_free_upto  ../data/func_code/cms_smime.c#small#do_free_upto#126.c  -1`
   
 *  iii) pass the specific sensitive_line_no to generate WFG
